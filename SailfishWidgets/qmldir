@@ -1,0 +1,5 @@
+module SailfishWidgets
+DescriptiveLabel 1.0 DescriptiveLabel.qml
+Heading 1.0 Heading.qml
+InformationalLabel 1.0 InformationalLabel.qml
+StandardListView 1.0 StandardListView.qml
