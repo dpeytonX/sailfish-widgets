@@ -18,13 +18,13 @@ Basic instructions in order to use this in your QtQuick project:
 </ol>
 <p>
 Jolla Store Instructions: <br/>
-The following are instructions to using SailfishWidgets with your own project (still untested)
+The following are instructions to using SailfishWidgets with your own project (still untested). Replace <em>your-project</em> with the name of your application (without the harbour-)
 <ol>
-  <li> First, download the source code and put the <code>SailfishWidgets</em> folder within the <code>harbour/<em>your-project</em></code> directory</li>
-  <li> Then, edit the first line of qmldir to read <code>module harbour.<em>you-project</em>.SailfishWidgets</code>.</li>
+  <li> First, download the source code and put the <code>SailfishWidgets</code> folder within the <code>harbour/<em>your-project</em></code> directory</li>
+  <li> Then, edit the first line of qmldir to read <code>module harbour.<em>your-project</em>.SailfishWidgets</code>.</li>
   <li> For using with QtCreator add the following<pre>
 OTHERFILES += harbour/<em>your-app</em>/SailfishWidgets/*
-ML_IMPORT_PATH = .
+QML_IMPORT_PATH = .
 <em>your-app</em>.files = harbour
 <em>your-app</em>.path = /usr/share/$${TARGET}
 </pre></li>
