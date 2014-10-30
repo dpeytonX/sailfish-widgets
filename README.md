@@ -17,9 +17,21 @@ Basic instructions in order to use this in your QtQuick project:
 <li> <strong>IMPORTANT</strong>: You must bundle SailfishWidgets in your installer so that the running application knows where to find it.</li> 
 </ol>
 <p>
-Jolla Store Instructions:
-<em>TODO:</em>
+Jolla Store Instructions: <br/>
+The following are instructions to using SailfishWidgets with your own project (still untested)
+<ol>
+  <li> First, download the source code and put the <code>SailfishWidgets</em> folder within the <code>harbour/<em>your-project</em></code> directory</li>
+  <li> Then, edit the first line of qmldir to read <code>module harbour.<em>you-project</em>.SailfishWidgets</code>.</li>
+  <li> For using with QtCreator add the following<pre>
+OTHERFILES += harbour/<em>your-app</em>/SailfishWidgets/*
+ML_IMPORT_PATH = .
+<em>your-app</em>.files = harbour
+<em>your-app</em>.path = /usr/share/$${TARGET}
+</pre></li>
+   <li> In any QML file you want to edit add the following import statement: <code>import harbour.<em>your-app</em>.SailfishWidgets 1.0 as SailfishWidgets</code></li>
+</ol>
 
+THANK YOU!
 
 <h2>Links</h2>
 <a href="http://qt-project.org/doc/qt-5/qtqml-modules-qmldir.html">qmldir specification</a>
