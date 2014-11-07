@@ -1,6 +1,9 @@
 module SailfishWidgets.Components
-DescriptiveLabel 1.1 DescriptiveLabel.qml
+PageColumn 1.1 PageColumn.qml
+Paragraph 1.1 Paragraph.qml
 Heading 1.1 Heading.qml
 InformationalLabel 1.1 InformationalLabel.qml
-StandardListView 1.1 StandardListView.qml
 StandardCover 1.1 StandardCover.qml
+StandardListView 1.1 StandardListView.qml
+StandardMenuItem 1.1 StandardMenuItem.qml
+Subtext 1.1 Subtext.qml

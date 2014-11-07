@@ -33,12 +33,16 @@ CoverBackground {
     property string coverTitle
     property bool displayDefault: true
     property string imageSource
+    property alias image: im
+    property alias label: lb
 
     Item {
+        id: im
         anchors.fill: parent
         anchors.top: parent.top
         anchors.topMargin: Theme.paddingLarge
         visible: displayDefault
+        z: -100
 
         Image {
             anchors.horizontalCenter: parent.horizontalCenter
@@ -48,6 +52,7 @@ CoverBackground {
     }
 
     InformationalLabel {
+        id: lb
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         text: coverTitle
