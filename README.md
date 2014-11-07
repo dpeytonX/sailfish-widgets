@@ -5,7 +5,7 @@ Sailfish.Silica 1.0 compatible widgets which aim to speed up development by impl
 
 This project is GPLv3 unless otherwise indicated on the file itself. Files with other licenses are copyrighted to their respective owners.
 
-Version 1.0
+Version 1.1
 
 <h2>Usage</h2>
 Basic instructions in order to use this in your QtQuick project:
@@ -30,6 +30,22 @@ QML_IMPORT_PATH = .
 </pre></li>
    <li> In any QML file you want to edit add the following import statement: <code>import harbour.<em>your-app</em>.SailfishWidgets 1.0 as SailfishWidgets</code></li>
 </ol>
+
+<h2>Contribute</h2>
+
+This application is open source,  but please do contribute to active development!
+<p>
+You can contribute in one of two ways:
+<ul>
+<li>Fork this branch and make pull request! (Please create an issue ticket first, though)
+<li>Donate Bitcoins
+</ul>
+<p>
+<img src="bitcoinaddy.png" />
+<p>
+<code>1PFqgHeGrtXLYvMge2mTT1FohKuuoKmUN5</code>
+
+<p>
 
 THANK YOU!
 
