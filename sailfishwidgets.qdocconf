@@ -1,0 +1,17 @@
+outputdir = Documentation
+outputencoding = UTF-8
+
+project = Safilfish Widgets
+description = Library to speed up Sailfish Development
+version = 1.1
+
+generateindex = true
+
+outputformats = HTML
+
+sourcedirs = SailfishWidgets
+sources.fileextensions += *.qml
+sources.fileextensions += *.qdoc
+sources.fileextensions += *.js
+
+syntaxhighlighting = true
