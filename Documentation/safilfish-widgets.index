@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QDOCINDEX>
+<INDEX url="" title="Library to speed up Sailfish Development" version="1.1" project="Safilfish Widgets">
+    <namespace threadsafety="unspecified" name="" access="public" status="commendable">
+        <qmlclass name="DynamicLoader" href="qml-dynamicloader.html" access="public" status="commendable" since="5.0" title="DynamicLoader" fulltitle="DynamicLoader" subtitle="" brief="Creates an object instance of a Component">
+            <qmlsignal threadsafety="unspecified" name="create" fullname="DynamicLoader::create" href="qml-dynamicloader.html#create-signal" access="public" status="commendable"/>
+            <qmlsignal threadsafety="unspecified" name="error" fullname="DynamicLoader::error" href="qml-dynamicloader.html#error-signal" access="public" status="commendable"/>
+            <qmlsignal threadsafety="unspecified" name="objectCompleted" fullname="DynamicLoader::objectCompleted" href="qml-dynamicloader.html#objectCompleted-signal" access="public" status="commendable"/>
+        </qmlclass>
+        <qmlclass name="Heading" href="qml-heading.html" access="public" status="commendable" since="5.0" title="Heading" fulltitle="Heading" subtitle="" brief="Meant to be used as a section header."/>
+        <qmlclass name="InformationalLabel" href="qml-informationallabel.html" access="public" status="commendable" since="5.0" title="InformationalLabel" fulltitle="InformationalLabel" subtitle="" brief="Use to give the user simple instructions or explanations."/>
+        <qmlclass name="PageColumn" href="qml-pagecolumn.html" access="public" status="commendable" since="5.0" title="PageColumn" fulltitle="PageColumn" subtitle="" brief="Column to be used in Page elements">
+            <qmlproperty threadsafety="unspecified" name="title" fullname="PageColumn::title" href="qml-pagecolumn.html#title-prop" access="public" status="commendable" type="alias" attached="false" writable="true"/>
+        </qmlclass>
+        <qmlclass name="Paragraph" href="qml-paragraph.html" access="public" status="commendable" since="5.0" title="Paragraph" fulltitle="Paragraph" subtitle="" brief="Can be used to add detailed information in the UI."/>
+        <qmlclass name="StandardCover" href="qml-standardcover.html" access="public" status="commendable" since="5.0" title="StandardCover" fulltitle="StandardCover" subtitle="" brief="Default cover with an image and a short title">
+            <qmlproperty threadsafety="unspecified" name="coverTitle" fullname="StandardCover::coverTitle" href="qml-standardcover.html#coverTitle-prop" access="public" status="commendable" type="string" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="displayDefault" fullname="StandardCover::displayDefault" href="qml-standardcover.html#displayDefault-prop" access="public" status="commendable" type="bool" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="image" fullname="StandardCover::image" href="qml-standardcover.html#image-prop" access="public" status="commendable" type="alias" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="imageSource" fullname="StandardCover::imageSource" href="qml-standardcover.html#imageSource-prop" access="public" status="commendable" type="string" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="label" fullname="StandardCover::label" href="qml-standardcover.html#label-prop" access="public" status="commendable" type="alias" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="im" fullname="StandardCover::im" href="qml-standardcover.html#im-prop" access="public" status="commendable" location="StandardCover.qml" filepath="/home/dametrious/Projects/sailfish/harbour-fallingblocks/thirdparty/SailfishWidgets/SailfishWidgets/Components/StandardCover.qml" lineno="50" type="alias" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="lb" fullname="StandardCover::lb" href="qml-standardcover.html#lb-prop" access="public" status="commendable" location="StandardCover.qml" filepath="/home/dametrious/Projects/sailfish/harbour-fallingblocks/thirdparty/SailfishWidgets/SailfishWidgets/Components/StandardCover.qml" lineno="55" type="alias" attached="false" writable="true"/>
+        </qmlclass>
+        <qmlclass name="StandardListView" href="qml-standardlistview.html" access="public" status="commendable" since="5.0" title="StandardListView" fulltitle="StandardListView" subtitle="" brief="SilicaListView with a default place holder and scroll decorator.">
+            <qmlproperty threadsafety="unspecified" name="headerTitle" fullname="StandardListView::headerTitle" href="qml-standardlistview.html#headerTitle-prop" access="public" status="commendable" type="alias" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="placeHolderText" fullname="StandardListView::placeHolderText" href="qml-standardlistview.html#placeHolderText-prop" access="public" status="commendable" type="string" attached="false" writable="true"/>
+        </qmlclass>
+        <qmlclass name="StandardMenuItem" href="qml-standardmenuitem.html" access="public" status="commendable" since="5.0" title="StandardMenuItem" fulltitle="StandardMenuItem" subtitle="" brief="MenuItem with Sailfish Silica theme."/>
+        <qmlclass name="Subtext" href="qml-subtext.html" access="public" status="commendable" since="5.0" title="Subtext" fulltitle="Subtext" subtitle="" brief="Can be used to add detailed information in the UI."/>
+        <qmlclass name="IconThemes" href="qml-iconthemes.html" access="public" status="commendable" location="IconThemes.js" filepath="/home/dametrious/Projects/sailfish/harbour-fallingblocks/thirdparty/SailfishWidgets/SailfishWidgets/JS/IconThemes.js" lineno="23" since="5.0" title="IconThemes" fulltitle="IconThemes" subtitle="" brief="Provides constants for accessing Sailfish icons."/>
+        <qmlclass name="MathHelper" href="qml-mathhelper.html" access="public" status="commendable" location="MathHelper.js" filepath="/home/dametrious/Projects/sailfish/harbour-fallingblocks/thirdparty/SailfishWidgets/SailfishWidgets/JS/MathHelper.js" lineno="23" since="5.0" title="MathHelper" fulltitle="MathHelper" subtitle="" brief="Provides additional math functions."/>
+        <page name="index.html" href="index.html" access="public" status="commendable" location="index.qdoc" filepath="/home/dametrious/Projects/sailfish/harbour-fallingblocks/thirdparty/SailfishWidgets/SailfishWidgets/index.qdoc" lineno="1" subtype="page" title="Sailfish Widgets" fulltitle="Sailfish Widgets" subtitle="" module="Safilfish Widgets" brief="Sailfish Library Extension"/>
+    </namespace>
+</INDEX>
