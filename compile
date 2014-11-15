@@ -3,7 +3,8 @@
 CURDIR=`pwd`
 PROJECT_NAME=sailfish-widgets
 BUILD_DIR=build
-DEPLOY_DIR=target/sailfish-widgets
+TARGET_DIR=target
+DEPLOY_DIR=$TARGET_DIR/$PROJECT_NAME
 QML_DIR=SailfishWidgets
 RELEASE_DIR=release
 
@@ -11,7 +12,7 @@ VERSION=1_1_2
 ARMV=armv
 i486=i486
 
-rm -fr $DEPLOY_DIR
+rm -fr $TARGET_DIR
 
 #copy qml files
 mkdir -p $DEPLOY_DIR
@@ -30,7 +31,7 @@ cp $BUILD_DIR/applicationsettings/$i486/*.so $TARGET_i486/Settings/
 
 #release builds
 
-cd $DEPLOY_DIR
+cd $TARGET_DIR
 tar -cvjf $PROJECT_NAME\_$VERSION\.tar.bz2 *
 cd $CURDIR
-cp $DEPLOY_DIR/*bz2 $RELEASE_DIR/
+cp $TARGET_DIR/*bz2 $RELEASE_DIR/
