@@ -1,0 +1,2 @@
+module SailfishWidgets.Settings
+plugin applicationsettings
