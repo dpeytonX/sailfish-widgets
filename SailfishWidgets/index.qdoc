@@ -36,6 +36,7 @@
   \li \l {InformationalLabel}
   \li \l {PageColumn}
   \li \l {Paragraph}
+  \li \l {RadioGroup}
   \li \l {StandardCover}
   \li \l {StandardListView}
   \li \l {StandardMenuItem}

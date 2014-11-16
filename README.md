@@ -5,7 +5,7 @@ Sailfish.Silica 1.0 compatible widgets which aim to speed up development by impl
 
 This project is GPLv3 unless otherwise indicated on the file itself. Files with other licenses are copyrighted to their respective owners.
 
-Version 1.1
+Version 1.1.1
 
 <h2>Jolla Store Instructions: </h2>
 The following are instructions to using SailfishWidgets with your own project. This project will <strong>PASS</strong> Jolla QA as long as you follow the following instructions. If you find a more clever way to do this, by all means share :-). Replace <em>your-project</em> with the name of your application (without the harbour-)
