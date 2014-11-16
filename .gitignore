@@ -1,0 +1,4 @@
+*.pro.user
+target
+build
+Makefile

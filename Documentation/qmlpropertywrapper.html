@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qmlpropertywrapper.cpp -->
+  <title>QmlPropertyWrapper Class | Safilfish Widgets 1.1</title>
+</head>
+<body>
+<li>QmlPropertyWrapper</li>
+<li id="buildversion">
+</li>
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QmlPropertyWrapper Class</h1>
+<!-- $$$QmlPropertyWrapper-brief -->
+<p>The QmlPropertyWrapper class <a href="#details">More...</a></p>
+<!-- @@@QmlPropertyWrapper -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> </b><tt><span class="preprocessor">#include &lt;QmlPropertyWrapper&gt;</span>
+</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign">  Qt 5.0</td></tr></table><ul>
+<li><a href="qmlpropertywrapper-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qmlpropertywrapper.html#QmlPropertyWrapper">QmlPropertyWrapper</a></b>(QQmlProperty<i> property</i>, QObject *<i> parent</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QQmlProperty </td><td class="memItemRight bottomAlign"><b><a href="qmlpropertywrapper.html#property">property</a></b>() const</td></tr>
+</table>
+<a name="public-slots"></a>
+<h2>Public Slots</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qmlpropertywrapper.html#notified">notified</a></b>()</td></tr>
+</table>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qmlpropertywrapper.html#notifySignal">notifySignal</a></b>(QmlPropertyWrapper *<i> property</i>)</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QmlPropertyWrapper-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QmlPropertyWrapper class</p>
+<p>This class was created because connecting to a signal against <tt>QQmlProperty</tt> that is determined at run time is difficult. The simplest way was to create a wrapper (this class) which provides a signal with the <tt>QQmlProperty</tt> as a parameter so that the receiver slots can perform different actions depending on the QQmlProperty that emitted the original signal.</p>
+<p>Back to <a href="index.html">Sailfish Widgets</a></p>
+</div>
+<!-- @@@QmlPropertyWrapper -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QmlPropertyWrapper[overload1]$$$QmlPropertyWrapperQQmlPropertyQObject* -->
+<h3 class="fn"><a name="QmlPropertyWrapper"></a>QmlPropertyWrapper::<span class="name">QmlPropertyWrapper</span>(<span class="type">QQmlProperty</span><i> property</i>, <span class="type">QObject</span> *<i> parent</i> = 0)</h3>
+<p>Constructs a new <a href="qmlpropertywrapper.html">QmlPropertyWrapper</a> with the given <tt>QQmlProperty</tt> <i>property</i> and <tt>QObject</tt> <i>parent</i></p>
+<!-- @@@QmlPropertyWrapper -->
+<!-- $$$notified[overload1]$$$notified -->
+<h3 class="fn"><a name="notified"></a><span class="type">void</span> QmlPropertyWrapper::<span class="name">notified</span>()<tt> [slot]</tt></h3>
+<p>This slot is executed when the internal <tt>QQmlProperty</tt> <tt>connectNotifySignal</tt> is emitted.</p>
+<!-- @@@notified -->
+<!-- $$$notifySignal[overload1]$$$notifySignalQmlPropertyWrapper* -->
+<h3 class="fn"><a name="notifySignal"></a><span class="type">void</span> QmlPropertyWrapper::<span class="name">notifySignal</span>(<span class="type">QmlPropertyWrapper</span> *<i> property</i>)<tt> [signal]</tt></h3>
+<p>Emitted when the <tt>connectNotifySignal</tt> of the <i>property</i> is emitted.</p>
+<!-- @@@notifySignal -->
+<!-- $$$property[overload1]$$$property -->
+<h3 class="fn"><a name="property"></a><span class="type">QQmlProperty</span> QmlPropertyWrapper::<span class="name">property</span>() const</h3>
+<p>Returns the internal <tt>QQmlProperty</tt>.</p>
+<!-- @@@property -->
+</div>
+</body>
+</html>
