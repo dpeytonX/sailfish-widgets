@@ -1,3 +1,25 @@
+/***************************************************************************
+** This file is part of SailfishWidgets
+**
+** Copyright (c) 2014 Dametrious Peyton
+**
+** $QT_BEGIN_LICENSE:GPLV3$
+** SailfishWidgets is free software: you can redistribute it and/or modify
+** it under the terms of the GNU General Public License as published by
+** the Free Software Foundation, either version 3 of the License, or
+** (at your option) any later version.
+**
+** SailfishWidgets is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with SailfishWidgets.  If not, see <http://www.gnu.org/licenses/>.
+** $QT_END_LICENSE$
+**
+**************************************************************************/
+
 #ifndef APPLICATIONSETTINGS_H
 #define APPLICATIONSETTINGS_H
 
@@ -14,17 +36,12 @@
 
 #include "qmlpropertywrapper.h"
 
-/**
- * @brief The ApplicationSettings class
- *
- * This class will support one way (writing) of qml settings and loading at initialization time.
- *
- */
 class ApplicationSettings : public QQuickItem
 {
     Q_OBJECT
     Q_DISABLE_COPY(ApplicationSettings)
     Q_INTERFACES(QQmlParserStatus)
+
     Q_PROPERTY(QString applicationName READ applicationName WRITE setApplicationName NOTIFY applicationNameChanged)
     Q_PROPERTY(QString fileName READ fileName WRITE setFileName NOTIFY fileNameChanged)
 
@@ -60,10 +77,26 @@ public:
         }
     }
 
+    /*!
+      \property ApplicationSettings::applicationName
+      \brief The application's name.
+
+      This property is passed to QSettings in order to create the application configuration directory where the settings file will be stored. It must be "harbour-yourapp" in order to pass sandboxing requirements.
+
+      \sa ApplicationSettings::applicationName()
+     */
     QString applicationName() const {
         return m_applicationName;
     }
 
+    /*!
+      \property ApplicationSettings::fileName
+      \brief The name of the settings file.
+
+      In general, this should be set to "settings" or "config". You may choose to name the settings file based on the configuration data inside, however.
+
+      \sa ApplicationSettings::fileName()
+     */
     QString fileName() const {
         return m_fileName;
     }
@@ -79,11 +112,6 @@ public:
         emit fileNameChanged();
         if (isSettingsValid()) emit settingsInitialized();
     }
-
-signals:
-    void applicationNameChanged();
-    void fileNameChanged();
-    void settingsInitialized();
 
 public slots:
     void setTarget(const QQmlProperty& qmlProperty) {
@@ -108,6 +136,11 @@ private slots:
     void qmlPropertyLookup(QmlPropertyWrapper *wrapper) {
         setTarget(wrapper->property());
     }
+
+signals:
+    void applicationNameChanged();
+    void fileNameChanged();
+    void settingsInitialized();
 
 private:
     void firstLoad() {
@@ -157,7 +190,6 @@ private:
         }
         return false;
     }
-
 
     QString m_applicationName;
     QStringList* m_existingProperties;

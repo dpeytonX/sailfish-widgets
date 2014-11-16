@@ -3,15 +3,15 @@ outputencoding = UTF-8
 
 project = Safilfish Widgets
 description = Library to speed up Sailfish Development
-version = 1.1
+version = 1.1.2
 
 generateindex = true
 
 outputformats = HTML
 
-sourcedirs = SailfishWidgets
-sources.fileextensions += *.qml
-sources.fileextensions += *.qdoc
-sources.fileextensions += *.js
+sourcedirs = SailfishWidgets applicationsettings
+headerdirs = applicationsettings
+sources.fileextensions = "*.cpp *.qml *.qdoc *.js *.h"
+headers.fileextensions = "*.h"
 
 syntaxhighlighting = true

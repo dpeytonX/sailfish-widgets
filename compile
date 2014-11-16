@@ -1,12 +1,13 @@
 #!/bin/bash
 
 CURDIR=`pwd`
-PROJECT_NAME=sailfish-widgets
+PROJECT_NAME=SailfishWidgets
 BUILD_DIR=build
 TARGET_DIR=target
 DEPLOY_DIR=$TARGET_DIR/$PROJECT_NAME
 QML_DIR=SailfishWidgets
 RELEASE_DIR=release
+DOC_DIR=Documentation
 
 VERSION=1_1_2
 ARMV=armv
@@ -28,6 +29,10 @@ TARGET_i486=$DEPLOY_DIR/$i486/$QML_DIR
 #copy built plugins
 cp $BUILD_DIR/applicationsettings/$ARMV/*.so $TARGET_ARMV/Settings/
 cp $BUILD_DIR/applicationsettings/$i486/*.so $TARGET_i486/Settings/
+
+#documentation
+qdoc3 *.qdocconf
+cp -r $DOC_DIR $DEPLOY_DIR
 
 #release builds
 
