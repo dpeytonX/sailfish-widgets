@@ -5,7 +5,7 @@ Sailfish.Silica 1.0 compatible widgets which aim to speed up development by impl
 
 This project is GPLv3 unless otherwise indicated on the file itself. Files with other licenses are copyrighted to their respective owners.
 
-Version 1.2
+Version 1.1.2
 
 <h2>Jolla Store Instructions: </h2>
 The following are instructions to using SailfishWidgets with your own project. This project will <strong>PASS</strong> Jolla QA as long as you follow the following instructions. If you find a more clever way to do this, by all means share :-). Replace <em>your-project</em> with the name of your application (without the harbour-)
@@ -23,10 +23,15 @@ QML_IMPORT_PATH = .
    <li> In any QML file you want to edit add the following import statement: <code>import harbour.<em>your-app</em>.SailfishWidgets.<em>SomePackage</em> <em>current-version</em></code></li>
 </ol>
 
+<h2> Using native plugins </h2>
+Sailfish Widgets provides native plugins that target both the Sailfish VM and arm device (cell phone). One such plugin is the ApplicationSettings which links QML user defined properties to a line entry in a QSettings configuration file. The following instructions will help you easily configure your project so that you can take advantage of these plugins for testing and project deployment.
+
+If you do not need these custom plugins then by all means you may skip the following.
+
 <h3>Switching between VM and Device plugins</h3>
 If you additionally want to use QML plugins, like ApplicationSettings, then it is best to configure your project settings to switch the SailfishWidgets source library from i486 (VM) to the device (armv) and vice versa.
 
-You can do this by adding a custom build step which will copy the appropriate Sailfish release directory into a common folder <em>harbour/your-app</em> so that it you can test easily. It is ok to do a straight <em>cp -r</em> because the qml sources are the same, only the library (.so) file will be overwritten; so none of your QML import paths need change.
+You can do this by adding a custom build step which will copy the appropriate Sailfish release directory into a common folder <em>harbour/your-app</em> so that you can test easily. It is ok to do a straight <em>cp -r</em> because the qml sources are the same, only the library (.so) file will be overwritten; so none of your QML import paths need to change.
 
 <strong>Remember:</strong> If you decide to go this route, remember to rename the qmldir module path by running the command in step 2 above. (Optionally, you can automate this process as well using a custom build setting.)</strong>
 <img src="build_process.png" />

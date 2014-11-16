@@ -4,7 +4,7 @@ QT += qml quick
 CONFIG += qt plugin
 
 TARGET = $$qtLibraryTarget($$TARGET)
-uri = SailfishWidgets.Utils
+uri = SailfishWidgets.Settings
 
 # Input
 SOURCES += \
