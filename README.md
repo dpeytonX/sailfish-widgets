@@ -14,12 +14,14 @@ The following are instructions to using SailfishWidgets with your own project. T
   <li> Then, edit the first line of qmldir. This is easiest accomplished with the following BASH command. 
 <pre>find . -name "qmldir" -exec sed -i "s/module SailfishWidgets/module harbour.<em>yourAppName</em>.SailfishWidgets/" \{} \;</pre>.
 If you are on Windows, manually edit each qmldir that you use to <code>module harbour.<em>your-project</em>.SailfishWidgets.</em>CurrentPackage</em></code>.</li>
-  <li> For using with QtCreator add the following<pre>
+  <li> For using with QtCreator add the following
+<pre>
 OTHERFILES += harbour/<em>your-app</em>/SailfishWidgets/*
 QML_IMPORT_PATH = .
 <em>your-app</em>.files = harbour
 <em>your-app</em>.path = /usr/share/$${TARGET}
-</pre></li>
+</pre>
+   </li>
    <li> In any QML file you want to edit add the following import statement: <code>import harbour.<em>your-app</em>.SailfishWidgets.<em>SomePackage</em> <em>current-version</em></code></li>
 </ol>
 
@@ -35,6 +37,15 @@ You can do this by adding a custom build step which will copy the appropriate Sa
 
 <strong>Remember:</strong> If you decide to go this route, remember to rename the qmldir module path by running the command in step 2 above. (Optionally, you can automate this process as well using a custom build setting.)</strong>
 <img src="build_process.png" />
+
+<h3>Update your spec file</h3>
+The RPM tool will put the native library into the provides section and this is strictly disallowed according to the Harbour Store policies.
+
+See <a href="https://harbour.jolla.com/faq#2.6.0">Provides: libFooBar.so.1' not allowed in RPM</a>
+
+The suggested solutions is to put the following line in between the <code># &gt;&gt; macros</code> and <code># &lt;&lt; macros</code> section in the <em>your-app</em>.spec file.
+<pre>%define __provides_exclude_from ^%{_datadir}/.*$</pre>
+
 
 <h2>Contribute</h2>
 
