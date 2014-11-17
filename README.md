@@ -6,6 +6,8 @@ Sailfish.Silica 1.0 compatible widgets which aim to speed up development by impl
 This project is GPLv3 unless otherwise indicated on the file itself. Files with other licenses are copyrighted to their respective owners.
 
 Version 1.1.2
+<p>
+<img src="http://www.gnu.org/graphics/gplv3-127x51.png" width="254" height="102" />
 
 <h2>Jolla Store Instructions: </h2>
 If you are in doubt that this will pass inspection <strong>use the tag feature and get a stable release<strong>. Tagged releases will <strong>always</strong> be tested by including it into a third party app that is on the app store. Of course, this means you will miss out on beta features and patches until then.
