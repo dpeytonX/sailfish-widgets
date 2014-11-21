@@ -23,6 +23,10 @@
   \endlegalese
 
   \startpage
+  SailfishWidgets 1.3
+  \list
+  \li Updated StandardListView to remove PageHeader (makes it more useful in dialogs)
+  \endlist
 
   SailfishWidgets 1.1.2
   \list

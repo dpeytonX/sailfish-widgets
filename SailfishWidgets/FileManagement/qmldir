@@ -1,0 +1,4 @@
+module SailfishWidgets.FileManagement
+versioner 1.2 version.qml
+plugin filemanagement
+typeinfo filemanagement.qmltypes
