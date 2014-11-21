@@ -21,22 +21,22 @@
 **************************************************************************/
 
 /*!
-   \qmltype IconThemes
+   \qmltype Variant
    \since 5.0
-   \brief Provides constants for accessing Sailfish icons.
+   \brief Provides constants for accessing manipulating variant types
 
    Back to \l {Sailfish Widgets}
 
 */
 .pragma library
 
-var iconCoverAlarm = "image://theme/icon-cover-alarm"
-var iconCoverAnswer = "image://theme/icon-cover-answer"
-var iconCoverNew = "image://theme/icon-cover-new"
-var iconCoverNext = "image://theme/icon-cover-next"
-var iconCoverNextSong = "image://theme/icon-cover-next-song"
-var iconCoverPause = "image://theme/icon-cover-pause"
-var iconCoverPrevious = "image://theme/icon-cover-previous"
-var iconCoverShuffle = "image://theme/icon-cover-shuffle"
+function remove(variant, obj) {
+    var i = variant.indexOf(obj)
+    var temp = variant
+    temp.splice(i, 1)
+    return temp
+}
 
-var iconDirectory = "image://theme/icon-m-folder"
+function add(variant, obj) {
+    return variant.concat(obj)
+}
