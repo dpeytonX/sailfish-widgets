@@ -24,7 +24,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Components" 1.2
 import "../JS" 1.2
-import FileManagement 1.2
+import "." 1.2
 
 /*!
    \qmltype FileSelector
