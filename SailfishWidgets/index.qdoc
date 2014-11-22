@@ -62,8 +62,8 @@
 
   FileManagement
   \list
-  \li \l {Dir}
-  \li \l {File}
+  \li \l {Dir} (Native Plugin)
+  \li \l {File} (Native Plugin)
   \li \l {FileSelector}
   \endlist
 
