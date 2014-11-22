@@ -9,7 +9,7 @@ QML_DIR=SailfishWidgets
 RELEASE_DIR=release
 DOC_DIR=Documentation
 
-VERSION=1_1_3
+VERSION=1_2
 ARMV=armv
 i486=i486
 
@@ -29,6 +29,8 @@ TARGET_i486=$DEPLOY_DIR/$i486/$QML_DIR
 #copy built plugins
 cp $BUILD_DIR/applicationsettings/$ARMV/*.so $TARGET_ARMV/Settings/
 cp $BUILD_DIR/applicationsettings/$i486/*.so $TARGET_i486/Settings/
+cp $BUILD_DIR/filemanagement/$ARMV/*.so $TARGET_ARMV/FileManagement/
+cp $BUILD_DIR/filemanagement/$i486/*.so $TARGET_i486/FileManagement/
 
 #documentation
 qdoc3 *.qdocconf

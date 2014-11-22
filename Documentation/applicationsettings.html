@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- applicationsettings.cpp -->
-  <title>ApplicationSettings Class | Safilfish Widgets 1.1</title>
+  <title>ApplicationSettings Class | Safilfish Widgets 1.2</title>
 </head>
 <body>
-<li>ApplicationSettings</li>
+<link rel='stylesheet' href='style/stylesheet.css' /> <h2>Back to <a href='https://github.com/prplmnky/sailfish-widgets'>GitHub</a></h2><li>ApplicationSettings</li>
 <li id="buildversion">
 </li>
 <div class="toc">
@@ -31,8 +31,13 @@
 <a name="public-functions"></a>
 <h2>Public Functions</h2>
 <table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#ApplicationSettings">ApplicationSettings</a></b>(QQuickItem *<i> parent</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#ApplicationSettings">ApplicationSettings</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#ApplicationSettings-2">ApplicationSettings</a></b>(QQuickItem *<i> parent</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#dtor.ApplicationSettings">~ApplicationSettings</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#applicationName">applicationName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#fileName">fileName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#setApplicationName">setApplicationName</a></b>(QString<i> appName</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#setFileName">setFileName</a></b>(QString<i> fileName</i>)</td></tr>
 </table>
 <a name="public-slots"></a>
 <h2>Public Slots</h2>
@@ -70,21 +75,41 @@
 <!-- @@@ApplicationSettings -->
 <div class="func">
 <h2>Member Function Documentation</h2>
-<!-- $$$ApplicationSettings[overload1]$$$ApplicationSettingsQQuickItem* -->
-<h3 class="fn"><a name="ApplicationSettings"></a>ApplicationSettings::<span class="name">ApplicationSettings</span>(<span class="type">QQuickItem</span> *<i> parent</i> = 0)</h3>
+<!-- $$$ApplicationSettings[overload1]$$$ApplicationSettings -->
+<h3 class="fn"><a name="ApplicationSettings"></a>ApplicationSettings::<span class="name">ApplicationSettings</span>()</h3>
+<p>Constructs a new <a href="applicationsettings.html">ApplicationSettings</a></p>
+<!-- @@@ApplicationSettings -->
+<!-- $$$ApplicationSettings$$$ApplicationSettingsQQuickItem* -->
+<h3 class="fn"><a name="ApplicationSettings-2"></a>ApplicationSettings::<span class="name">ApplicationSettings</span>(<span class="type">QQuickItem</span> *<i> parent</i>)</h3>
 <p>Constructs a new <a href="applicationsettings.html">ApplicationSettings</a> with the given <tt>QQuickItem</tt> <i>parent</i></p>
 <!-- @@@ApplicationSettings -->
 <!-- $$$~ApplicationSettings[overload1]$$$~ApplicationSettings -->
 <h3 class="fn"><a name="dtor.ApplicationSettings"></a>ApplicationSettings::<span class="name">~ApplicationSettings</span>()</h3>
 <!-- @@@~ApplicationSettings -->
+<!-- $$$applicationName[overload1]$$$applicationName -->
+<h3 class="fn"><a name="applicationName"></a><span class="type">QString</span> ApplicationSettings::<span class="name">applicationName</span>() const</h3>
+<p><b>See also </b><a href="applicationsettings.html#setApplicationName">setApplicationName</a>().</p>
+<!-- @@@applicationName -->
 <!-- $$$applicationNameChanged[overload1]$$$applicationNameChanged -->
 <h3 class="fn"><a name="applicationNameChanged"></a><span class="type">void</span> ApplicationSettings::<span class="name">applicationNameChanged</span>()<tt> [signal]</tt></h3>
 <p>Emitted when the <tt>applicationName</tt> has changed.</p>
 <!-- @@@applicationNameChanged -->
+<!-- $$$fileName[overload1]$$$fileName -->
+<h3 class="fn"><a name="fileName"></a><span class="type">QString</span> ApplicationSettings::<span class="name">fileName</span>() const</h3>
+<p><b>See also </b><a href="applicationsettings.html#setFileName">setFileName</a>().</p>
+<!-- @@@fileName -->
 <!-- $$$fileNameChanged[overload1]$$$fileNameChanged -->
 <h3 class="fn"><a name="fileNameChanged"></a><span class="type">void</span> ApplicationSettings::<span class="name">fileNameChanged</span>()<tt> [signal]</tt></h3>
 <p>Emitted when the <tt>fileName</tt> has changed.</p>
 <!-- @@@fileNameChanged -->
+<!-- $$$setApplicationName[overload1]$$$setApplicationNameQString -->
+<h3 class="fn"><a name="setApplicationName"></a><span class="type">void</span> ApplicationSettings::<span class="name">setApplicationName</span>(<span class="type">QString</span><i> appName</i>)</h3>
+<p><b>See also </b><a href="applicationsettings.html#applicationName">applicationName</a>().</p>
+<!-- @@@setApplicationName -->
+<!-- $$$setFileName[overload1]$$$setFileNameQString -->
+<h3 class="fn"><a name="setFileName"></a><span class="type">void</span> ApplicationSettings::<span class="name">setFileName</span>(<span class="type">QString</span><i> fileName</i>)</h3>
+<p><b>See also </b><a href="applicationsettings.html#fileName">fileName</a>().</p>
+<!-- @@@setFileName -->
 <!-- $$$setTarget[overload1]$$$setTargetconstQQmlProperty& -->
 <h3 class="fn"><a name="setTarget"></a><span class="type">void</span> ApplicationSettings::<span class="name">setTarget</span>(const <span class="type">QQmlProperty</span> &amp;<i> qmlProperty</i>)<tt> [slot]</tt></h3>
 <p>Sets the interal value of <i>qmlProperty</i> to whatever is stored in the settings file. If nothing is stored, then the <i>qmlProperty</i>'s state will be unchanged and the value will instead be written into the settings file.</p>

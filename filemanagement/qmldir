@@ -1,0 +1,3 @@
+module SailfishWidgets.FileManagement
+plugin filemanagement
+

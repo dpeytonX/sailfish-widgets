@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- file.cpp -->
+  <title>File Class | Safilfish Widgets 1.2</title>
+</head>
+<body>
+<link rel='stylesheet' href='style/stylesheet.css' /> <h2>Back to <a href='https://github.com/prplmnky/sailfish-widgets'>GitHub</a></h2><li>File</li>
+<li id="buildversion">
+</li>
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">File Class</h1>
+<!-- $$$File-brief -->
+<p>The File class <a href="#details">More...</a></p>
+<!-- @@@File -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> </b><tt><span class="preprocessor">#include &lt;File&gt;</span>
+</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign">  Qt 5.0</td></tr></table><ul>
+<li><a href="file-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2>Properties</h2>
+<table class="propsummary">
+<tr><td class="topAlign"><ul>
+<li class="fn"><b><a href="file.html#absoluteFilePath-prop">absoluteFilePath</a></b> : const QString</li>
+<li class="fn"><b><a href="file.html#dir-prop">dir</a></b> : const bool</li>
+<li class="fn"><b><a href="file.html#executable-prop">executable</a></b> : const bool</li>
+<li class="fn"><b><a href="file.html#exists-prop">exists</a></b> : const bool</li>
+<li class="fn"><b><a href="file.html#file-prop">file</a></b> : const bool</li>
+<li class="fn"><b><a href="file.html#fileName-prop">fileName</a></b> : QString</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn"><b><a href="file.html#hidden-prop">hidden</a></b> : const bool</li>
+<li class="fn"><b><a href="file.html#readable-prop">readable</a></b> : const bool</li>
+<li class="fn"><b><a href="file.html#root-prop">root</a></b> : const bool</li>
+<li class="fn"><b><a href="file.html#symLink-prop">symLink</a></b> : const bool</li>
+<li class="fn"><b><a href="file.html#writable-prop">writable</a></b> : const bool</li>
+</ul>
+</td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="file.html#File">File</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="file.html#File-2">File</a></b>(const QString &amp;<i> name</i>, QObject *<i> parent</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="file.html#exists-prop">exists</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="file.html#fileName-prop">fileName</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="file.html#readable-prop">isReadable</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="file.html#writable-prop">isWritable</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="file.html#fileName-prop">setFileName</a></b>(const QString &amp;<i> name</i>)</td></tr>
+</table>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="file.html#fileName-prop">fileNameChanged</a></b>()</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$File-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The File class</p>
+<p>This class will expose <tt>QFileInfo</tt> and <tt>QFile</tt> functionality to QML.</p>
+<p>An example QML usage:</p>
+<pre class="qml"><span class="type">File</span> {
+     <span class="name">id</span>: <span class="name">fileList</span>
+     <span class="name">fileName</span>: <span class="string">&quot;myfile.txt&quot;</span>
+ }</pre>
+<p>Back to <a href="index.html">Sailfish Widgets</a></p>
+</div>
+<!-- @@@File -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$absoluteFilePath-prop -->
+<h3 class="fn"><a name="absoluteFilePath-prop"></a><span class="name">absoluteFilePath</span> : const <span class="type">QString</span></h3>
+<!-- @@@absoluteFilePath -->
+<!-- $$$dir-prop$$$fileNameChanged -->
+<h3 class="fn"><a name="dir-prop"></a><span class="name">dir</span> : const <span class="type">bool</span></h3>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="file.html#fileName-prop">fileNameChanged</a></b></span>()</td></tr>
+</table>
+<!-- @@@dir -->
+<!-- $$$executable-prop$$$fileNameChanged -->
+<h3 class="fn"><a name="executable-prop"></a><span class="name">executable</span> : const <span class="type">bool</span></h3>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="file.html#fileName-prop">fileNameChanged</a></b></span>()</td></tr>
+</table>
+<!-- @@@executable -->
+<!-- $$$exists-prop$$$exists$$$fileNameChanged -->
+<h3 class="fn"><a name="exists-prop"></a><span class="name">exists</span> : const <span class="type">bool</span></h3>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>exists</b></span>() const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="file.html#fileName-prop">fileNameChanged</a></b></span>()</td></tr>
+</table>
+<!-- @@@exists -->
+<!-- $$$file-prop$$$fileNameChanged -->
+<h3 class="fn"><a name="file-prop"></a><span class="name">file</span> : const <span class="type">bool</span></h3>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="file.html#fileName-prop">fileNameChanged</a></b></span>()</td></tr>
+</table>
+<!-- @@@file -->
+<!-- $$$fileName-prop$$$fileName$$$setFileNameconstQString&$$$fileNameChanged -->
+<h3 class="fn"><a name="fileName-prop"></a><span class="name">fileName</span> : <span class="type">QString</span></h3>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>fileName</b></span>()</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setFileName</b></span>(const QString &amp;<i> name</i>)</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>fileNameChanged</b></span>()</td></tr>
+</table>
+<!-- @@@fileName -->
+<!-- $$$hidden-prop$$$fileNameChanged -->
+<h3 class="fn"><a name="hidden-prop"></a><span class="name">hidden</span> : const <span class="type">bool</span></h3>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="file.html#fileName-prop">fileNameChanged</a></b></span>()</td></tr>
+</table>
+<!-- @@@hidden -->
+<!-- $$$readable-prop$$$isReadable$$$fileNameChanged -->
+<h3 class="fn"><a name="readable-prop"></a><span class="name">readable</span> : const <span class="type">bool</span></h3>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isReadable</b></span>() const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="file.html#fileName-prop">fileNameChanged</a></b></span>()</td></tr>
+</table>
+<!-- @@@readable -->
+<!-- $$$root-prop$$$fileNameChanged -->
+<h3 class="fn"><a name="root-prop"></a><span class="name">root</span> : const <span class="type">bool</span></h3>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="file.html#fileName-prop">fileNameChanged</a></b></span>()</td></tr>
+</table>
+<!-- @@@root -->
+<!-- $$$symLink-prop$$$fileNameChanged -->
+<h3 class="fn"><a name="symLink-prop"></a><span class="name">symLink</span> : const <span class="type">bool</span></h3>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="file.html#fileName-prop">fileNameChanged</a></b></span>()</td></tr>
+</table>
+<!-- @@@symLink -->
+<!-- $$$writable-prop$$$isWritable$$$fileNameChanged -->
+<h3 class="fn"><a name="writable-prop"></a><span class="name">writable</span> : const <span class="type">bool</span></h3>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isWritable</b></span>() const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="file.html#fileName-prop">fileNameChanged</a></b></span>()</td></tr>
+</table>
+<!-- @@@writable -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$File[overload1]$$$File -->
+<h3 class="fn"><a name="File"></a>File::<span class="name">File</span>()</h3>
+<p>Constructs a new <a href="file.html">File</a> with no file reference</p>
+<!-- @@@File -->
+<!-- $$$File$$$FileconstQString&QObject* -->
+<h3 class="fn"><a name="File-2"></a>File::<span class="name">File</span>(const <span class="type">QString</span> &amp;<i> name</i>, <span class="type">QObject</span> *<i> parent</i> = 0)</h3>
+<p>Constructs a new <a href="file.html">File</a> linked to file name <i>name</i> and given a <tt>QObject</tt> <i>parent</i>.</p>
+<!-- @@@File -->
+</div>
+</body>
+</html>

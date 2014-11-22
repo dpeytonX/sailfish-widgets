@@ -23,6 +23,12 @@
   \endlegalese
 
   \startpage
+  SailfishWidgets 1.2
+  \list
+  \li Updated \l {StandardListView} to remove PageHeader (makes it more useful in dialogs)
+  \li Added \l {Variant} for operations on variant types
+  \li Added \l {Dir}, \l {File}, and \l {FileSelector} inside the FileManagement package
+  \endlist
 
   SailfishWidgets 1.1.2
   \list

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- FileSelector.qml -->
+  <title>FileSelector QML Type | Safilfish Widgets 1.2</title>
+</head>
+<body>
+<link rel='stylesheet' href='style/stylesheet.css' /> <h2>Back to <a href='https://github.com/prplmnky/sailfish-widgets'>GitHub</a></h2><li>FileSelector QML Type</li>
+<li id="buildversion">
+</li>
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">FileSelector QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$FileSelector-brief -->
+<p>Allows files to be selected from the filesystem. <a href="#details">More...</a></p>
+<!-- @@@FileSelector -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> </b><tt>import SailfishWidgets.FileManagement .</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign">  Qt 5.0</td></tr></table><ul>
+<li><a href="qml-sailfishwidgets-filemanagement-fileselector-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-filemanagement-fileselector.html#acceptText-prop">acceptText</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-filemanagement-fileselector.html#baseDirectory-prop">baseDirectory</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-filemanagement-fileselector.html#cancelText-prop">cancelText</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-filemanagement-fileselector.html#deselectText-prop">deselectText</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-filemanagement-fileselector.html#directory-prop">directory</a></b></b> : alias</li>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-filemanagement-fileselector.html#fileList-prop">fileList</a></b></b> : alias</li>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-filemanagement-fileselector.html#filter-prop">filter</a></b></b> : alias</li>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-filemanagement-fileselector.html#header-prop">header</a></b></b> : alias</li>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-filemanagement-fileselector.html#headerTitle-prop">headerTitle</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-filemanagement-fileselector.html#multiSelect-prop">multiSelect</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-filemanagement-fileselector.html#quickSelect-prop">quickSelect</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-filemanagement-fileselector.html#selectText-prop">selectText</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-filemanagement-fileselector.html#selectedFiles-prop">selectedFiles</a></b></b> : variant</li>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-filemanagement-fileselector.html#selectionFilter-prop">selectionFilter</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-filemanagement-fileselector.html#sort-prop">sort</a></b></b> : alias</li>
+</ul>
+<!-- $$$FileSelector-description -->
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>Back to <a href="index.html">Sailfish Widgets</a></p>
+<p>Displays a file system borwser that allows a user to select one or files or directories by visually selecting files that are stored in a <tt>ListView</tt></p>
+<p class="centerAlign"><img src="images/file_selector.png" alt="&quot;File Selector in action&quot;" /></p><p>It uses the <a href="dir.html">Dir</a> Qt object which provides the directory list and exposes some methods from <tt>QDir</tt> as Qml Properties</p>
+<p>This widget inherits the properties and signals from Sailfish.Silica Dialog.</p>
+<pre class="cpp">Qml                           Instantiates
+This dialog <span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">&gt;</span> Qml DirectoryInfo (handles all operations)
+                              Sends back
+dynamically <span class="operator">&lt;</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span> list of <span class="type">QFiles</span> matching request
+populates list view</pre>
+<!-- @@@FileSelector -->
+<h2>Property Documentation</h2>
+<!-- $$$acceptText -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="acceptText-prop"></a><span class="name">acceptText</span> : <span class="type">string</span></p></td></tr></table></div><div class="qmldoc"><p>Text that should be displayed in the Accept toolbar of this Dialog.</p>
+</div></div><!-- @@@acceptText -->
+<br/>
+<!-- $$$baseDirectory -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="baseDirectory-prop"></a><span class="name">baseDirectory</span> : <span class="type">string</span></p></td></tr></table></div><div class="qmldoc"><p>Text property which is a file path that this Dialog should show at first. Defaults to <a href="dir.html">Dir</a> <tt>XdgHome</tt></p>
+</div></div><!-- @@@baseDirectory -->
+<br/>
+<!-- $$$cancelText -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="cancelText-prop"></a><span class="name">cancelText</span> : <span class="type">string</span></p></td></tr></table></div><div class="qmldoc"><p>Text that should be displayed in the Cancel toolbar of this Dialog.</p>
+</div></div><!-- @@@cancelText -->
+<br/>
+<!-- $$$deselectText -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="deselectText-prop"></a><span class="name">deselectText</span> : <span class="type">string</span></p></td></tr></table></div><div class="qmldoc"><p>Text that should be displayed in the selection <tt>ContextMenu</tt> when deselecting a file.</p>
+</div></div><!-- @@@deselectText -->
+<br/>
+<!-- $$$directory -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="directory-prop"></a><span class="name">directory</span> : <span class="type">alias</span></p></td></tr></table></div><div class="qmldoc"><p>An alias to the <a href="dir.html">Dir</a> object.</p>
+</div></div><!-- @@@directory -->
+<br/>
+<!-- $$$fileList -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="fileList-prop"></a><span class="name">fileList</span> : <span class="type">alias</span></p></td></tr></table></div><div class="qmldoc"><p>An alias to the <a href="dir.html">Dir</a> object.</p>
+</div></div><!-- @@@fileList -->
+<br/>
+<!-- $$$filter -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="filter-prop"></a><span class="name">filter</span> : <span class="type">alias</span></p></td></tr></table></div><div class="qmldoc"><p>An enum type that controls what file system types to display in the <tt>ListView</tt>. Uses the <a href="dir.html">Dir</a> <tt>DirFilter</tt> enum. You can chain enums using bitwise-or <tt>|</tt>. Its syntax follows that same as that of <tt>QDir::entryList</tt>.</p>
+</div></div><!-- @@@filter -->
+<br/>
+<!-- $$$header -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="header-prop"></a><span class="name">header</span> : <span class="type">alias</span></p></td></tr></table></div><div class="qmldoc"><p>An alias to the <tt>listView</tt> object's <tt>DialogHeader</tt></p>
+</div></div><!-- @@@header -->
+<br/>
+<!-- $$$headerTitle -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="headerTitle-prop"></a><span class="name">headerTitle</span> : <span class="type">string</span></p></td></tr></table></div><div class="qmldoc"><p>Displays &quot;No items&quot; when no items are present. Override to provide custom text.</p>
+</div></div><!-- @@@headerTitle -->
+<br/>
+<!-- $$$multiSelect -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="multiSelect-prop"></a><span class="name">multiSelect</span> : <span class="type">bool</span></p></td></tr></table></div><div class="qmldoc"><p>Set this to <tt>true</tt> to allow users to select more than one file. <tt>false</tt> by default.</p>
+</div></div><!-- @@@multiSelect -->
+<br/>
+<!-- $$$quickSelect -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="quickSelect-prop"></a><span class="name">quickSelect</span> : <span class="type">bool</span></p></td></tr></table></div><div class="qmldoc"><p>Set this to <tt>false</tt> to force users to use the <tt>ListItem</tt> <tt>ContextMenu</tt> in order to select files. <tt>true</tt> by default to allow single type selection of files. Directories always require <tt>ContextMenu</tt> select.</p>
+</div></div><!-- @@@quickSelect -->
+<br/>
+<!-- $$$selectText -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="selectText-prop"></a><span class="name">selectText</span> : <span class="type">string</span></p></td></tr></table></div><div class="qmldoc"><p>Title text that should be displayed just above the <tt>ListView</tt></p>
+</div></div><!-- @@@selectText -->
+<br/>
+<!-- $$$selectedFiles -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="selectedFiles-prop"></a><span class="name">selectedFiles</span> : <span class="type">variant</span></p></td></tr></table></div><div class="qmldoc"><p>Variant-list which holds the <tt>Files</tt> thata are selected.</p>
+</div></div><!-- @@@selectedFiles -->
+<br/>
+<!-- $$$selectionFilter -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="selectionFilter-prop"></a><span class="name">selectionFilter</span> : <span class="type">int</span></p></td></tr></table></div><div class="qmldoc"><p>An alias to an enum type that controls which elements can be selected. It uses the same enum as <a href="dir.html">Dir</a> <tt>DirFilter</tt>.</p>
+</div></div><!-- @@@selectionFilter -->
+<br/>
+<!-- $$$sort -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="sort-prop"></a><span class="name">sort</span> : <span class="type">alias</span></p></td></tr></table></div><div class="qmldoc"><p>An enum type that controls the order of file system types to display in the <tt>ListView</tt>. Uses the <a href="dir.html">Dir</a> <tt>DirSort</tt> enum. You can chain enums using bitwise-or <tt>|</tt>. Its syntax follows that same as that of <tt>QDir::entryList</tt>.</p>
+</div></div><!-- @@@sort -->
+<br/>
+</body>
+</html>

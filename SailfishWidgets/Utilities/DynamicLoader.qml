@@ -26,6 +26,7 @@ import QtQuick 2.0
    \qmltype DynamicLoader
    \since 5.0
    \brief Creates an object instance of a Component
+   \inqmlmodule SailfishWidgets.Utilities
 
    Back to \l {Sailfish Widgets}
 

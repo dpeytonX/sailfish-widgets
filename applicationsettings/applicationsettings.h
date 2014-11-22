@@ -40,102 +40,32 @@ class ApplicationSettings : public QQuickItem
 {
     Q_OBJECT
     Q_DISABLE_COPY(ApplicationSettings)
-    Q_INTERFACES(QQmlParserStatus)
 
+    Q_INTERFACES(QQmlParserStatus)
     Q_PROPERTY(QString applicationName READ applicationName WRITE setApplicationName NOTIFY applicationNameChanged)
     Q_PROPERTY(QString fileName READ fileName WRITE setFileName NOTIFY fileNameChanged)
 
 public:
-    ApplicationSettings(QQuickItem *parent = 0) : QQuickItem(parent),
-        m_existingProperties(new QStringList()),
-        m_initialized(false),
-        m_pending(new QMap<QString, QVariant>()),
-        m_settings(0),
-        m_userProperties(new QList<QmlPropertyWrapper*>()) {
+    explicit ApplicationSettings();
+    ApplicationSettings(QQuickItem *parent);
 
-        const QMetaObject* myMetaObj = metaObject();
-        for(int i = 0; i < myMetaObj->propertyCount();i++) {
-            QMetaProperty property = myMetaObj->property(i);
-            //Build up a list of pre-existing properties (hackish)
-            m_existingProperties->append(property.name());
-        }
-    }
+    ~ApplicationSettings();
 
-    ~ApplicationSettings() {
-        if(m_pending != 0)
-            delete m_pending;
+    QString applicationName() const;
 
-        if(m_existingProperties != 0)
-            delete m_existingProperties;
+    QString fileName() const;
 
-        if(m_userProperties != 0) {
-            for(int i = 0; i < m_userProperties->size(); i++) {
-                delete m_userProperties->at(i);
-            }
-            m_userProperties->clear();
-            delete m_userProperties;
-        }
-    }
+    void setApplicationName(QString appName);
 
-    /*!
-      \property ApplicationSettings::applicationName
-      \brief The application's name.
-
-      This property is passed to QSettings in order to create the application configuration directory where the settings file will be stored. It must be "harbour-yourapp" in order to pass sandboxing requirements.
-
-      \sa ApplicationSettings::applicationName()
-     */
-    QString applicationName() const {
-        return m_applicationName;
-    }
-
-    /*!
-      \property ApplicationSettings::fileName
-      \brief The name of the settings file.
-
-      In general, this should be set to "settings" or "config". You may choose to name the settings file based on the configuration data inside, however.
-
-      \sa ApplicationSettings::fileName()
-     */
-    QString fileName() const {
-        return m_fileName;
-    }
-
-    void setApplicationName(QString appName) {
-        m_applicationName = appName;
-        emit applicationNameChanged();
-        if (isSettingsValid()) emit settingsInitialized();
-    }
-
-    void setFileName(QString fileName) {
-        m_fileName = fileName;
-        emit fileNameChanged();
-        if (isSettingsValid()) emit settingsInitialized();
-    }
+    void setFileName(QString fileName);
 
 public slots:
-    void setTarget(const QQmlProperty& qmlProperty) {
-        if(!qmlProperty.isValid() || qmlProperty.propertyType() == QVariant::Invalid) return;
+    void setTarget(const QQmlProperty& qmlProperty);
 
-        // Skip applicationName and fileName
-        if(qmlProperty.name() == "applicationName" || qmlProperty.name() == "fileName") return;
-
-        // Notify settings updater that property changed
-        updateProperty(qmlProperty.name(), qmlProperty.read());
-    }
-
-    void updateProperty(const QString& propertyName, const QVariant& value) {
-        if(m_settings == 0) {
-            m_pending->insert(propertyName, value);
-            return;
-        }
-        m_settings->setValue(propertyName, value);
-    }
+    void updateProperty(const QString& propertyName, const QVariant& value);
 
 private slots:
-    void qmlPropertyLookup(QmlPropertyWrapper *wrapper) {
-        setTarget(wrapper->property());
-    }
+    void qmlPropertyLookup(QmlPropertyWrapper *wrapper);
 
 signals:
     void applicationNameChanged();
@@ -143,61 +73,18 @@ signals:
     void settingsInitialized();
 
 private:
-    void firstLoad() {
-        if(m_settings == 0 || m_initialized) return;
-        m_initialized = true;
+    void firstLoad();
 
-        const QMetaObject* myMetaObj = metaObject();
-        for(int i = 0; i < myMetaObj->propertyCount();i++) {
-            QMetaProperty property = myMetaObj->property(i);
+    bool isSettingsValid();
 
-            QQmlProperty qmlProperty(this, property.name());
-            if(!qmlProperty.isValid() || qmlProperty.propertyType() == QVariant::Invalid) continue;
-
-            // Skip applicationName and fileName
-            if(qmlProperty.name() == "applicationName" || qmlProperty.name() == "fileName") continue;
-
-            //Don't persist class properties (only user defined ones)
-            if(m_existingProperties->contains(qmlProperty.name())) continue;
-
-            QVariant value = m_settings->value(qmlProperty.name(), QVariant(QVariant::Invalid));
-            if(value.isValid())
-                // We already have a value, so prefer settings over default
-                qmlProperty.write(value);
-            else
-                // Populate settings with value
-                updateProperty(qmlProperty.name(), qmlProperty.read());
-
-            // Add notification handler
-            QmlPropertyWrapper* wrapper = new QmlPropertyWrapper(qmlProperty);
-            m_userProperties->append(wrapper);
-            connect(wrapper, SIGNAL(notifySignal(QmlPropertyWrapper*)), this,
-                    SLOT(qmlPropertyLookup(QmlPropertyWrapper*)));
-        }
-    }
-
-    bool isSettingsValid() {
-        if(!m_applicationName.isEmpty() && !m_fileName.isEmpty()) {
-            m_settings = new QSettings(m_applicationName, m_fileName, this);
-            QMap<QString, QVariant>::const_iterator i = m_pending->constBegin();
-            while (i != m_pending->constEnd()) {
-                updateProperty(i.key(), i.value());
-                ++i;
-            }
-            delete m_pending; m_pending = 0;
-            firstLoad();
-            return true;
-        }
-        return false;
-    }
-
+    bool m_initialized;
+    QMap<QString, QVariant>* m_pending;
+    QList<QmlPropertyWrapper*>* m_userProperties;
+    QSettings* m_settings;
     QString m_applicationName;
     QStringList* m_existingProperties;
     QString m_fileName;
-    bool m_initialized;
-    QMap<QString, QVariant>* m_pending;
-    QSettings* m_settings;
-    QList<QmlPropertyWrapper*>* m_userProperties;
+
 };
 
 #endif // APPLICATIONSETTINGS_H

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- DynamicLoader.qml -->
+  <title>DynamicLoader QML Type | Safilfish Widgets 1.2</title>
+</head>
+<body>
+<link rel='stylesheet' href='style/stylesheet.css' /> <h2>Back to <a href='https://github.com/prplmnky/sailfish-widgets'>GitHub</a></h2><li>DynamicLoader QML Type</li>
+<li id="buildversion">
+</li>
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">DynamicLoader QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$DynamicLoader-brief -->
+<p>Creates an object instance of a Component <a href="#details">More...</a></p>
+<!-- @@@DynamicLoader -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> </b><tt>import SailfishWidgets.Utilities .</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign">  Qt 5.0</td></tr></table><ul>
+<li><a href="qml-sailfishwidgets-utilities-dynamicloader-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-utilities-dynamicloader.html#create-signal">create</a></b></b>(Component <i>component</i>, variant <i>parent</i>, variant <i>properties</i>)</li>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-utilities-dynamicloader.html#error-signal">error</a></b></b>(string <i>errorString</i>)</li>
+<li class="fn"><b><b><a href="qml-sailfishwidgets-utilities-dynamicloader.html#objectCompleted-signal">objectCompleted</a></b></b>(variant <i>object</i>)</li>
+</ul>
+<!-- $$$DynamicLoader-description -->
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>Back to <a href="index.html">Sailfish Widgets</a></p>
+<p>Provides signals for creating dynamic objects from Component types.</p>
+<!-- @@@DynamicLoader -->
+<h2>Signal Documentation</h2>
+<!-- $$$create -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlFuncNode"><p><a name="create-signal"></a><span class="name">create</span>(<span class="type">Component</span><i> component</i>, <span class="type">variant</span><i> parent</i>, <span class="type">variant</span><i> properties</i>)</p></td></tr></table></div><div class="qmldoc"><p>Call this signal to begin object creation. Pass in the QML Component, its parent, and properties. <tt>onCreate</tt></p>
+</div></div><!-- @@@create -->
+<br/>
+<!-- $$$error -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlFuncNode"><p><a name="error-signal"></a><span class="name">error</span>(<span class="type">string</span><i> errorString</i>)</p></td></tr></table></div><div class="qmldoc"><p>Emitted when an error has occurred with object creation. <tt>onError</tt></p>
+</div></div><!-- @@@error -->
+<br/>
+<!-- $$$objectCompleted -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlFuncNode"><p><a name="objectCompleted-signal"></a><span class="name">objectCompleted</span>(<span class="type">variant</span><i> object</i>)</p></td></tr></table></div><div class="qmldoc"><p>Emitted when the object creation has completed. <tt>onObjectCompleted</tt></p>
+</div></div><!-- @@@objectCompleted -->
+<br/>
+</body>
+</html>

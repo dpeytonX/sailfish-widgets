@@ -27,6 +27,7 @@ import Sailfish.Silica 1.0
    \qmltype InformationLabel
    \since 5.0
    \brief Use to give the user simple instructions or explanations.
+   \inqmlmodule SailfishWidgets.Components
 
    Back to \l {Sailfish Widgets}
 

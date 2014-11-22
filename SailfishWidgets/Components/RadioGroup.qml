@@ -26,6 +26,7 @@ import Sailfish.Silica 1.0
    \qmltype RadioGroup
    \since 5.0
    \brief Togglable set of TextSwitch components
+   \inqmlmodule SailfishWidgets.Components
 
    Back to \l {Sailfish Widgets}
 

@@ -1,0 +1,42 @@
+html {
+  /*background: linear-gradient(lightBlue, white) !important*/
+  background: black;
+}
+
+body {
+  background: linear-gradient(white, lightBlue) !important;
+  border: thin solid black;
+  border-bottom: 0;
+  border-radius: 20px 20px 0 0;
+  font-family: Ubuntu, Oxygen Sans, Helvetica, sans;
+  font-size: 20px;
+  margin: 20px auto 0 auto;
+  padding: 30px;
+  width: 800px;
+}
+
+h2 {
+  text-shadow: 1px 1px 3px #00F
+}
+
+code, pre, tt {
+  font-family: Ubuntu Mono, Oxygen Mono, Courier, monospace;
+}
+
+#buildversion {
+  list-style: none;
+}
+
+.LegaleseLeft {
+  padding: 20px;
+  font-size: 20px;
+}
+
+.name {
+  font-weight: bolder;
+}
+
+.title {
+  text-align: center;
+  text-shadow: 1px 1px 3px #00F
+}

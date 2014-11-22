@@ -27,6 +27,7 @@ import Sailfish.Silica 1.0
    \qmltype Heading
    \since 5.0
    \brief Meant to be used as a section header.
+   \inqmlmodule SailfishWidgets.Components
 
    Back to \l {Sailfish Widgets}
 

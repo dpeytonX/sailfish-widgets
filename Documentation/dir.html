@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- dir.cpp -->
+  <title>Dir Class | Safilfish Widgets 1.2</title>
+</head>
+<body>
+<link rel='stylesheet' href='style/stylesheet.css' /> <h2>Back to <a href='https://github.com/prplmnky/sailfish-widgets'>GitHub</a></h2><li>Dir</li>
+<li id="buildversion">
+</li>
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">Dir Class</h1>
+<!-- $$$Dir-brief -->
+<p>The Dir class <a href="#details">More...</a></p>
+<!-- @@@Dir -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> </b><tt><span class="preprocessor">#include &lt;Dir&gt;</span>
+</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign">  Qt 5.0</td></tr></table><ul>
+<li><a href="dir-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="dir.html#DirFilter-enum">DirFilter</a></b> { Dirs, Files, Drives, NoSymLinks, ..., NoFilter }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="dir.html#DirSortFlag-enum">DirSortFlag</a></b> { Name, Time, Size, Unsorted, ..., NoSort }</td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="dir.html#Dir">Dir</a></b>(QObject *<i> parent</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#clearList">clearList</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="dir.html#dirName">dirName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="dir.html#entryList">entryList</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QQmlListProperty&lt;File&gt; </td><td class="memItemRight bottomAlign"><b><a href="dir.html#files">files</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="dir.html#filter">filter</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;File *&gt; &amp; </td><td class="memItemRight bottomAlign"><b><a href="dir.html#getList">getList</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#setFilter">setFilter</a></b>(int<i> filter</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#setPath">setPath</a></b>(const QString &amp;<i> p</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#setSort">setSort</a></b>(int<i> sort</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="dir.html#sort">sort</a></b>() const</td></tr>
+</table>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#filesChanged">filesChanged</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#filterChanged">filterChanged</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#pathChanged">pathChanged</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#sortChanged">sortChanged</a></b>()</td></tr>
+</table>
+<a name="static-public-members"></a>
+<h2>Static Public Members</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#dclAppendObject">dclAppendObject</a></b>(QQmlListProperty&lt;File&gt; *<i> obj</i>, File *<i> model</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> File * </td><td class="memItemRight bottomAlign"><b><a href="dir.html#dclAtIndex">dclAtIndex</a></b>(QQmlListProperty&lt;File&gt; *<i> obj</i>, int<i> index</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#dclClearObject">dclClearObject</a></b>(QQmlListProperty&lt;File&gt; *<i> obj</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="dir.html#dclCountObject">dclCountObject</a></b>(QQmlListProperty&lt;File&gt; *<i> obj</i>)</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$Dir-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The Dir class</p>
+<p>This class will expose <tt>QDir</tt> functionality to QML.</p>
+<p>An example usage is as follows.</p>
+<pre class="qml"><span class="type">Dir</span> {
+     <span class="name">id</span>: <span class="name">fileList</span>
+     <span class="name">filter</span>: <span class="name">Dir</span>.<span class="name">AllEntries</span> <span class="operator">|</span> <span class="name">Dir</span>.<span class="name">Hidden</span>
+     <span class="name">sort</span>: <span class="name">Dir</span>.<span class="name">DirsFirst</span> <span class="operator">|</span> <span class="name">Dir</span>.<span class="name">Name</span>
+
+     <span class="name">onPathChanged</span>: <span class="name">refresh</span>()
+ }</pre>
+<p>It does not support file manipulation (creation, reading, writing, delete). This class may be extended in the future as needed.</p>
+<p>Back to <a href="index.html">Sailfish Widgets</a></p>
+</div>
+<!-- @@@Dir -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$DirFilter$$$Dirs$$$Files$$$Drives$$$NoSymLinks$$$AllEntries$$$TypeMask$$$Readable$$$Writable$$$Executable$$$PermissionMask$$$Modified$$$Hidden$$$System$$$AccessMask$$$AllDirs$$$CaseSensitive$$$NoDot$$$NoDotDot$$$NoDotAndDotDot$$$NoFilter -->
+<h3 class="fn"><a name="DirFilter-enum"></a>enum Dir::<span class="name">DirFilter</span></h3>
+<!-- @@@DirFilter -->
+<!-- $$$DirSortFlag$$$Name$$$Time$$$Size$$$Unsorted$$$SortByMask$$$DirsFirst$$$Reversed$$$IgnoreCase$$$DirsLast$$$LocaleAware$$$Type$$$NoSort -->
+<h3 class="fn"><a name="DirSortFlag-enum"></a>enum Dir::<span class="name">DirSortFlag</span></h3>
+<!-- @@@DirSortFlag -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$Dir[overload1]$$$DirQObject* -->
+<h3 class="fn"><a name="Dir"></a>Dir::<span class="name">Dir</span>(<span class="type">QObject</span> *<i> parent</i> = 0)</h3>
+<p>Constructs a new <a href="dir.html">Dir</a> with the given <tt>QObject</tt> <i>parent</i></p>
+<!-- @@@Dir -->
+<!-- $$$clearList[overload1]$$$clearList -->
+<h3 class="fn"><a name="clearList"></a><span class="type">void</span> Dir::<span class="name">clearList</span>()</h3>
+<!-- @@@clearList -->
+<!-- $$$dclAppendObject[overload1]$$$dclAppendObjectQQmlListProperty<File>*File* -->
+<h3 class="fn"><a name="dclAppendObject"></a><span class="type">void</span> Dir::<span class="name">dclAppendObject</span>(<span class="type">QQmlListProperty</span>&lt;<span class="type"><a href="file.html">File</a></span>&gt; *<i> obj</i>, <span class="type"><a href="file.html">File</a></span> *<i> model</i>)<tt> [static]</tt></h3>
+<!-- @@@dclAppendObject -->
+<!-- $$$dclAtIndex[overload1]$$$dclAtIndexQQmlListProperty<File>*int -->
+<h3 class="fn"><a name="dclAtIndex"></a><span class="type"><a href="file.html">File</a></span> * Dir::<span class="name">dclAtIndex</span>(<span class="type">QQmlListProperty</span>&lt;<span class="type"><a href="file.html">File</a></span>&gt; *<i> obj</i>, <span class="type">int</span><i> index</i>)<tt> [static]</tt></h3>
+<!-- @@@dclAtIndex -->
+<!-- $$$dclClearObject[overload1]$$$dclClearObjectQQmlListProperty<File>* -->
+<h3 class="fn"><a name="dclClearObject"></a><span class="type">void</span> Dir::<span class="name">dclClearObject</span>(<span class="type">QQmlListProperty</span>&lt;<span class="type"><a href="file.html">File</a></span>&gt; *<i> obj</i>)<tt> [static]</tt></h3>
+<!-- @@@dclClearObject -->
+<!-- $$$dclCountObject[overload1]$$$dclCountObjectQQmlListProperty<File>* -->
+<h3 class="fn"><a name="dclCountObject"></a><span class="type">int</span> Dir::<span class="name">dclCountObject</span>(<span class="type">QQmlListProperty</span>&lt;<span class="type"><a href="file.html">File</a></span>&gt; *<i> obj</i>)<tt> [static]</tt></h3>
+<!-- @@@dclCountObject -->
+<!-- $$$dirName[overload1]$$$dirName -->
+<h3 class="fn"><a name="dirName"></a><span class="type">QString</span> Dir::<span class="name">dirName</span>() const</h3>
+<p>Returns the directory name. Unlike <tt>QDir::dirName()</tt> it will convert the root path to <tt>/</tt> .</p>
+<!-- @@@dirName -->
+<!-- $$$entryList[overload1]$$$entryList -->
+<h3 class="fn"><a name="entryList"></a><span class="type">QStringList</span> Dir::<span class="name">entryList</span>()</h3>
+<p>Returns the files in this <a href="dir.html">Dir</a> object's <tt>Dir::path()</tt>. It provides this object's <tt>filter</tt> and <tt>sort</tt> properties as arguments to <tt>QDir::entryList()</tt>.</p>
+<p>This applies the following <tt>DirFilter</tt> enums (always).</p>
+<ul>
+<li><tt>QDir::Readable</tt></li>
+<li><tt>QDir::NoDot</tt></li>
+</ul>
+<!-- @@@entryList -->
+<!-- $$$files[overload1]$$$files -->
+<h3 class="fn"><a name="files"></a><span class="type">QQmlListProperty</span>&lt;<span class="type"><a href="file.html">File</a></span>&gt; Dir::<span class="name">files</span>()</h3>
+<p>Returns the files in this directory as <a href="file.html">File</a> objects.</p>
+<p>If the internal file list is unpopulated, a call to this method will populate it.</p>
+<p>It will return the same content as <tt>entryList()</tt>.</p>
+<p><b>See also </b><a href="dir.html#entryList">Dir::entryList</a>().</p>
+<!-- @@@files -->
+<!-- $$$filesChanged[overload1]$$$filesChanged -->
+<h3 class="fn"><a name="filesChanged"></a><span class="type">void</span> Dir::<span class="name">filesChanged</span>()<tt> [signal]</tt></h3>
+<p>Emitted when the internal file list is udpated.</p>
+<!-- @@@filesChanged -->
+<!-- $$$filter[overload1]$$$filter -->
+<h3 class="fn"><a name="filter"></a><span class="type">int</span> Dir::<span class="name">filter</span>() const</h3>
+<p>Returns the internal file list filter.</p>
+<p><b>See also </b><a href="dir.html#setFilter">setFilter</a>().</p>
+<!-- @@@filter -->
+<!-- $$$filterChanged[overload1]$$$filterChanged -->
+<h3 class="fn"><a name="filterChanged"></a><span class="type">void</span> Dir::<span class="name">filterChanged</span>()<tt> [signal]</tt></h3>
+<p>Emitted when the <tt>filter</tt> is udpated.</p>
+<!-- @@@filterChanged -->
+<!-- $$$getList[overload1]$$$getList -->
+<h3 class="fn"><a name="getList"></a><span class="type">QList</span>&lt;<span class="type"><a href="file.html">File</a></span> *&gt; &amp; Dir::<span class="name">getList</span>()</h3>
+<!-- @@@getList -->
+<!-- $$$pathChanged[overload1]$$$pathChanged -->
+<h3 class="fn"><a name="pathChanged"></a><span class="type">void</span> Dir::<span class="name">pathChanged</span>()<tt> [signal]</tt></h3>
+<p>Emitted when the <tt>path</tt> is updated.</p>
+<!-- @@@pathChanged -->
+<!-- $$$setFilter[overload1]$$$setFilterint -->
+<h3 class="fn"><a name="setFilter"></a><span class="type">void</span> Dir::<span class="name">setFilter</span>(<span class="type">int</span><i> filter</i>)</h3>
+<p>It set the current <i>filter</i>. Afterwords it will emit the <tt>filterChanged()</tt> method.</p>
+<p><b>See also </b><a href="dir.html#filterChanged">Dir::filterChanged</a>().</p>
+<!-- @@@setFilter -->
+<!-- $$$setPath[overload1]$$$setPathconstQString& -->
+<h3 class="fn"><a name="setPath"></a><span class="type">void</span> Dir::<span class="name">setPath</span>(const <span class="type">QString</span> &amp;<i> p</i>)</h3>
+<p>It will set the current path to <i>p</i> after running QDir::absolutePath().</p>
+<p>To workaround an issue with indefinate /.. when navigating code, it will force references of /.. to the root directory.</p>
+<p>Afterwords it will emit the <tt>pathChanged()</tt> method.</p>
+<p><b>See also </b><a href="dir.html#pathChanged">Dir::pathChanged</a>().</p>
+<!-- @@@setPath -->
+<!-- $$$setSort[overload1]$$$setSortint -->
+<h3 class="fn"><a name="setSort"></a><span class="type">void</span> Dir::<span class="name">setSort</span>(<span class="type">int</span><i> sort</i>)</h3>
+<p>It will set this object's <i>sort</i> method Afterwords it will emit the <tt>sortChanged()</tt> method.</p>
+<p><b>See also </b><a href="dir.html#sortChanged">Dir::sortChanged</a>().</p>
+<!-- @@@setSort -->
+<!-- $$$sort[overload1]$$$sort -->
+<h3 class="fn"><a name="sort"></a><span class="type">int</span> Dir::<span class="name">sort</span>() const</h3>
+<p>Gets the current sort method.</p>
+<p><b>See also </b><a href="dir.html#setSort">setSort</a>().</p>
+<!-- @@@sort -->
+<!-- $$$sortChanged[overload1]$$$sortChanged -->
+<h3 class="fn"><a name="sortChanged"></a><span class="type">void</span> Dir::<span class="name">sortChanged</span>()<tt> [signal]</tt></h3>
+<p>Emitted when the <tt>sort</tt> is udpated.</p>
+<!-- @@@sortChanged -->
+</div>
+</body>
+</html>

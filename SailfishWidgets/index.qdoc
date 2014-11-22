@@ -3,7 +3,7 @@
   \title Sailfish Widgets
   \brief Sailfish Library Extension
 
-  SailfishWidgets 1.1.2
+  SailfishWidgets 1.3
 
   This is a library that aims to speed up Sailfish OS Development
 
@@ -52,6 +52,7 @@
   \list
   \li \l {MathHelper}
   \li \l {IconThemes}
+  \li \l {Variant}
   \endlist
 
   Settings
@@ -59,10 +60,19 @@
   \li \l {ApplicationSettings} (Native Plugin)
   \endlist
 
+  FileManagement
+  \list
+  \li \l {Dir}
+  \li \l {File}
+  \li \l {FileSelector}
+  \endlist
+
   C++ Documentation
   \list
   \li \l {ApplicationSettings}
   \li \l {QmlPropertyWrapper}
+  \li \l {Dir}
+  \li \l {File}
   \endlist
 
   Change List \l {ChangeList}

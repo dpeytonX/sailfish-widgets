@@ -27,6 +27,7 @@ import Sailfish.Silica 1.0
    \qmltype Subtext
    \since 5.0
    \brief Can be used to add detailed information in the UI.
+   \inqmlmodule SailfishWidgets.Components
 
    Back to \l {Sailfish Widgets}
 

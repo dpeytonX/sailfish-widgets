@@ -26,6 +26,7 @@ import Sailfish.Silica 1.0
    \qmltype StandardCover
    \since 5.0
    \brief Default cover with an image and a short title
+   \inqmlmodule SailfishWidgets.Components
 
    Back to \l {Sailfish Widgets}
 
