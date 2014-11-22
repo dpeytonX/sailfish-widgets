@@ -18,4 +18,5 @@ headers.fileextensions = "*.h"
 syntaxhighlighting = true
 HTML.stylesheets = stylesheet.css
 HTML.style = "body {background: red;}"
-HTML.postheader = "<link rel='stylesheet' href='style/stylesheet.css' />"
+HTML.postheader = "<link rel='stylesheet' href='style/stylesheet.css' />" \
+                  "<h2>Back to <a href='https://github.com/prplmnky/sailfish-widgets'>GitHub</a></h2>"

@@ -9,6 +9,9 @@ Version 1.2
 <p>
 <img src="http://www.gnu.org/graphics/gplv3-127x51.png" width="254" height="102" />
 
+<h2> Documentation </h2>
+Documentation is located <a href="https://rawgit.com/prplmnky/sailfish-widgets/master/Documentation/index.html">here</a>.
+
 <h2>Jolla Store Instructions: </h2>
 If you are in doubt that this will pass inspection <strong>use the tag feature and get a stable release<strong>. Tagged releases will <strong>always</strong> be tested by including it into a third party app that is on the app store. Of course, this means you will miss out on beta features and patches until then.
 
