@@ -26,6 +26,7 @@ import Sailfish.Silica 1.0
    \qmltype StandardMenuItem
    \since 5.0
    \brief MenuItem with Sailfish Silica theme.
+   \inqmlmodule SailfishWidgets.Components
 
    Back to \l {Sailfish Widgets}
 

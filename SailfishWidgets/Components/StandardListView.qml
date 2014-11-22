@@ -24,17 +24,22 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 /*!
-   \qmltype BasicListView
+   \qmltype StandardListView
    \since 5.0
    \brief SilicaListView with a default place holder and scroll decorator.
+   \inqmlmodule SailfishWidgets.Components
 
    Back to \l {Sailfish Widgets}
 
    A SilicaListView with a default place holder, scroll decorator.
 */
 SilicaListView {
-    id: listView
+    /*!
+       \qmlproperty alias StandardListView::placeHolderText
+       Displays "No items" when no items are present. Override to provide custom text.
+    */
     property string placeHolderText: qsTr("No items")
+    id: listView
 
     ViewPlaceholder {
         enabled: !listView.count

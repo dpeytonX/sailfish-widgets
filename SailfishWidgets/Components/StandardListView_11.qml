@@ -27,6 +27,7 @@ import Sailfish.Silica 1.0
    \qmltype StandardListView
    \since 5.0
    \brief SilicaListView with a default place holder and scroll decorator.
+   \inqmlmodule SailfishWidgets.Components
 
    Back to \l {Sailfish Widgets}
 

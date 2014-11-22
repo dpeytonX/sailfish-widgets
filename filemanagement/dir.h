@@ -32,16 +32,6 @@
 
 #include "file.h"
 
-/**
- * @brief The Dir class
- *
- * No point in reinventing the wheel.
- * This class will be a QDir wrapper with functions exposed to the QML Engine.
- *
- * TODO:
- * Copy over SailfishWidgets.JS folder
- *
- */
 class Dir : public QObject,QDir
 {
     Q_OBJECT

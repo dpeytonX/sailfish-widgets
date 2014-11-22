@@ -3,15 +3,19 @@ outputencoding = UTF-8
 
 project = Safilfish Widgets
 description = Library to speed up Sailfish Development
-version = 1.1.2
+version = 1.2
 
 generateindex = true
 
 outputformats = HTML
 
-sourcedirs = SailfishWidgets applicationsettings
-headerdirs = applicationsettings
+imagedirs = images
+sourcedirs = SailfishWidgets applicationsettings filemanagement
+headerdirs = applicationsettings filemanagement
 sources.fileextensions = "*.cpp *.qml *.qdoc *.js *.h"
 headers.fileextensions = "*.h"
 
 syntaxhighlighting = true
+HTML.stylesheets = stylesheet.css
+HTML.style = "body {background: red;}"
+HTML.postheader = "<link rel='stylesheet' href='style/stylesheet.css' />"

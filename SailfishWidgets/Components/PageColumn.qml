@@ -27,6 +27,7 @@ import Sailfish.Silica 1.0
    \qmltype PageColumn
    \since 5.0
    \brief Column to be used in Page elements
+   \inqmlmodule SailfishWidgets.Components
 
    Back to \l {Sailfish Widgets}
 
