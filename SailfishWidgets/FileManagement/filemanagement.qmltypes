@@ -104,29 +104,29 @@ Module {
         Enum {
             name: "DirFilter"
             values: {
-                  "Dirs" : 0x001,
-                  "Files" : 0x002,
-                  "Drives" : 0x004,
-                  "NoSymLinks" : 0x008,
-                  "AllEntries" : Dirs | Files | Drives,
-                  "TypeMask" : 0x00f,
+                  "Dirs" : 1,
+                  "Files" : 2,
+                  "Drives" : 4,
+                  "NoSymLinks" : 8,
+                  "AllEntries" : 7,
+                  "TypeMask" : 15,
 
-                  "Readable" : 0x010,
-                  "Writable" : 0x020,
-                  "Executable" : 0x040,
-                  "PermissionMask" : 0x070,
+                  "Readable" : 17,
+                  "Writable" : 32,
+                  "Executable" : 64,
+                  "PermissionMask" : 112,
 
-                  "Modified" : 0x080,
-                  "Hidden" : 0x100,
-                  "System" : 0x200,
+                  "Modified" : 128,
+                  "Hidden" : 160,
+                  "System" : 320,
 
-                  "AccessMask" : 0x3F0,
+                  "AccessMask" : 624,
 
-                  "AllDirs" : 0x400,
-                  "CaseSensitive" : 0x800,
-                  "NoDot" : 0x2000,
-                  "NoDotDot" : 0x4000,
-                  "NoDotAndDotDot" : NoDot | NoDotDot,
+                  "AllDirs" : 640,
+                  "CaseSensitive" : 1280,
+                  "NoDot" : 3200,
+                  "NoDotDot" : 6400,
+                  "NoDotAndDotDot" : 9600,
 
                   "NoFilter" : -1
             }
@@ -135,18 +135,18 @@ Module {
         Enum {
             name: "DirSort"
             values: {
-                    "Name" : 0x00,
-                    "Time" : 0x01,
-                    "Size" : 0x02,
-                    "Unsorted" : 0x03,
-                    "SortByMask" : 0x03,
+                    "Name" : 0,
+                    "Time" : 1,
+                    "Size" : 2,
+                    "Unsorted" : 3,
+                    "SortByMask" : 3,
 
-                    "DirsFirst" : 0x04,
-                    "Reversed" : 0x08,
-                    "IgnoreCase" : 0x10,
-                    "DirsLast" : 0x20,
-                    "LocaleAware" : 0x40,
-                    "Type" : 0x80,
+                    "DirsFirst" : 4,
+                    "Reversed" : 8,
+                    "IgnoreCase" : 16,
+                    "DirsLast" : 32,
+                    "LocaleAware" : 64,
+                    "Type" : 128,
                     "NoSort" : -1
             }
         }
