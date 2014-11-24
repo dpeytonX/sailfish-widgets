@@ -1,4 +1,4 @@
-module harbour.encryptor.SailfishWidgets.Components
+module SailfishWidgets.Components
 versioner 1.2 version.qml
 PageColumn 1.1 PageColumn.qml
 Paragraph 1.1 Paragraph.qml
