@@ -55,11 +55,17 @@ public:
 
     QString fileName() const;
 
+    void componentComplete();
+
     void setApplicationName(QString appName);
 
     void setFileName(QString fileName);
 
+    void handleProperty(const QQmlProperty& qmlProperty, bool overwrite=true);
+
 public slots:
+    void refresh();
+
     void setTarget(const QQmlProperty& qmlProperty);
 
     void updateProperty(const QString& propertyName, const QVariant& value);
@@ -71,12 +77,15 @@ signals:
     void applicationNameChanged();
     void fileNameChanged();
     void settingsInitialized();
+    void settingsPropertyUpdated(QString name);
 
 private:
     void firstLoad();
-
     bool isSettingsValid();
 
+    static QList<ApplicationSettings*> s_allSettings;
+
+    bool m_disposed;
     bool m_initialized;
     QMap<QString, QVariant>* m_pending;
     QList<QmlPropertyWrapper*>* m_userProperties;

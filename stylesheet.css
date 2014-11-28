@@ -21,6 +21,9 @@ h2 {
 
 code, pre, tt {
   font-family: Ubuntu Mono, Oxygen Mono, Courier, monospace;
+  background: white;
+  border: thin dotted lightGray;
+  padding: 2px;
 }
 
 #buildversion {

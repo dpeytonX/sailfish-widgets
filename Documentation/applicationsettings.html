@@ -42,6 +42,7 @@
 <a name="public-slots"></a>
 <h2>Public Slots</h2>
 <table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#refresh">refresh</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#setTarget">setTarget</a></b>(const QQmlProperty &amp;<i> qmlProperty</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#updateProperty">updateProperty</a></b>(const QString &amp;<i> propertyName</i>, const QVariant &amp;<i> value</i>)</td></tr>
 </table>
@@ -51,13 +52,14 @@
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#applicationNameChanged">applicationNameChanged</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#fileNameChanged">fileNameChanged</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#settingsInitialized">settingsInitialized</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#settingsPropertyUpdated">settingsPropertyUpdated</a></b>(QString<i> name</i>)</td></tr>
 </table>
 <a name="details"></a>
 <!-- $$$ApplicationSettings-description -->
 <div class="descr">
 <h2>Detailed Description</h2>
 <p>The ApplicationSettings class</p>
-<p>This class will support one way (writing) of qml settings and loading at initialization time.</p>
+<p>This class will support reading and writing of QSettings configuration file.</p>
 <p>Instantiate this QML object as you would any other and provide the applicationName and fileName. These applicationName will be &quot;harbour-yourproject&quot; and the fileName will be something like &quot;settings&quot; or &quot;configuration&quot;. There is nothing technically stopping you from using multiple ApplicationSettings within the same application. However, until you provide both of these properties with actual values, this object will not persist any values.</p>
 <p>An example usage is as follows.</p>
 <pre class="qml"><span class="type">ApplicationSettings</span> {
@@ -69,7 +71,9 @@
     property <span class="type">bool</span> <span class="name">performFirstRunWizard</span>: <span class="number">true</span>
 }</pre>
 <p>We define an ApplicationSetting QML type for the <tt>harbour-applicationsettings</tt> application and give it the file name of &quot;settings&quot;. (This will appear on the local user's home directory as .config/harbour-applicationsettings/settings). Next, we set the property <tt>performFirstRunWizard</tt> to <tt>true</tt>. This is only to provide a default value, and if the property exists, then it will be overwritten once the component has finished construction. Even if the property does not exist in the settings file, we would still have a valid property. If later on, we set <tt>performFirstRunWizard</tt> to <tt>false</tt>, then it will be persisted in the settings file.</p>
-<p>As of now, this QML type will not detect if the settings file was changed externally. Therefore, if your application has the need to set settings in multiple places, then you should take care to update the state of each ApplicationSettings as needed for data integrity.</p>
+<p>Multiple instances of ApplicationSetting in the same application will be notifed when a settings property is updated as long as the following requirements are met:</p>
+<p>The second ApplicationSetting uses the same applicationName and fileName The second ApplicationSetting has the property defined.</p>
+<p>However, this will not detect external modifications to the config file--two or more applications running simultaneously or hand editing of the file while your application is running. You will need to handle these scenarios if your application requires it.</p>
 <p>Back to <a href="index.html">Sailfish Widgets</a></p>
 </div>
 <!-- @@@ApplicationSettings -->
@@ -88,6 +92,7 @@
 <!-- @@@~ApplicationSettings -->
 <!-- $$$applicationName[overload1]$$$applicationName -->
 <h3 class="fn"><a name="applicationName"></a><span class="type">QString</span> ApplicationSettings::<span class="name">applicationName</span>() const</h3>
+<p>This property is passed to QSettings in order to create the application configuration directory where the settings file will be stored. It must be &quot;harbour-yourapp&quot; in order to pass sandboxing requirements.</p>
 <p><b>See also </b><a href="applicationsettings.html#setApplicationName">setApplicationName</a>().</p>
 <!-- @@@applicationName -->
 <!-- $$$applicationNameChanged[overload1]$$$applicationNameChanged -->
@@ -96,18 +101,25 @@
 <!-- @@@applicationNameChanged -->
 <!-- $$$fileName[overload1]$$$fileName -->
 <h3 class="fn"><a name="fileName"></a><span class="type">QString</span> ApplicationSettings::<span class="name">fileName</span>() const</h3>
+<p>In general, this should be set to &quot;settings&quot; or &quot;config&quot;. You may choose to name the settings file based on the configuration data inside, however.</p>
 <p><b>See also </b><a href="applicationsettings.html#setFileName">setFileName</a>().</p>
 <!-- @@@fileName -->
 <!-- $$$fileNameChanged[overload1]$$$fileNameChanged -->
 <h3 class="fn"><a name="fileNameChanged"></a><span class="type">void</span> ApplicationSettings::<span class="name">fileNameChanged</span>()<tt> [signal]</tt></h3>
 <p>Emitted when the <tt>fileName</tt> has changed.</p>
 <!-- @@@fileNameChanged -->
+<!-- $$$refresh[overload1]$$$refresh -->
+<h3 class="fn"><a name="refresh"></a><span class="type">void</span> ApplicationSettings::<span class="name">refresh</span>()<tt> [slot]</tt></h3>
+<p>Refreshes all properties defined by the QML interface with those from QSettings</p>
+<!-- @@@refresh -->
 <!-- $$$setApplicationName[overload1]$$$setApplicationNameQString -->
 <h3 class="fn"><a name="setApplicationName"></a><span class="type">void</span> ApplicationSettings::<span class="name">setApplicationName</span>(<span class="type">QString</span><i> appName</i>)</h3>
+<p>Sets the application's name to <i>appName</i>.</p>
 <p><b>See also </b><a href="applicationsettings.html#applicationName">applicationName</a>().</p>
 <!-- @@@setApplicationName -->
 <!-- $$$setFileName[overload1]$$$setFileNameQString -->
 <h3 class="fn"><a name="setFileName"></a><span class="type">void</span> ApplicationSettings::<span class="name">setFileName</span>(<span class="type">QString</span><i> fileName</i>)</h3>
+<p>Sets the setting file's name to <i>fileName</i>.</p>
 <p><b>See also </b><a href="applicationsettings.html#fileName">fileName</a>().</p>
 <!-- @@@setFileName -->
 <!-- $$$setTarget[overload1]$$$setTargetconstQQmlProperty& -->
@@ -116,8 +128,13 @@
 <!-- @@@setTarget -->
 <!-- $$$settingsInitialized[overload1]$$$settingsInitialized -->
 <h3 class="fn"><a name="settingsInitialized"></a><span class="type">void</span> ApplicationSettings::<span class="name">settingsInitialized</span>()<tt> [signal]</tt></h3>
-<p>Emitted when the settings file has been created or accessed for the first time after loading.</p>
+<p>Emitted when a initialization of the settings file has been completed.</p>
 <!-- @@@settingsInitialized -->
+<!-- $$$settingsPropertyUpdated[overload1]$$$settingsPropertyUpdatedQString -->
+<h3 class="fn"><a name="settingsPropertyUpdated"></a><span class="type">void</span> ApplicationSettings::<span class="name">settingsPropertyUpdated</span>(<span class="type">QString</span><i> name</i>)<tt> [signal]</tt></h3>
+<p>Emitted when a user defined QML property has been loaded with the value from a the setting file.</p>
+<p>The <i>name</i> parameter is the name of the QML property that was updated.</p>
+<!-- @@@settingsPropertyUpdated -->
 <!-- $$$updateProperty[overload1]$$$updatePropertyconstQString&constQVariant& -->
 <h3 class="fn"><a name="updateProperty"></a><span class="type">void</span> ApplicationSettings::<span class="name">updateProperty</span>(const <span class="type">QString</span> &amp;<i> propertyName</i>, const <span class="type">QVariant</span> &amp;<i> value</i>)<tt> [slot]</tt></h3>
 <p>Updates the settings file with <i>propertyName</i> and <i>value</i>.</p>
