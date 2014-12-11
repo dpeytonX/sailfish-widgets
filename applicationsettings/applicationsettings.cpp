@@ -181,6 +181,7 @@ void ApplicationSettings::refresh() {
     const QMetaObject* myMetaObj = metaObject();
     for(int i = 0; i < myMetaObj->propertyCount();i++) {
         QMetaProperty property = myMetaObj->property(i);
+        if(m_existingProperties->contains(property.name())) continue;
 
         handleProperty(QQmlProperty(this, property.name()));
 
