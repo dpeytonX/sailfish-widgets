@@ -288,6 +288,9 @@ void ApplicationSettings::componentComplete() {
     emit settingsInitialized();
 }
 
+/*!
+  \internal
+ */
 bool ApplicationSettings::isSettingsValid() {
     if(m_settings != 0)
         return true;

@@ -32,11 +32,14 @@
   
   Components
   \list
+  \li \l {BusyPage}
   \li \l {Heading}
   \li \l {InformationalLabel}
+  \li \l {LabelButton}
   \li \l {PageColumn}
   \li \l {Paragraph}
   \li \l {RadioGroup}
+  \li \l {Spacer}
   \li \l {StandardCover}
   \li \l {StandardListView}
   \li \l {StandardMenuItem}

@@ -28,6 +28,9 @@
   \li Updated \l {StandardListView} to remove PageHeader (makes it more useful in dialogs)
   \li Added \l {Variant} for operations on variant types
   \li Added \l {Dir}, \l {File}, and \l {FileSelector} inside the FileManagement package
+  \li ApplicationSettings will emit \c settingsPropertyUpdated(QString name) when a property is changed.
+  \li ApplicationSettings will propagate settings changes to all known QML objects refering to the same settings file.
+  \li Added \l {Spacer}, \l {LabelButton}, and \l {BusyPage} components
   \endlist
 
   SailfishWidgets 1.1.2
