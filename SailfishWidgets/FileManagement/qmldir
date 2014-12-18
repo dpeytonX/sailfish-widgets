@@ -1,4 +1,4 @@
-module harbour.nemosyne.SailfishWidgets.FileManagement
+module SailfishWidgets.FileManagement
 versioner 1.2 version.qml
 versioner 1.3 version.qml
 FileSelector 1.2 FileSelector_12.qml
