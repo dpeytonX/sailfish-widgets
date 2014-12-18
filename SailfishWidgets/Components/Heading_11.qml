@@ -20,6 +20,7 @@
 **
 **************************************************************************/
 
+import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 /*!
@@ -27,12 +28,13 @@ import Sailfish.Silica 1.0
    \since 5.0
    \brief Meant to be used as a section header.
    \inqmlmodule SailfishWidgets.Components
-   \obsolete
 
    Back to \l {Sailfish Widgets}
 
-   \warning Deprecated
-   Use, \c SectionHeader, instead. Internally, this item is replaced with the \c SectionHeader component from \c Sailfish.Silica 1.0. 
+   Label with a large font size and normal highlighting.
 */
-SectionHeader {
+Label {
+    color: Theme.highlightColor
+    font.family: Theme.fontFamilyHeading
+    font.pixelSize: Theme.fontSizeLarge
 }

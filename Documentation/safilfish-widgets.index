@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QDOCINDEX>
-<INDEX url="" title="Library to speed up Sailfish Development" version="1.2" project="Safilfish Widgets">
+<INDEX url="" title="Library to speed up Sailfish Development" version="1.3" project="Safilfish Widgets">
     <namespace threadsafety="unspecified" name="" access="public" status="commendable">
+        <qmlclass name="AboutPage" qml-module-name="SailfishWidgets.Components" fullname="SailfishWidgets.Components::AboutPage" href="qml-sailfishwidgets-components-aboutpage.html" access="public" status="commendable" since="5.1" title="AboutPage" fulltitle="AboutPage" subtitle="" brief="Displays a summary page for your application">
+            <qmlproperty threadsafety="unspecified" name="aboutContent" fullname="SailfishWidgets.Components::AboutPage::aboutContent" href="qml-sailfishwidgets-components-aboutpage.html#aboutContent-prop" access="public" status="commendable" type="alias" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="application" fullname="SailfishWidgets.Components::AboutPage::application" href="qml-sailfishwidgets-components-aboutpage.html#application-prop" access="public" status="commendable" type="string" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="contributors" fullname="SailfishWidgets.Components::AboutPage::contributors" href="qml-sailfishwidgets-components-aboutpage.html#contributors-prop" access="public" status="commendable" type="variant" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="copyrightHolder" fullname="SailfishWidgets.Components::AboutPage::copyrightHolder" href="qml-sailfishwidgets-components-aboutpage.html#copyrightHolder-prop" access="public" status="commendable" type="string" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="copyrightYear" fullname="SailfishWidgets.Components::AboutPage::copyrightYear" href="qml-sailfishwidgets-components-aboutpage.html#copyrightYear-prop" access="public" status="commendable" type="string" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="description" fullname="SailfishWidgets.Components::AboutPage::description" href="qml-sailfishwidgets-components-aboutpage.html#description-prop" access="public" status="commendable" type="string" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="headline" fullname="SailfishWidgets.Components::AboutPage::headline" href="qml-sailfishwidgets-components-aboutpage.html#headline-prop" access="public" status="commendable" type="alias" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="icon" fullname="SailfishWidgets.Components::AboutPage::icon" href="qml-sailfishwidgets-components-aboutpage.html#icon-prop" access="public" status="commendable" type="string" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="licenses" fullname="SailfishWidgets.Components::AboutPage::licenses" href="qml-sailfishwidgets-components-aboutpage.html#licenses-prop" access="public" status="commendable" type="variant" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="pageTitle" fullname="SailfishWidgets.Components::AboutPage::pageTitle" href="qml-sailfishwidgets-components-aboutpage.html#pageTitle-prop" access="public" status="commendable" type="alias" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="projectLinks" fullname="SailfishWidgets.Components::AboutPage::projectLinks" href="qml-sailfishwidgets-components-aboutpage.html#projectLinks-prop" access="public" status="commendable" type="variant" attached="false" writable="true"/>
+            <qmlproperty threadsafety="unspecified" name="aboutTaskList" fullname="SailfishWidgets.Components::AboutPage::aboutTaskList" href="qml-sailfishwidgets-components-aboutpage.html#aboutTaskList-prop" access="public" status="commendable" location="AboutPage.qml" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/Components/AboutPage.qml" lineno="58" type="alias" attached="false" writable="true"/>
+        </qmlclass>
         <qmlclass name="BusyPage" qml-module-name="SailfishWidgets.Components" fullname="SailfishWidgets.Components::BusyPage" href="qml-sailfishwidgets-components-busypage.html" access="public" status="commendable" since="5.0" title="BusyPage" fulltitle="BusyPage" subtitle="" brief="Shows a busy spinner with optional title">
             <qmlproperty threadsafety="unspecified" name="moveForward" fullname="SailfishWidgets.Components::BusyPage::moveForward" href="qml-sailfishwidgets-components-busypage.html#moveForward-prop" access="public" status="internal" type="bool" attached="false" writable="true"/>
             <qmlproperty threadsafety="unspecified" name="navigatePage" fullname="SailfishWidgets.Components::BusyPage::navigatePage" href="qml-sailfishwidgets-components-busypage.html#navigatePage-prop" access="public" status="internal" type="variant" attached="false" writable="true"/>
@@ -37,7 +51,8 @@
             <qmlmethod threadsafety="unspecified" name="matchSelectionFilter" fullname="SailfishWidgets.FileManagement::FileSelector::matchSelectionFilter" href="qml-sailfishwidgets-filemanagement-fileselector.html#matchSelectionFilter-method" access="public" status="internal"/>
             <qmlproperty threadsafety="unspecified" name="fileList" fullname="SailfishWidgets.FileManagement::FileSelector::fileList" href="qml-sailfishwidgets-filemanagement-fileselector.html#fileList-prop" access="public" status="commendable" location="FileSelector.qml" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/FileManagement/FileSelector.qml" lineno="56" type="alias" attached="false" writable="true"/>
         </qmlclass>
-        <qmlclass name="Heading" qml-module-name="SailfishWidgets.Components" fullname="SailfishWidgets.Components::Heading" href="qml-sailfishwidgets-components-heading.html" access="public" status="commendable" since="5.0" title="Heading" fulltitle="Heading" subtitle="" brief="Meant to be used as a section header."/>
+        <qmlclass name="Heading" qml-module-name="SailfishWidgets.Components" fullname="SailfishWidgets.Components::Heading" href="qml-sailfishwidgets-components-heading.html" access="public" status="obsolete" since="5.0" title="Heading" fulltitle="Heading" subtitle="" brief="Meant to be used as a section header."/>
+        <qmlclass name="Heading_11" qml-module-name="SailfishWidgets.Components" fullname="SailfishWidgets.Components::Heading_11" href="qml-sailfishwidgets-components-heading-11.html" access="public" status="commendable" since="5.0" title="Heading_11" fulltitle="Heading_11" subtitle="" brief="Meant to be used as a section header."/>
         <qmlclass name="InformationalLabel" qml-module-name="SailfishWidgets.Components" fullname="SailfishWidgets.Components::InformationalLabel" href="qml-sailfishwidgets-components-informationallabel.html" access="public" status="commendable" since="5.0" title="InformationalLabel" fulltitle="InformationalLabel" subtitle="" brief="Use to give the user simple instructions or explanations."/>
         <qmlclass name="LabelButton" qml-module-name="SailfishWidgets.Components" fullname="SailfishWidgets.Components::LabelButton" href="qml-sailfishwidgets-components-labelbutton.html" access="public" status="commendable" since="5.0" title="LabelButton" fulltitle="LabelButton" subtitle="" brief="A Clickable Label">
             <qmlproperty threadsafety="unspecified" name="color" fullname="SailfishWidgets.Components::LabelButton::color" href="qml-sailfishwidgets-components-labelbutton.html#color-prop" access="public" status="commendable" type="alias" attached="false" writable="true"/>
@@ -60,8 +75,8 @@
             <qmlsignal threadsafety="unspecified" name="reset" fullname="SailfishWidgets.Components::RadioGroup::reset" href="qml-sailfishwidgets-components-radiogroup.html#reset-signal" access="public" status="commendable"/>
         </qmlclass>
         <page name="SailfishWidgets.Utilities" qml-module-name="SailfishWidgets.Utilities" qml-module-version="." href="sailfishwidgets-utilities-qmlmodule.html" access="private" status="internal" subtype="qmlmodule" title="" fulltitle="" subtitle=""/>
-        <page name="Settings" href="settings-module.html" access="private" status="internal" subtype="module" title="" fulltitle="" subtitle=""/>
         <page name="SailfishWidgets.Components" qml-module-name="SailfishWidgets.Components" qml-module-version="." href="sailfishwidgets-components-qmlmodule.html" access="private" status="internal" subtype="qmlmodule" title="" fulltitle="" subtitle=""/>
+        <page name="Settings" href="settings-module.html" access="private" status="internal" subtype="module" title="" fulltitle="" subtitle=""/>
         <page name="SailfishWidgets.FileManagement" qml-module-name="SailfishWidgets.FileManagement" qml-module-version="." href="sailfishwidgets-filemanagement-qmlmodule.html" access="private" status="internal" subtype="qmlmodule" title="" fulltitle="" subtitle=""/>
         <qmlclass name="Spacer" qml-module-name="SailfishWidgets.Components" fullname="SailfishWidgets.Components::Spacer" href="qml-sailfishwidgets-components-spacer.html" access="public" status="commendable" since="5.0" title="Spacer" fulltitle="Spacer" subtitle="" brief="Provides padding to separate components"/>
         <qmlclass name="StandardCover" qml-module-name="SailfishWidgets.Components" fullname="SailfishWidgets.Components::StandardCover" href="qml-sailfishwidgets-components-standardcover.html" access="public" status="commendable" since="5.0" title="StandardCover" fulltitle="StandardCover" subtitle="" brief="Default cover with an image and a short title">
@@ -82,6 +97,32 @@
         </qmlclass>
         <qmlclass name="StandardMenuItem" qml-module-name="SailfishWidgets.Components" fullname="SailfishWidgets.Components::StandardMenuItem" href="qml-sailfishwidgets-components-standardmenuitem.html" access="public" status="commendable" since="5.0" title="StandardMenuItem" fulltitle="StandardMenuItem" subtitle="" brief="MenuItem with Sailfish Silica theme."/>
         <qmlclass name="Subtext" qml-module-name="SailfishWidgets.Components" fullname="SailfishWidgets.Components::Subtext" href="qml-sailfishwidgets-components-subtext.html" access="public" status="commendable" since="5.0" title="Subtext" fulltitle="Subtext" subtitle="" brief="Can be used to add detailed information in the UI."/>
+        <qmlclass name="IconThemes" href="qml-iconthemes.html" access="public" status="commendable" location="IconThemes.js" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/JS/IconThemes.js" lineno="23" since="5.0" title="IconThemes" fulltitle="IconThemes" subtitle="" brief="Provides constants for accessing Sailfish icons."/>
+        <qmlclass name="MathHelper" href="qml-mathhelper.html" access="public" status="commendable" location="MathHelper.js" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/JS/MathHelper.js" lineno="23" since="5.0" title="MathHelper" fulltitle="MathHelper" subtitle="" brief="Provides additional math functions."/>
+        <qmlclass name="Variant" href="qml-variant.html" access="public" status="commendable" location="Variant.js" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/JS/Variant.js" lineno="23" since="5.0" title="Variant" fulltitle="Variant" subtitle="" brief="Provides constants for accessing manipulating variant types"/>
+        <qmlclass name="versioner" href="qml-versioner.html" access="private" status="internal" location="versioner.qml" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/Settings/versioner.qml" lineno="3" title="versioner" fulltitle="versioner" subtitle=""/>
+        <class threadsafety="unspecified" name="ApplicationsettingsPlugin" href="applicationsettingsplugin.html" access="private" status="internal" location="applicationsettings_plugin.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/applicationsettings/applicationsettings_plugin.h" lineno="28" bases="">
+            <function threadsafety="unspecified" name="registerTypes" fullname="ApplicationsettingsPlugin::registerTypes" href="applicationsettingsplugin.html#registerTypes" access="public" status="commendable" location="applicationsettings_plugin.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/applicationsettings/applicationsettings_plugin.cpp" lineno="28" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="registerTypes(const char * uri)">
+                <parameter left="const char *" right="" name="uri" default=""/>
+            </function>
+            <function threadsafety="unspecified" name="Q_PLUGIN_METADATA" fullname="ApplicationsettingsPlugin::Q_PLUGIN_METADATA" href="applicationsettingsplugin.html#Q_PLUGIN_METADATA" access="private" status="commendable" location="applicationsettings_plugin.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/applicationsettings/applicationsettings_plugin.h" lineno="31" virtual="non" meta="plain" const="false" static="false" overload="false" type="" signature="Q_PLUGIN_METADATA(IID )">
+                <parameter left="IID" right="" name="" default=""/>
+            </function>
+        </class>
+        <qmlclass name="versioner" href="qml-versioner.html" access="private" status="internal" location="versioner.qml" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/Utilities/versioner.qml" lineno="3" title="versioner" fulltitle="versioner" subtitle=""/>
+        <class threadsafety="unspecified" name="FilemanagementPlugin" href="filemanagementplugin.html" access="private" status="internal" location="filemanagement_plugin.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/filemanagement_plugin.h" lineno="28" bases="">
+            <function threadsafety="unspecified" name="registerTypes" fullname="FilemanagementPlugin::registerTypes" href="filemanagementplugin.html#registerTypes" access="public" status="commendable" location="filemanagement_plugin.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/filemanagement_plugin.cpp" lineno="29" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="registerTypes(const char * uri)">
+                <parameter left="const char *" right="" name="uri" default=""/>
+            </function>
+            <function threadsafety="unspecified" name="Q_PLUGIN_METADATA" fullname="FilemanagementPlugin::Q_PLUGIN_METADATA" href="filemanagementplugin.html#Q_PLUGIN_METADATA" access="private" status="commendable" location="filemanagement_plugin.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/filemanagement_plugin.h" lineno="31" virtual="non" meta="plain" const="false" static="false" overload="false" type="" signature="Q_PLUGIN_METADATA(IID )">
+                <parameter left="IID" right="" name="" default=""/>
+            </function>
+        </class>
+        <qmlclass name="versioner" href="qml-versioner.html" access="private" status="internal" location="versioner.qml" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/JS/versioner.qml" lineno="3" title="versioner" fulltitle="versioner" subtitle=""/>
+        <qmlclass name="versioner" href="qml-versioner.html" access="private" status="internal" location="versioner.qml" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/FileManagement/versioner.qml" lineno="3" title="versioner" fulltitle="versioner" subtitle=""/>
+        <qmlclass name="versioner" href="qml-versioner.html" access="private" status="internal" location="versioner.qml" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/Components/versioner.qml" lineno="3" title="versioner" fulltitle="versioner" subtitle=""/>
+        <page name="ChangeList.html" href="changelist.html" access="public" status="commendable" location="changelist.qdoc" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/changelist.qdoc" lineno="1" subtype="page" title="ChangeList" fulltitle="ChangeList" subtitle="" module="Safilfish Widgets" brief="Change List"/>
+        <page name="index.html" href="index.html" access="public" status="commendable" location="index.qdoc" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/index.qdoc" lineno="1" subtype="page" title="Sailfish Widgets" fulltitle="Sailfish Widgets" subtitle="" module="Safilfish Widgets" brief="Sailfish Library Extension"/>
         <class threadsafety="unspecified" name="ApplicationSettings" href="applicationsettings.html" access="public" status="commendable" location="applicationsettings.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/applicationsettings/applicationsettings.h" lineno="39" since="5.0" bases="" module="Settings" brief="The ApplicationSettings class">
             <function threadsafety="unspecified" name="ApplicationSettings" fullname="ApplicationSettings::ApplicationSettings" href="applicationsettings.html#ApplicationSettings" access="public" status="commendable" location="applicationsettings.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/applicationsettings/applicationsettings.cpp" lineno="69" virtual="non" meta="constructor" const="false" static="false" overload="false" type="" signature="ApplicationSettings()"/>
             <function threadsafety="unspecified" name="ApplicationSettings" fullname="ApplicationSettings::ApplicationSettings" href="applicationsettings.html#ApplicationSettings-2" access="public" status="commendable" location="applicationsettings.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/applicationsettings/applicationsettings.cpp" lineno="90" virtual="non" meta="constructor" const="false" static="false" overload="true" overload-number="2" type="" signature="ApplicationSettings(QQuickItem * parent)">
@@ -124,83 +165,6 @@
                 <parameter left="QString" right="" name="name" default=""/>
             </function>
         </class>
-        <class threadsafety="unspecified" name="ApplicationsettingsPlugin" href="applicationsettingsplugin.html" access="private" status="internal" location="applicationsettings_plugin.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/applicationsettings/applicationsettings_plugin.h" lineno="28" bases="">
-            <function threadsafety="unspecified" name="registerTypes" fullname="ApplicationsettingsPlugin::registerTypes" href="applicationsettingsplugin.html#registerTypes" access="public" status="commendable" location="applicationsettings_plugin.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/applicationsettings/applicationsettings_plugin.cpp" lineno="28" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="registerTypes(const char * uri)">
-                <parameter left="const char *" right="" name="uri" default=""/>
-            </function>
-            <function threadsafety="unspecified" name="Q_PLUGIN_METADATA" fullname="ApplicationsettingsPlugin::Q_PLUGIN_METADATA" href="applicationsettingsplugin.html#Q_PLUGIN_METADATA" access="private" status="commendable" location="applicationsettings_plugin.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/applicationsettings/applicationsettings_plugin.h" lineno="31" virtual="non" meta="plain" const="false" static="false" overload="false" type="" signature="Q_PLUGIN_METADATA(IID )">
-                <parameter left="IID" right="" name="" default=""/>
-            </function>
-        </class>
-        <qmlclass name="versioner" href="qml-versioner.html" access="private" status="internal" location="versioner.qml" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/Components/versioner.qml" lineno="3" title="versioner" fulltitle="versioner" subtitle=""/>
-        <qmlclass name="IconThemes" href="qml-iconthemes.html" access="public" status="commendable" location="IconThemes.js" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/JS/IconThemes.js" lineno="23" since="5.0" title="IconThemes" fulltitle="IconThemes" subtitle="" brief="Provides constants for accessing Sailfish icons."/>
-        <qmlclass name="MathHelper" href="qml-mathhelper.html" access="public" status="commendable" location="MathHelper.js" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/JS/MathHelper.js" lineno="23" since="5.0" title="MathHelper" fulltitle="MathHelper" subtitle="" brief="Provides additional math functions."/>
-        <qmlclass name="Variant" href="qml-variant.html" access="public" status="commendable" location="Variant.js" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/JS/Variant.js" lineno="23" since="5.0" title="Variant" fulltitle="Variant" subtitle="" brief="Provides constants for accessing manipulating variant types"/>
-        <qmlclass name="versioner" href="qml-versioner.html" access="private" status="internal" location="versioner.qml" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/Utilities/versioner.qml" lineno="3" title="versioner" fulltitle="versioner" subtitle=""/>
-        <page name="ChangeList.html" href="changelist.html" access="public" status="commendable" location="changelist.qdoc" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/changelist.qdoc" lineno="1" subtype="page" title="ChangeList" fulltitle="ChangeList" subtitle="" module="Safilfish Widgets" brief="Change List"/>
-        <page name="index.html" href="index.html" access="public" status="commendable" location="index.qdoc" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/index.qdoc" lineno="1" subtype="page" title="Sailfish Widgets" fulltitle="Sailfish Widgets" subtitle="" module="Safilfish Widgets" brief="Sailfish Library Extension"/>
-        <class threadsafety="unspecified" name="File" href="file.html" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="30" since="5.0" bases="" module="FileManagement" brief="The File class">
-            <function threadsafety="unspecified" name="File" fullname="File::File" href="file.html#File" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.cpp" lineno="51" virtual="non" meta="constructor" const="false" static="false" overload="false" type="" signature="File()"/>
-            <function threadsafety="unspecified" name="File" fullname="File::File" href="file.html#File-2" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.cpp" lineno="59" virtual="non" meta="constructor" const="false" static="false" overload="true" overload-number="2" type="" signature="File(const QString &amp; name, QObject * parent)">
-                <parameter left="const QString &amp;" right="" name="name" default=""/>
-                <parameter left="QObject *" right="" name="parent" default="0"/>
-            </function>
-            <function threadsafety="unspecified" name="exists" fullname="File::exists" href="file.html#exists-prop" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.cpp" lineno="68" virtual="non" meta="plain" const="true" static="false" overload="false" associated-property="exists" type="bool" signature="exists() const"/>
-            <function threadsafety="unspecified" name="fileName" fullname="File::fileName" href="file.html#fileName-prop" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.cpp" lineno="74" virtual="non" meta="plain" const="false" static="false" overload="false" associated-property="fileName" type="QString" signature="fileName()"/>
-            <function threadsafety="unspecified" name="isReadable" fullname="File::isReadable" href="file.html#readable-prop" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.cpp" lineno="80" virtual="non" meta="plain" const="true" static="false" overload="false" associated-property="readable" type="bool" signature="isReadable() const"/>
-            <function threadsafety="unspecified" name="isWritable" fullname="File::isWritable" href="file.html#writable-prop" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.cpp" lineno="86" virtual="non" meta="plain" const="true" static="false" overload="false" associated-property="writable" type="bool" signature="isWritable() const"/>
-            <function threadsafety="unspecified" name="setFileName" fullname="File::setFileName" href="file.html#fileName-prop" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.cpp" lineno="92" virtual="non" meta="plain" const="false" static="false" overload="false" associated-property="fileName" type="void" signature="setFileName(const QString &amp; name)">
-                <parameter left="const QString &amp;" right="" name="name" default=""/>
-            </function>
-            <function threadsafety="unspecified" name="fileNameChanged" fullname="File::fileNameChanged" href="file.html#fileName-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="58" virtual="non" meta="signal" const="false" static="false" overload="false" associated-property="fileName" type="void" signature="fileNameChanged()"/>
-            <property threadsafety="unspecified" name="absoluteFilePath" fullname="File::absoluteFilePath" href="file.html#absoluteFilePath-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="43" type="QString"/>
-            <property threadsafety="unspecified" name="dir" fullname="File::dir" href="file.html#dir-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="34" type="bool">
-                <notifier name="fileNameChanged"/>
-            </property>
-            <property threadsafety="unspecified" name="executable" fullname="File::executable" href="file.html#executable-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="35" type="bool">
-                <notifier name="fileNameChanged"/>
-            </property>
-            <property threadsafety="unspecified" name="exists" fullname="File::exists" href="file.html#exists-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="36" type="bool">
-                <getter name="exists"/>
-                <notifier name="fileNameChanged"/>
-            </property>
-            <property threadsafety="unspecified" name="file" fullname="File::file" href="file.html#file-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="37" type="bool">
-                <notifier name="fileNameChanged"/>
-            </property>
-            <property threadsafety="unspecified" name="fileName" fullname="File::fileName" href="file.html#fileName-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="44" type="QString">
-                <getter name="fileName"/>
-                <setter name="setFileName"/>
-                <notifier name="fileNameChanged"/>
-            </property>
-            <property threadsafety="unspecified" name="hidden" fullname="File::hidden" href="file.html#hidden-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="38" type="bool">
-                <notifier name="fileNameChanged"/>
-            </property>
-            <property threadsafety="unspecified" name="readable" fullname="File::readable" href="file.html#readable-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="39" type="bool">
-                <getter name="isReadable"/>
-                <notifier name="fileNameChanged"/>
-            </property>
-            <property threadsafety="unspecified" name="root" fullname="File::root" href="file.html#root-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="40" type="bool">
-                <notifier name="fileNameChanged"/>
-            </property>
-            <property threadsafety="unspecified" name="symLink" fullname="File::symLink" href="file.html#symLink-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="41" type="bool">
-                <notifier name="fileNameChanged"/>
-            </property>
-            <property threadsafety="unspecified" name="writable" fullname="File::writable" href="file.html#writable-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="42" type="bool">
-                <getter name="isWritable"/>
-                <notifier name="fileNameChanged"/>
-            </property>
-        </class>
-        <class threadsafety="unspecified" name="FilemanagementPlugin" href="filemanagementplugin.html" access="private" status="internal" location="filemanagement_plugin.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/filemanagement_plugin.h" lineno="28" bases="">
-            <function threadsafety="unspecified" name="registerTypes" fullname="FilemanagementPlugin::registerTypes" href="filemanagementplugin.html#registerTypes" access="public" status="commendable" location="filemanagement_plugin.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/filemanagement_plugin.cpp" lineno="29" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="registerTypes(const char * uri)">
-                <parameter left="const char *" right="" name="uri" default=""/>
-            </function>
-            <function threadsafety="unspecified" name="Q_PLUGIN_METADATA" fullname="FilemanagementPlugin::Q_PLUGIN_METADATA" href="filemanagementplugin.html#Q_PLUGIN_METADATA" access="private" status="commendable" location="filemanagement_plugin.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/filemanagement_plugin.h" lineno="31" virtual="non" meta="plain" const="false" static="false" overload="false" type="" signature="Q_PLUGIN_METADATA(IID )">
-                <parameter left="IID" right="" name="" default=""/>
-            </function>
-        </class>
-        <qmlclass name="versioner" href="qml-versioner.html" access="private" status="internal" location="versioner.qml" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/Settings/versioner.qml" lineno="3" title="versioner" fulltitle="versioner" subtitle=""/>
-        <qmlclass name="versioner" href="qml-versioner.html" access="private" status="internal" location="versioner.qml" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/JS/versioner.qml" lineno="3" title="versioner" fulltitle="versioner" subtitle=""/>
-        <qmlclass name="versioner" href="qml-versioner.html" access="private" status="internal" location="versioner.qml" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/SailfishWidgets/FileManagement/versioner.qml" lineno="3" title="versioner" fulltitle="versioner" subtitle=""/>
         <class threadsafety="unspecified" name="QmlPropertyWrapper" href="qmlpropertywrapper.html" access="public" status="commendable" location="qmlpropertywrapper.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/applicationsettings/qmlpropertywrapper.h" lineno="29" since="5.0" bases="" module="Settings" brief="The QmlPropertyWrapper class">
             <function threadsafety="unspecified" name="QmlPropertyWrapper" fullname="QmlPropertyWrapper::QmlPropertyWrapper" href="qmlpropertywrapper.html#QmlPropertyWrapper" access="public" status="commendable" location="qmlpropertywrapper.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/applicationsettings/qmlpropertywrapper.cpp" lineno="42" virtual="non" meta="constructor" const="false" static="false" overload="false" type="" signature="QmlPropertyWrapper(QQmlProperty property, QObject * parent)">
                 <parameter left="QQmlProperty" right="" name="property" default=""/>
@@ -289,6 +253,57 @@
             <function threadsafety="unspecified" name="getList" fullname="Dir::getList" href="dir.html#getList" access="public" status="commendable" location="dir.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/dir.h" lineno="119" virtual="non" meta="plain" const="false" static="false" overload="false" type="QList&lt;File *&gt; &amp;" signature="getList()"/>
             <function threadsafety="unspecified" name="pathChanged" fullname="Dir::pathChanged" href="dir.html#pathChanged" access="public" status="commendable" location="dir.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/dir.h" lineno="162" virtual="non" meta="signal" const="false" static="false" overload="false" type="void" signature="pathChanged()"/>
             <function threadsafety="unspecified" name="sortChanged" fullname="Dir::sortChanged" href="dir.html#sortChanged" access="public" status="commendable" location="dir.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/dir.h" lineno="165" virtual="non" meta="signal" const="false" static="false" overload="false" type="void" signature="sortChanged()"/>
+        </class>
+        <class threadsafety="unspecified" name="File" href="file.html" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="30" since="5.0" bases="" module="FileManagement" brief="The File class">
+            <function threadsafety="unspecified" name="File" fullname="File::File" href="file.html#File" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.cpp" lineno="51" virtual="non" meta="constructor" const="false" static="false" overload="false" type="" signature="File()"/>
+            <function threadsafety="unspecified" name="File" fullname="File::File" href="file.html#File-2" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.cpp" lineno="59" virtual="non" meta="constructor" const="false" static="false" overload="true" overload-number="2" type="" signature="File(const QString &amp; name, QObject * parent)">
+                <parameter left="const QString &amp;" right="" name="name" default=""/>
+                <parameter left="QObject *" right="" name="parent" default="0"/>
+            </function>
+            <function threadsafety="unspecified" name="exists" fullname="File::exists" href="file.html#exists-prop" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.cpp" lineno="68" virtual="non" meta="plain" const="true" static="false" overload="false" associated-property="exists" type="bool" signature="exists() const"/>
+            <function threadsafety="unspecified" name="fileName" fullname="File::fileName" href="file.html#fileName-prop" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.cpp" lineno="74" virtual="non" meta="plain" const="false" static="false" overload="false" associated-property="fileName" type="QString" signature="fileName()"/>
+            <function threadsafety="unspecified" name="isReadable" fullname="File::isReadable" href="file.html#readable-prop" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.cpp" lineno="80" virtual="non" meta="plain" const="true" static="false" overload="false" associated-property="readable" type="bool" signature="isReadable() const"/>
+            <function threadsafety="unspecified" name="isWritable" fullname="File::isWritable" href="file.html#writable-prop" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.cpp" lineno="86" virtual="non" meta="plain" const="true" static="false" overload="false" associated-property="writable" type="bool" signature="isWritable() const"/>
+            <function threadsafety="unspecified" name="setFileName" fullname="File::setFileName" href="file.html#fileName-prop" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.cpp" lineno="92" virtual="non" meta="plain" const="false" static="false" overload="false" associated-property="fileName" type="void" signature="setFileName(const QString &amp; name)">
+                <parameter left="const QString &amp;" right="" name="name" default=""/>
+            </function>
+            <function threadsafety="unspecified" name="fileNameChanged" fullname="File::fileNameChanged" href="file.html#fileName-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="58" virtual="non" meta="signal" const="false" static="false" overload="false" associated-property="fileName" type="void" signature="fileNameChanged()"/>
+            <property threadsafety="unspecified" name="absoluteFilePath" fullname="File::absoluteFilePath" href="file.html#absoluteFilePath-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="43" type="QString"/>
+            <property threadsafety="unspecified" name="dir" fullname="File::dir" href="file.html#dir-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="34" type="bool">
+                <notifier name="fileNameChanged"/>
+            </property>
+            <property threadsafety="unspecified" name="executable" fullname="File::executable" href="file.html#executable-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="35" type="bool">
+                <notifier name="fileNameChanged"/>
+            </property>
+            <property threadsafety="unspecified" name="exists" fullname="File::exists" href="file.html#exists-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="36" type="bool">
+                <getter name="exists"/>
+                <notifier name="fileNameChanged"/>
+            </property>
+            <property threadsafety="unspecified" name="file" fullname="File::file" href="file.html#file-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="37" type="bool">
+                <notifier name="fileNameChanged"/>
+            </property>
+            <property threadsafety="unspecified" name="fileName" fullname="File::fileName" href="file.html#fileName-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="44" type="QString">
+                <getter name="fileName"/>
+                <setter name="setFileName"/>
+                <notifier name="fileNameChanged"/>
+            </property>
+            <property threadsafety="unspecified" name="hidden" fullname="File::hidden" href="file.html#hidden-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="38" type="bool">
+                <notifier name="fileNameChanged"/>
+            </property>
+            <property threadsafety="unspecified" name="readable" fullname="File::readable" href="file.html#readable-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="39" type="bool">
+                <getter name="isReadable"/>
+                <notifier name="fileNameChanged"/>
+            </property>
+            <property threadsafety="unspecified" name="root" fullname="File::root" href="file.html#root-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="40" type="bool">
+                <notifier name="fileNameChanged"/>
+            </property>
+            <property threadsafety="unspecified" name="symLink" fullname="File::symLink" href="file.html#symLink-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="41" type="bool">
+                <notifier name="fileNameChanged"/>
+            </property>
+            <property threadsafety="unspecified" name="writable" fullname="File::writable" href="file.html#writable-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/qt/sailfish/sailfish_widgets/filemanagement/file.h" lineno="42" type="bool">
+                <getter name="isWritable"/>
+                <notifier name="fileNameChanged"/>
+            </property>
         </class>
     </namespace>
 </INDEX>

@@ -23,6 +23,14 @@
   \endlegalese
 
   \startpage
+
+  SailfishWidgets 1.3
+  \list
+  \li Deprecating \l {Heading} in favor of SectionHeader. From now on, use \c Sailfish.Silica::SectionHeader.
+  \li Added \l {AboutPage}
+  \li Fixed error in \l {DynamicLoader} when accessing \c errorString on null Component
+  \endlist
+
   SailfishWidgets 1.2
   \list
   \li Updated \l {StandardListView} to remove PageHeader (makes it more useful in dialogs)

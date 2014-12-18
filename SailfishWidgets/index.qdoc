@@ -3,7 +3,7 @@
   \title Sailfish Widgets
   \brief Sailfish Library Extension
 
-  SailfishWidgets 1.2
+  SailfishWidgets 1.3
 
   This is a library that aims to speed up Sailfish OS Development
 
@@ -32,8 +32,8 @@
   
   Components
   \list
+  \li \l {AboutPage}
   \li \l {BusyPage}
-  \li \l {Heading}
   \li \l {InformationalLabel}
   \li \l {LabelButton}
   \li \l {PageColumn}
@@ -44,6 +44,10 @@
   \li \l {StandardListView}
   \li \l {StandardMenuItem}
   \li \l {Subtext}
+  \endlist
+  \warning Deprecated!
+  \list
+  \li \l {Heading}
   \endlist
 
   Utilities
