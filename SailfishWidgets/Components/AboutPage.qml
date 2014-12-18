@@ -188,7 +188,7 @@ Page {
 
                 width: parent.width - Theme.paddingLarge * 2
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: Theme.fontSizeTiny
+                font.pixelSize: Theme.fontSizeMedium
                 onLinkActivated: {
                     Qt.openUrlExternally(link)
                 }
