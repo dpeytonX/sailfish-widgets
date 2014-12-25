@@ -68,7 +68,7 @@ File::File(const QString &name, QObject *parent) : QFile(name, parent),
 bool File::exists() const { return QFileInfo::exists(); }
 
 /*!
- \fn File::fileName() const
+ \fn File::fileName()
  Returns the current file path of the file.
  */
 QString File::fileName() { return QFileInfo::fileName(); }
@@ -86,7 +86,7 @@ bool File::isReadable() const { return QFileInfo::isReadable(); }
 bool File::isWritable() const { return QFileInfo::isWritable(); }
 
 /*!
- \fn File::setFileName(QString &name)
+ \fn void File::setFileName(const QString& name)
  Sets the file name to \a name.
  */
 void File::setFileName(const QString& name) {
@@ -100,3 +100,48 @@ void File::setFileName(const QString& name) {
  \fn void File::fileNameChanged()
  Emitted when the \c the file name is changed.
  */
+
+/*!
+  \property File::dir
+  True if this object points to a directory.
+  */
+/*!
+  \property File::executable
+  True if this object is executable.
+  */
+/*!
+  \property File::exists
+  True if this object exists.
+  */
+/*!
+  \property File::file
+  True if this object points to a file.
+  */
+/*!
+  \property File::hidden
+  True if this object is hidden.
+  */
+/*!
+  \property File::readable
+  True if this object is readable.
+  */
+/*!
+  \property File::root
+  True if this object points to the root directory.
+  */
+/*!
+  \property File::symLink
+  True if this object points to a symbolic link.
+  */
+/*!
+  \property File::writable
+  True if this object is writable.
+  */
+/*!
+  \property File::absoluteFilePath
+  Holds the absolute path with file name.
+  */
+/*!
+  \property File::fileName
+  Holds the file name without the path prepended.
+  */

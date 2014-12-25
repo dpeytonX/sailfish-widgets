@@ -16,7 +16,6 @@
 <li class="level1"><a href="#public-types">Public Types</a></li>
 <li class="level1"><a href="#public-functions">Public Functions</a></li>
 <li class="level1"><a href="#signals">Signals</a></li>
-<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
 <li class="level1"><a href="#details">Detailed Description</a></li>
 </ul>
 </div>
@@ -39,12 +38,11 @@
 <h2>Public Functions</h2>
 <table class="alignedsummary">
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="dir.html#Dir">Dir</a></b>(QObject *<i> parent</i> = 0)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#clearList">clearList</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="dir.html#dirName">dirName</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="dir.html#entryList">entryList</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QQmlListProperty&lt;File&gt; </td><td class="memItemRight bottomAlign"><b><a href="dir.html#files">files</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="dir.html#filter">filter</a></b>() const</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;File *&gt; &amp; </td><td class="memItemRight bottomAlign"><b><a href="dir.html#getList">getList</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#refresh">refresh</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#setFilter">setFilter</a></b>(int<i> filter</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#setPath">setPath</a></b>(const QString &amp;<i> p</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#setSort">setSort</a></b>(int<i> sort</i>)</td></tr>
@@ -57,14 +55,6 @@
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#filterChanged">filterChanged</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#pathChanged">pathChanged</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#sortChanged">sortChanged</a></b>()</td></tr>
-</table>
-<a name="static-public-members"></a>
-<h2>Static Public Members</h2>
-<table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#dclAppendObject">dclAppendObject</a></b>(QQmlListProperty&lt;File&gt; *<i> obj</i>, File *<i> model</i>)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> File * </td><td class="memItemRight bottomAlign"><b><a href="dir.html#dclAtIndex">dclAtIndex</a></b>(QQmlListProperty&lt;File&gt; *<i> obj</i>, int<i> index</i>)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="dir.html#dclClearObject">dclClearObject</a></b>(QQmlListProperty&lt;File&gt; *<i> obj</i>)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="dir.html#dclCountObject">dclCountObject</a></b>(QQmlListProperty&lt;File&gt; *<i> obj</i>)</td></tr>
 </table>
 <a name="details"></a>
 <!-- $$$Dir-description -->
@@ -88,9 +78,47 @@
 <h2>Member Type Documentation</h2>
 <!-- $$$DirFilter$$$Dirs$$$Files$$$Drives$$$NoSymLinks$$$AllEntries$$$TypeMask$$$Readable$$$Writable$$$Executable$$$PermissionMask$$$Modified$$$Hidden$$$System$$$AccessMask$$$AllDirs$$$CaseSensitive$$$NoDot$$$NoDotDot$$$NoDotAndDotDot$$$NoFilter -->
 <h3 class="fn"><a name="DirFilter-enum"></a>enum Dir::<span class="name">DirFilter</span></h3>
+<p>Provides the filters available for file restrictions.</p>
+<table class="valuelist"><tr><th class="tblConst">Constant</th><th class="tblVal">Value</th></tr>
+<tr><td class="topAlign"><tt>Dir::Dirs</tt></td><td class="topAlign"><tt>0x001</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::Files</tt></td><td class="topAlign"><tt>0x002</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::Drives</tt></td><td class="topAlign"><tt>0x004</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::NoSymLinks</tt></td><td class="topAlign"><tt>0x008</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::AllEntries</tt></td><td class="topAlign"><tt>Dirs | Files | Drives</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::TypeMask</tt></td><td class="topAlign"><tt>0x00f</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::Readable</tt></td><td class="topAlign"><tt>0x010</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::Writable</tt></td><td class="topAlign"><tt>0x020</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::Executable</tt></td><td class="topAlign"><tt>0x040</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::PermissionMask</tt></td><td class="topAlign"><tt>0x070</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::Modified</tt></td><td class="topAlign"><tt>0x080</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::Hidden</tt></td><td class="topAlign"><tt>0x100</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::System</tt></td><td class="topAlign"><tt>0x200</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::AccessMask</tt></td><td class="topAlign"><tt>0x3F0</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::AllDirs</tt></td><td class="topAlign"><tt>0x400</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::CaseSensitive</tt></td><td class="topAlign"><tt>0x800</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::NoDot</tt></td><td class="topAlign"><tt>0x2000</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::NoDotDot</tt></td><td class="topAlign"><tt>0x4000</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::NoDotAndDotDot</tt></td><td class="topAlign"><tt>NoDot | NoDotDot</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::NoFilter</tt></td><td class="topAlign"><tt>-1</tt></td></tr>
+</table>
 <!-- @@@DirFilter -->
 <!-- $$$DirSortFlag$$$Name$$$Time$$$Size$$$Unsorted$$$SortByMask$$$DirsFirst$$$Reversed$$$IgnoreCase$$$DirsLast$$$LocaleAware$$$Type$$$NoSort -->
 <h3 class="fn"><a name="DirSortFlag-enum"></a>enum Dir::<span class="name">DirSortFlag</span></h3>
+<p>Provides the filters available for file sorting.</p>
+<table class="valuelist"><tr><th class="tblConst">Constant</th><th class="tblVal">Value</th></tr>
+<tr><td class="topAlign"><tt>Dir::Name</tt></td><td class="topAlign"><tt>0x00</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::Time</tt></td><td class="topAlign"><tt>0x01</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::Size</tt></td><td class="topAlign"><tt>0x02</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::Unsorted</tt></td><td class="topAlign"><tt>0x03</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::SortByMask</tt></td><td class="topAlign"><tt>0x03</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::DirsFirst</tt></td><td class="topAlign"><tt>0x04</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::Reversed</tt></td><td class="topAlign"><tt>0x08</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::IgnoreCase</tt></td><td class="topAlign"><tt>0x10</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::DirsLast</tt></td><td class="topAlign"><tt>0x20</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::LocaleAware</tt></td><td class="topAlign"><tt>0x40</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::Type</tt></td><td class="topAlign"><tt>0x80</tt></td></tr>
+<tr><td class="topAlign"><tt>Dir::NoSort</tt></td><td class="topAlign"><tt>-1</tt></td></tr>
+</table>
 <!-- @@@DirSortFlag -->
 </div>
 <div class="func">
@@ -99,21 +127,6 @@
 <h3 class="fn"><a name="Dir"></a>Dir::<span class="name">Dir</span>(<span class="type">QObject</span> *<i> parent</i> = 0)</h3>
 <p>Constructs a new <a href="dir.html">Dir</a> with the given <tt>QObject</tt> <i>parent</i></p>
 <!-- @@@Dir -->
-<!-- $$$clearList[overload1]$$$clearList -->
-<h3 class="fn"><a name="clearList"></a><span class="type">void</span> Dir::<span class="name">clearList</span>()</h3>
-<!-- @@@clearList -->
-<!-- $$$dclAppendObject[overload1]$$$dclAppendObjectQQmlListProperty<File>*File* -->
-<h3 class="fn"><a name="dclAppendObject"></a><span class="type">void</span> Dir::<span class="name">dclAppendObject</span>(<span class="type">QQmlListProperty</span>&lt;<span class="type"><a href="file.html">File</a></span>&gt; *<i> obj</i>, <span class="type"><a href="file.html">File</a></span> *<i> model</i>)<tt> [static]</tt></h3>
-<!-- @@@dclAppendObject -->
-<!-- $$$dclAtIndex[overload1]$$$dclAtIndexQQmlListProperty<File>*int -->
-<h3 class="fn"><a name="dclAtIndex"></a><span class="type"><a href="file.html">File</a></span> * Dir::<span class="name">dclAtIndex</span>(<span class="type">QQmlListProperty</span>&lt;<span class="type"><a href="file.html">File</a></span>&gt; *<i> obj</i>, <span class="type">int</span><i> index</i>)<tt> [static]</tt></h3>
-<!-- @@@dclAtIndex -->
-<!-- $$$dclClearObject[overload1]$$$dclClearObjectQQmlListProperty<File>* -->
-<h3 class="fn"><a name="dclClearObject"></a><span class="type">void</span> Dir::<span class="name">dclClearObject</span>(<span class="type">QQmlListProperty</span>&lt;<span class="type"><a href="file.html">File</a></span>&gt; *<i> obj</i>)<tt> [static]</tt></h3>
-<!-- @@@dclClearObject -->
-<!-- $$$dclCountObject[overload1]$$$dclCountObjectQQmlListProperty<File>* -->
-<h3 class="fn"><a name="dclCountObject"></a><span class="type">int</span> Dir::<span class="name">dclCountObject</span>(<span class="type">QQmlListProperty</span>&lt;<span class="type"><a href="file.html">File</a></span>&gt; *<i> obj</i>)<tt> [static]</tt></h3>
-<!-- @@@dclCountObject -->
 <!-- $$$dirName[overload1]$$$dirName -->
 <h3 class="fn"><a name="dirName"></a><span class="type">QString</span> Dir::<span class="name">dirName</span>() const</h3>
 <p>Returns the directory name. Unlike <tt>QDir::dirName()</tt> it will convert the root path to <tt>/</tt> .</p>
@@ -147,13 +160,14 @@
 <h3 class="fn"><a name="filterChanged"></a><span class="type">void</span> Dir::<span class="name">filterChanged</span>()<tt> [signal]</tt></h3>
 <p>Emitted when the <tt>filter</tt> is udpated.</p>
 <!-- @@@filterChanged -->
-<!-- $$$getList[overload1]$$$getList -->
-<h3 class="fn"><a name="getList"></a><span class="type">QList</span>&lt;<span class="type"><a href="file.html">File</a></span> *&gt; &amp; Dir::<span class="name">getList</span>()</h3>
-<!-- @@@getList -->
 <!-- $$$pathChanged[overload1]$$$pathChanged -->
 <h3 class="fn"><a name="pathChanged"></a><span class="type">void</span> Dir::<span class="name">pathChanged</span>()<tt> [signal]</tt></h3>
 <p>Emitted when the <tt>path</tt> is updated.</p>
 <!-- @@@pathChanged -->
+<!-- $$$refresh[overload1]$$$refresh -->
+<h3 class="fn"><a name="refresh"></a><span class="type">void</span> Dir::<span class="name">refresh</span>()</h3>
+<p>It will clear the current list and call <a href="dir.html#files">files</a>(). Afterwords it will emit the <a href="dir.html#filesChanged">filesChanged</a>() method.</p>
+<!-- @@@refresh -->
 <!-- $$$setFilter[overload1]$$$setFilterint -->
 <h3 class="fn"><a name="setFilter"></a><span class="type">void</span> Dir::<span class="name">setFilter</span>(<span class="type">int</span><i> filter</i>)</h3>
 <p>It set the current <i>filter</i>. Afterwords it will emit the <tt>filterChanged()</tt> method.</p>
@@ -163,8 +177,7 @@
 <h3 class="fn"><a name="setPath"></a><span class="type">void</span> Dir::<span class="name">setPath</span>(const <span class="type">QString</span> &amp;<i> p</i>)</h3>
 <p>It will set the current path to <i>p</i> after running QDir::absolutePath().</p>
 <p>To workaround an issue with indefinate /.. when navigating code, it will force references of /.. to the root directory.</p>
-<p>Afterwords it will emit the <tt>pathChanged()</tt> method.</p>
-<p><b>See also </b><a href="dir.html#pathChanged">Dir::pathChanged</a>().</p>
+<p>Afterwords it will emit the <a href="dir.html#pathChanged">pathChanged</a>() method.</p>
 <!-- @@@setPath -->
 <!-- $$$setSort[overload1]$$$setSortint -->
 <h3 class="fn"><a name="setSort"></a><span class="type">void</span> Dir::<span class="name">setSort</span>(<span class="type">int</span><i> sort</i>)</h3>

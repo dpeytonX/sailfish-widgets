@@ -56,47 +56,49 @@ public:
 
     /*** START: Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies). Under GPL Version 3 License ***/
     enum DirFilter { Dirs        = 0x001,
-                  Files       = 0x002,
-                  Drives      = 0x004,
-                  NoSymLinks  = 0x008,
-                  AllEntries  = Dirs | Files | Drives,
-                  TypeMask    = 0x00f,
+                     Files       = 0x002,
+                     Drives      = 0x004,
+                     NoSymLinks  = 0x008,
+                     AllEntries  = Dirs | Files | Drives,
+                     TypeMask    = 0x00f,
 
-                  Readable    = 0x010,
-                  Writable    = 0x020,
-                  Executable  = 0x040,
-                  PermissionMask    = 0x070,
+                     Readable    = 0x010,
+                     Writable    = 0x020,
+                     Executable  = 0x040,
+                     PermissionMask    = 0x070,
 
-                  Modified    = 0x080,
-                  Hidden      = 0x100,
-                  System      = 0x200,
+                     Modified    = 0x080,
+                     Hidden      = 0x100,
+                     System      = 0x200,
 
-                  AccessMask  = 0x3F0,
+                     AccessMask  = 0x3F0,
 
-                  AllDirs       = 0x400,
-                  CaseSensitive = 0x800,
-                  NoDot         = 0x2000,
-                  NoDotDot      = 0x4000,
-                  NoDotAndDotDot = NoDot | NoDotDot,
+                     AllDirs       = 0x400,
+                     CaseSensitive = 0x800,
+                     NoDot         = 0x2000,
+                     NoDotDot      = 0x4000,
+                     NoDotAndDotDot = NoDot | NoDotDot,
 
-                  NoFilter = -1
-    };
+                     NoFilter = -1
+                   };
 
     enum DirSortFlag { Name        = 0x00,
-                    Time        = 0x01,
-                    Size        = 0x02,
-                    Unsorted    = 0x03,
-                    SortByMask  = 0x03,
+                       Time        = 0x01,
+                       Size        = 0x02,
+                       Unsorted    = 0x03,
+                       SortByMask  = 0x03,
 
-                    DirsFirst   = 0x04,
-                    Reversed    = 0x08,
-                    IgnoreCase  = 0x10,
-                    DirsLast    = 0x20,
-                    LocaleAware = 0x40,
-                    Type        = 0x80,
-                    NoSort = -1
-    };
+                       DirsFirst   = 0x04,
+                       Reversed    = 0x08,
+                       IgnoreCase  = 0x10,
+                       DirsLast    = 0x20,
+                       LocaleAware = 0x40,
+                       Type        = 0x80,
+                       NoSort = -1
+                     };
     /*** End: Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies). Under GPL Version 3 License ***/
+
+    Q_INVOKABLE void refresh();
 
     QString dirName() const;
 
@@ -106,8 +108,6 @@ public:
 
     int filter() const;
 
-    Q_INVOKABLE void refresh();
-
     void setFilter(int filter);
 
     void setPath(const QString &p);
@@ -116,10 +116,12 @@ public:
 
     int sort() const;
 
+    /*! \internal */
     QList<File *>& getList() {
         return m_list;
     }
 
+    /*! \internal */
     void clearList() {
         foreach(File *o, m_list) {
             if(o) o->deleteLater(); //Could still be in use by QML
@@ -128,6 +130,7 @@ public:
     }
 
     // QQmlListProperty helpers
+    /*! \internal */
     static void dclAppendObject(QQmlListProperty<File> *obj, File *model) {
         Dir *backEnd = dynamic_cast<Dir*>(obj->object);
         if(backEnd) {
@@ -135,6 +138,7 @@ public:
         }
     }
 
+    /*! \internal */
     static void dclClearObject(QQmlListProperty<File> *obj) {
         Dir *backEnd = dynamic_cast<Dir*>(obj->object);
         if(backEnd) {
@@ -142,6 +146,7 @@ public:
         }
     }
 
+    /*! \internal */
     static File* dclAtIndex(QQmlListProperty<File> *obj, int index) {
         Dir *backEnd = dynamic_cast<Dir*>(obj->object);
         if(backEnd) {
@@ -150,6 +155,7 @@ public:
         return 0;
     }
 
+    /*! \internal */
     static int dclCountObject(QQmlListProperty<File> *obj) {
         Dir *backEnd = dynamic_cast<Dir*>(obj->object);
         if(backEnd) {
@@ -158,22 +164,23 @@ public:
         return 0;
     }
 
+private:
+    int m_filter;
+    int m_sort;
+    QList<File*> m_list;
+    QQmlListProperty<File> m_fileList;
+
+    static const QString m_cacheDir;
+    static const QString m_configDir;
+    static const QString m_dataDir;
+    static const QString m_homeDir;
+
 signals:
+
     void pathChanged();
-    void filterChanged();
     void filesChanged();
     void sortChanged();
-
-private:
-   int m_filter;
-   int m_sort;
-   QList<File*> m_list;
-   QQmlListProperty<File> m_fileList;
-
-   static const QString m_cacheDir;
-   static const QString m_configDir;
-   static const QString m_dataDir;
-   static const QString m_homeDir;
+    void filterChanged();
 };
 
 #endif // FILELIST_H

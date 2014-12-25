@@ -49,24 +49,56 @@
  */
 
 /*!
-   \variable Dir::m_configDir
-   Link to the XDG application configuration path.
+   \enum Dir::DirFilter
+
+   Provides the filters available for file restrictions.
+
+   \value Dirs
+   \value Files
+   \value          Drives
+   \value         NoSymLinks
+   \value         AllEntries
+   \value        TypeMask
+   \value        Readable
+   \value       Writable
+   \value       Executable
+   \value       PermissionMask
+   \value       Modified
+   \value      Hidden
+   \value      System
+   \value     AccessMask
+   \value      AllDirs
+   \value      CaseSensitive
+   \value     NoDot
+   \value       NoDotDot
+   \value NoDotAndDotDot
+   \value NoFilter
  */
+
+
+/*!
+   \enum Dir::DirSortFlag
+
+   Provides the filters available for file sorting.
+
+   \value Name
+   \value Time
+   \value Size
+   \value Unsorted
+   \value SortByMask
+   \value DirsFirst
+   \value Reversed
+   \value IgnoreCase
+   \value DirsLast
+   \value LocaleAware
+   \value Type
+   \value NoSort
+ */
+
+
 const QString Dir::m_configDir = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation);
-/*!
-   \variable Dir::m_dataDir
-   Link to the XDG application data path.
- */
 const QString Dir::m_dataDir = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
-/*!
-   \variable Dir::m_cacheDir
-   Link to the XDG application cache path.
- */
 const QString Dir::m_cacheDir = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
-/*!
-   \variable Dir::m_homeDir
-   Link to the XDG user HOME path.
- */
 const QString Dir::m_homeDir = QDir::homePath();
 
 /*!
@@ -128,19 +160,17 @@ QQmlListProperty<File> Dir::files() {
 }
 
 /*!
-   \fn Dir::filter() const
+   \fn int Dir::filter() const
 
    Returns the internal file list filter.
  */
 int Dir::filter() const { return m_filter; }
 
 /*!
- \fn Dir::refresh()
+ \fn void Dir::refresh()
 
- It will clear the current list and call \c files().
- Afterwords it will emit the \c filesChanged() method.
-
- \sa Dir::filesChanged()
+ It will clear the current list and call files().
+ Afterwords it will emit the filesChanged() method.
  */
 void Dir::refresh() {
     clearList();
@@ -169,9 +199,7 @@ void Dir::setFilter(int filter) {
  To workaround an issue with indefinate /.. when navigating code, it will
  force references of /.. to the root directory.
 
- Afterwords it will emit the \c pathChanged() method.
-
- \sa Dir::pathChanged()
+ Afterwords it will emit the pathChanged() method.
  */
 void Dir::setPath(const QString &p) {
     QDir nPath(p);
@@ -200,10 +228,6 @@ void Dir::setSort(int sort) {
  */
 int Dir::sort() const { return m_sort; }
 
-/*!
- \fn void Dir::pathChanged()
- Emitted when the \c path is updated.
- */
 
 /*!
  \fn void Dir::filterChanged()
@@ -220,6 +244,8 @@ int Dir::sort() const { return m_sort; }
  Emitted when the \c sort is udpated.
  */
 
+
 /*!
-  \internal QDir::path()
+ \fn void Dir::pathChanged()
+ Emitted when the \c path is updated.
  */

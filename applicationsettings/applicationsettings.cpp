@@ -50,8 +50,8 @@
    Multiple instances of ApplicationSetting in the same application will be notifed when a settings property is updated as long as the following requirements are met:
 
    \list
-   \l The second ApplicationSetting uses the same applicationName and fileName
-   \l The second ApplicationSetting has the property defined.
+   \li The second ApplicationSetting uses the same applicationName and fileName
+   \li The second ApplicationSetting has the property defined.
    \endlist
 
    However, this will not detect external modifications to the config file--two or more applications running simultaneously or hand editing of the file while your application is running. You will need to handle these scenarios if your application requires it.
