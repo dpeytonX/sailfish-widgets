@@ -125,6 +125,42 @@ Dir::Dir(QObject *parent) :
 QString Dir::dirName() const { return isRoot() ? root().path() : QDir::dirName(); }
 
 /*!
+ \fn QString Dir::XdgCache() const
+
+ Returns the XDG Cache directory (usu. /home/nemo/.cache/yourApp)
+ */
+QString Dir::XdgCache() const {
+    return Dir::m_cacheDir;
+}
+
+/*!
+ \fn QString Dir::XdgConfig() const
+
+ Returns the XDG Config directory (usu. /home/nemo/.config/yourApp)
+ */
+QString Dir::XdgConfig() const {
+    return Dir::m_configDir;
+}
+
+/*!
+ \fn QString Dir::XdgData() const
+
+ Returns the XDG Data directory (usu. /home/nemo/.local/share/yourApp)
+ */
+QString Dir::XdgData() const {
+    return Dir::m_dataDir;
+}
+
+/*!
+ \fn QString Dir::XdgHome() const
+
+ Returns the XDG Home directory (usu. /home/nemo). Equivalent to \c QDir::homePath()
+ */
+QString Dir::XdgHome() const {
+    return Dir::m_homeDir;
+}
+
+/*!
  \fn Dir::entryList()
  Returns the files in this \l {Dir} object's \c Dir::path(). It provides this object's
  \c filter and \c sort properties as arguments to \c QDir::entryList().

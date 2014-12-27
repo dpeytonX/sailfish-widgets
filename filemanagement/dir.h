@@ -45,10 +45,10 @@ class Dir : public QObject,QDir
     Q_PROPERTY(QQmlListProperty<File> files READ files NOTIFY filesChanged)
     Q_PROPERTY(QString dirName READ dirName NOTIFY pathChanged)
     Q_PROPERTY(QString path READ path WRITE setPath NOTIFY pathChanged)
-    Q_PROPERTY(QString XdgCache MEMBER m_cacheDir CONSTANT)
-    Q_PROPERTY(QString XdgConfig MEMBER m_configDir CONSTANT)
-    Q_PROPERTY(QString XdgData MEMBER m_dataDir CONSTANT)
-    Q_PROPERTY(QString XdgHome MEMBER m_homeDir CONSTANT)
+    Q_PROPERTY(QString XdgCache READ XdgCache CONSTANT)
+    Q_PROPERTY(QString XdgConfig READ XdgConfig CONSTANT)
+    Q_PROPERTY(QString XdgData READ XdgData CONSTANT)
+    Q_PROPERTY(QString XdgHome READ XdgHome CONSTANT)
     Q_PROPERTY(QStringList entries READ entryList CONSTANT)
 
 public:
@@ -99,6 +99,11 @@ public:
     /*** End: Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies). Under GPL Version 3 License ***/
 
     Q_INVOKABLE void refresh();
+
+    QString XdgCache() const;
+    QString XdgConfig() const;
+    QString XdgData() const;
+    QString XdgHome() const;
 
     QString dirName() const;
 
