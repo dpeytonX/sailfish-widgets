@@ -22,6 +22,8 @@
 
 #include "file.h"
 
+#include <QTextStream>
+
 /*!
    \class File
    \since 5.0
@@ -42,6 +44,21 @@
 
    Back to \l {Sailfish Widgets}
 
+ */
+
+/*!
+   \enum File::OpenModeFlag
+
+   Provides the flags available for opening files.
+
+   \value NotOpen = 0x0000,
+   \value ReadOnly = 0x0001,
+   \value WriteOnly = 0x0002,
+   \value ReadWrite = ReadOnly | WriteOnly,
+   \value Append = 0x0004,
+   \value Truncate = 0x0008,
+   \value Text = 0x0010,
+   \value Unbuffered = 0x0020
  */
 
 /*!
@@ -95,6 +112,43 @@ void File::setFileName(const QString& name) {
     emit fileNameChanged();
 }
 
+/*!
+ \fn bool File::open(int mode)
+
+ It will take the \c OpenModeFlags indicated by \a mode and open the file.
+
+ Returns true if successful.
+ */
+bool File::open(int mode) {
+    return QFile::open(OpenMode(mode));
+}
+
+/*!
+ \fn void File::close()
+
+ Closes the file.
+ */
+void File::close() {
+    QFile::close();
+}
+
+/*!
+ \fn QString File::readAll()
+
+ Reads the file in a \c QTextStream and returns the contents.
+ */
+QString File::readAll() {
+    return QTextStream(this).readAll();
+}
+
+/*!
+ \fn void File::write(const QString& text)
+
+ Writes \a text to the file and returns the contents.
+ */
+void File::write(const QString& text) {
+    QTextStream(this) << text;
+}
 
 /*!
  \fn void File::fileNameChanged()

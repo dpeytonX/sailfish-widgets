@@ -38,6 +38,10 @@
 <h2>Public Functions</h2>
 <table class="alignedsummary">
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="dir.html#Dir">Dir</a></b>(QObject *<i> parent</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="dir.html#XdgCache">XdgCache</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="dir.html#XdgConfig">XdgConfig</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="dir.html#XdgData">XdgData</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="dir.html#XdgHome">XdgHome</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="dir.html#dirName">dirName</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="dir.html#entryList">entryList</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QQmlListProperty&lt;File&gt; </td><td class="memItemRight bottomAlign"><b><a href="dir.html#files">files</a></b>()</td></tr>
@@ -127,6 +131,22 @@
 <h3 class="fn"><a name="Dir"></a>Dir::<span class="name">Dir</span>(<span class="type">QObject</span> *<i> parent</i> = 0)</h3>
 <p>Constructs a new <a href="dir.html">Dir</a> with the given <tt>QObject</tt> <i>parent</i></p>
 <!-- @@@Dir -->
+<!-- $$$XdgCache[overload1]$$$XdgCache -->
+<h3 class="fn"><a name="XdgCache"></a><span class="type">QString</span> Dir::<span class="name">XdgCache</span>() const</h3>
+<p>Returns the XDG Cache directory (usu. /home/nemo/.cache/yourApp)</p>
+<!-- @@@XdgCache -->
+<!-- $$$XdgConfig[overload1]$$$XdgConfig -->
+<h3 class="fn"><a name="XdgConfig"></a><span class="type">QString</span> Dir::<span class="name">XdgConfig</span>() const</h3>
+<p>Returns the XDG Config directory (usu. /home/nemo/.config/yourApp)</p>
+<!-- @@@XdgConfig -->
+<!-- $$$XdgData[overload1]$$$XdgData -->
+<h3 class="fn"><a name="XdgData"></a><span class="type">QString</span> Dir::<span class="name">XdgData</span>() const</h3>
+<p>Returns the XDG Data directory (usu. /home/nemo/.local/share/yourApp)</p>
+<!-- @@@XdgData -->
+<!-- $$$XdgHome[overload1]$$$XdgHome -->
+<h3 class="fn"><a name="XdgHome"></a><span class="type">QString</span> Dir::<span class="name">XdgHome</span>() const</h3>
+<p>Returns the XDG Home directory (usu. /home/nemo). Equivalent to <tt>QDir::homePath()</tt></p>
+<!-- @@@XdgHome -->
 <!-- $$$dirName[overload1]$$$dirName -->
 <h3 class="fn"><a name="dirName"></a><span class="type">QString</span> Dir::<span class="name">dirName</span>() const</h3>
 <p>Returns the directory name. Unlike <tt>QDir::dirName()</tt> it will convert the root path to <tt>/</tt> .</p>
