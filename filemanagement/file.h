@@ -42,6 +42,8 @@ class File : public QFile, public QFileInfo
     Q_PROPERTY(bool writable READ isWritable NOTIFY fileNameChanged)
     Q_PROPERTY(QString absoluteFilePath READ absoluteFilePath CONSTANT)
     Q_PROPERTY(QString fileName READ fileName WRITE setFileName NOTIFY fileNameChanged)
+
+    Q_ENUMS(OpenModeFlag)
 public:
     explicit File();
     File(const QString &name, QObject *parent=0);
@@ -53,6 +55,25 @@ public:
     bool isWritable() const;
 
     void setFileName(const QString& name);
+
+    Q_INVOKABLE bool open(int mode);
+    Q_INVOKABLE void close();
+    Q_INVOKABLE QString readAll();
+    Q_INVOKABLE void write(const QString& text);
+
+    /*** START: Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies). Under GPL Version 3 License ***/
+    enum OpenModeFlag {
+        NotOpen = 0x0000,
+        ReadOnly = 0x0001,
+        WriteOnly = 0x0002,
+        ReadWrite = ReadOnly | WriteOnly,
+        Append = 0x0004,
+        Truncate = 0x0008,
+        Text = 0x0010,
+        Unbuffered = 0x0020
+    };
+    /*** End: Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies). Under GPL Version 3 License ***/
+
 
 signals:
     void fileNameChanged();
