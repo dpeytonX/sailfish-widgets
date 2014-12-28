@@ -61,6 +61,10 @@ public:
     Q_INVOKABLE QString readAll();
     Q_INVOKABLE void write(const QString& text);
 
+    Q_INVOKABLE bool remove();
+    Q_INVOKABLE bool rename(const QString &newName);
+    Q_INVOKABLE bool copy(const QString &newName);
+
     /*** START: Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies). Under GPL Version 3 License ***/
     enum OpenModeFlag {
         NotOpen = 0x0000,

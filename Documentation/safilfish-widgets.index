@@ -369,6 +369,9 @@
                 <parameter left="QObject *" right="" name="parent" default="0"/>
             </function>
             <function threadsafety="unspecified" name="close" fullname="File::close" href="file.html#close" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.cpp" lineno="131" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="close()"/>
+            <function threadsafety="unspecified" name="copy" fullname="File::copy" href="file.html#copy" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.cpp" lineno="182" virtual="non" meta="plain" const="false" static="false" overload="false" type="bool" signature="copy(const QString &amp; newName)">
+                <parameter left="const QString &amp;" right="" name="newName" default=""/>
+            </function>
             <function threadsafety="unspecified" name="exists" fullname="File::exists" href="file.html#exists-prop" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.cpp" lineno="85" virtual="non" meta="plain" const="true" static="false" overload="false" associated-property="exists" type="bool" signature="exists() const"/>
             <function threadsafety="unspecified" name="fileName" fullname="File::fileName" href="file.html#fileName-prop" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.cpp" lineno="91" virtual="non" meta="plain" const="false" static="false" overload="false" associated-property="fileName" type="QString" signature="fileName()"/>
             <function threadsafety="unspecified" name="isReadable" fullname="File::isReadable" href="file.html#readable-prop" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.cpp" lineno="97" virtual="non" meta="plain" const="true" static="false" overload="false" associated-property="readable" type="bool" signature="isReadable() const"/>
@@ -377,13 +380,17 @@
                 <parameter left="int" right="" name="mode" default=""/>
             </function>
             <function threadsafety="unspecified" name="readAll" fullname="File::readAll" href="file.html#readAll" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.cpp" lineno="140" virtual="non" meta="plain" const="false" static="false" overload="false" type="QString" signature="readAll()"/>
+            <function threadsafety="unspecified" name="remove" fullname="File::remove" href="file.html#remove" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.cpp" lineno="160" virtual="non" meta="plain" const="false" static="false" overload="false" type="bool" signature="remove()"/>
+            <function threadsafety="unspecified" name="rename" fullname="File::rename" href="file.html#rename" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.cpp" lineno="171" virtual="non" meta="plain" const="false" static="false" overload="false" type="bool" signature="rename(const QString &amp; newName)">
+                <parameter left="const QString &amp;" right="" name="newName" default=""/>
+            </function>
             <function threadsafety="unspecified" name="setFileName" fullname="File::setFileName" href="file.html#fileName-prop" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.cpp" lineno="109" virtual="non" meta="plain" const="false" static="false" overload="false" associated-property="fileName" type="void" signature="setFileName(const QString &amp; name)">
                 <parameter left="const QString &amp;" right="" name="name" default=""/>
             </function>
             <function threadsafety="unspecified" name="write" fullname="File::write" href="file.html#write" access="public" status="commendable" location="file.cpp" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.cpp" lineno="149" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="write(const QString &amp; text)">
                 <parameter left="const QString &amp;" right="" name="text" default=""/>
             </function>
-            <enum threadsafety="unspecified" name="OpenModeFlag" fullname="File::OpenModeFlag" href="file.html#OpenModeFlag-enum" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.h" lineno="65">
+            <enum threadsafety="unspecified" name="OpenModeFlag" fullname="File::OpenModeFlag" href="file.html#OpenModeFlag-enum" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.h" lineno="69">
                 <value name="NotOpen" value="0x0000"/>
                 <value name="ReadOnly" value="0x0001"/>
                 <value name="WriteOnly" value="0x0002"/>
@@ -396,7 +403,7 @@
             <function threadsafety="unspecified" name="Q_ENUMS" fullname="File::Q_ENUMS" href="file.html#Q_ENUMS" access="private" status="commendable" location="file.h" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.h" lineno="46" virtual="non" meta="plain" const="false" static="false" overload="false" type="" signature="Q_ENUMS(OpenModeFlag )">
                 <parameter left="OpenModeFlag" right="" name="" default=""/>
             </function>
-            <function threadsafety="unspecified" name="fileNameChanged" fullname="File::fileNameChanged" href="file.html#fileName-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.h" lineno="79" virtual="non" meta="signal" const="false" static="false" overload="false" associated-property="fileName" type="void" signature="fileNameChanged()"/>
+            <function threadsafety="unspecified" name="fileNameChanged" fullname="File::fileNameChanged" href="file.html#fileName-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.h" lineno="83" virtual="non" meta="signal" const="false" static="false" overload="false" associated-property="fileName" type="void" signature="fileNameChanged()"/>
             <property threadsafety="unspecified" name="absoluteFilePath" fullname="File::absoluteFilePath" href="file.html#absoluteFilePath-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.h" lineno="43" type="QString"/>
             <property threadsafety="unspecified" name="dir" fullname="File::dir" href="file.html#dir-prop" access="public" status="commendable" location="file.h" filepath="/home/dametrious/Projects/sailfish/sailfish-widgets/filemanagement/file.h" lineno="34" type="bool">
                 <notifier name="fileNameChanged"/>

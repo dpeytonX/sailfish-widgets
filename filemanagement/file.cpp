@@ -151,6 +151,39 @@ void File::write(const QString& text) {
 }
 
 /*!
+ \fn bool File::remove()
+
+ Removes this file from the file system.
+
+ Returns true if successful.
+ */
+bool File::remove() {
+    return QFile::remove();
+}
+
+/*!
+ \fn bool File::rename(const QString &newName)
+
+ Renames this file to \a newName.
+
+ Returns true if successful.
+ */
+bool File::rename(const QString &newName) {
+    return QFile::rename(newName);
+}
+
+/*!
+ \fn bool File::copy(const QString &newName)
+
+ Copies the this file to the file located at \a newName.
+
+ Returns true if successful.
+ */
+bool File::copy(const QString &newName) {
+    return QFile::copy(newName);
+}
+
+/*!
  \fn void File::fileNameChanged()
  Emitted when the \c the file name is changed.
  */

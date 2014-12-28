@@ -59,12 +59,15 @@
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="file.html#File">File</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="file.html#File-2">File</a></b>(const QString &amp;<i> name</i>, QObject *<i> parent</i> = 0)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="file.html#close">close</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="file.html#copy">copy</a></b>(const QString &amp;<i> newName</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="file.html#exists-prop">exists</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="file.html#fileName-prop">fileName</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="file.html#readable-prop">isReadable</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="file.html#writable-prop">isWritable</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="file.html#open">open</a></b>(int<i> mode</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="file.html#readAll">readAll</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="file.html#remove">remove</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="file.html#rename">rename</a></b>(const QString &amp;<i> newName</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="file.html#fileName-prop">setFileName</a></b>(const QString &amp;<i> name</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="file.html#write">write</a></b>(const QString &amp;<i> text</i>)</td></tr>
 </table>
@@ -222,6 +225,11 @@
 <h3 class="fn"><a name="close"></a><span class="type">void</span> File::<span class="name">close</span>()</h3>
 <p>Closes the file.</p>
 <!-- @@@close -->
+<!-- $$$copy[overload1]$$$copyconstQString& -->
+<h3 class="fn"><a name="copy"></a><span class="type">bool</span> File::<span class="name">copy</span>(const <span class="type">QString</span> &amp;<i> newName</i>)</h3>
+<p>Copies the this file to the file located at <i>newName</i>.</p>
+<p>Returns true if successful.</p>
+<!-- @@@copy -->
 <!-- $$$open[overload1]$$$openint -->
 <h3 class="fn"><a name="open"></a><span class="type">bool</span> File::<span class="name">open</span>(<span class="type">int</span><i> mode</i>)</h3>
 <p>It will take the <tt>OpenModeFlags</tt> indicated by <i>mode</i> and open the file.</p>
@@ -231,6 +239,16 @@
 <h3 class="fn"><a name="readAll"></a><span class="type">QString</span> File::<span class="name">readAll</span>()</h3>
 <p>Reads the file in a <tt>QTextStream</tt> and returns the contents.</p>
 <!-- @@@readAll -->
+<!-- $$$remove[overload1]$$$remove -->
+<h3 class="fn"><a name="remove"></a><span class="type">bool</span> File::<span class="name">remove</span>()</h3>
+<p>Removes this file from the file system.</p>
+<p>Returns true if successful.</p>
+<!-- @@@remove -->
+<!-- $$$rename[overload1]$$$renameconstQString& -->
+<h3 class="fn"><a name="rename"></a><span class="type">bool</span> File::<span class="name">rename</span>(const <span class="type">QString</span> &amp;<i> newName</i>)</h3>
+<p>Renames this file to <i>newName</i>.</p>
+<p>Returns true if successful.</p>
+<!-- @@@rename -->
 <!-- $$$write[overload1]$$$writeconstQString& -->
 <h3 class="fn"><a name="write"></a><span class="type">void</span> File::<span class="name">write</span>(const <span class="type">QString</span> &amp;<i> text</i>)</h3>
 <p>Writes <i>text</i> to the file and returns the contents.</p>
