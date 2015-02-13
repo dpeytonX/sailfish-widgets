@@ -37,6 +37,7 @@
   \li \l {InformationalLabel}
   \li \l {LabelButton}
   \li \l {PageColumn}
+  \li \l {PageIndicator}
   \li \l {Paragraph}
   \li \l {RadioGroup}
   \li \l {Spacer}
