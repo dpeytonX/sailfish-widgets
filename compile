@@ -9,7 +9,7 @@ QML_DIR=SailfishWidgets
 RELEASE_DIR=release
 DOC_DIR=Documentation
 
-VERSION=1_3_1
+VERSION=1_3_2
 ARMV=armv
 i486=i486
 
