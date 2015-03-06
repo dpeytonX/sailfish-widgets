@@ -24,6 +24,11 @@
 
   \startpage
 
+  SailfishWidgets 1.3.3
+  \list
+  \li \l {BusyPage} will allow any orientation
+  \endlist
+
   SailfishWidgets 1.3.2
   \list
   \li Added \l {PageIndicator}
