@@ -20,6 +20,11 @@ export MER_SSH_SHARED_TARGET="$HOME/SailfishOS/mersdk/targets"
 ROOT=`pwd`
 PROJECTS=("database" "applicationsettings" "filemanagement")
 
+function usage() {
+  echo "$0 [project name]"
+  echo "  where [project name] is a valid Qt project"
+}
+
 function compile_i486() {
   PROJECT=$1
   TARGET="i486"
@@ -49,6 +54,11 @@ function compile_armv() {
 }
 
 echo "Starting Build"
+
+if [ -n "$1" ]; then
+  PROJECTS=("$1")
+fi
+
 for proj in ${PROJECTS[@]}; do
   echo "STARTING PROJECT: $proj i486"
   compile_i486 $proj
