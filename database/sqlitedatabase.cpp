@@ -165,6 +165,21 @@ bool SQLiteDatabase::transaction() {
 }
 
 /*!
+  \fn bool SQLiteDatabase::rollback()
+  Rolls back a database transaction.
+
+  This method will automatically invalidate the existing query.
+
+  Returns true if successful.
+ */
+bool SQLiteDatabase::rollback() {
+    if(m_query) {
+        m_query->finish();
+    }
+    return m_database.rollback();
+}
+
+/*!
   \fn bool SQLiteDatabase::commit()
   Ends an SQLite transaction. Returns true if successful.
  */

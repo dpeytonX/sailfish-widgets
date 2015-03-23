@@ -28,6 +28,8 @@
   \list
   \li \l {BusyPage} will allow any orientation
   \li \l {LabelButton} now has the \c {truncationMode} property
+  \li \l {SQLiteDatabase} has \c rollback() method
+  \li Added \c {finish()} , \c {close()} to \l {Query}
   \endlist
 
   SailfishWidgets 1.3.2

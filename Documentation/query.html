@@ -39,6 +39,8 @@
 <h2>Public Functions</h2>
 <table class="alignedsummary">
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="query.html#Query">Query</a></b>(const QSqlQuery &amp;<i> query</i> = QSqlQuery(), QObject *<i> parent</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="query.html#close">close</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="query.html#finish">finish</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="query.html#first">first</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="query.html#indexOf">indexOf</a></b>(const QString &amp;<i> field</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="query.html#last">last</a></b>()</td></tr>
@@ -96,6 +98,14 @@
 <h3 class="fn"><a name="Query"></a>Query::<span class="name">Query</span>(const <span class="type">QSqlQuery</span> &amp;<i> query</i> = QSqlQuery(), <span class="type">QObject</span> *<i> parent</i> = 0)</h3>
 <p>It sets the internal <tt>QSqlQuery</tt> to be <i>query</i> and its <tt>QObject</tt> <i>parent</i>.</p>
 <!-- @@@Query -->
+<!-- $$$close[overload1]$$$close -->
+<h3 class="fn"><a name="close"></a><span class="type">void</span> Query::<span class="name">close</span>()</h3>
+<p>Alias to <tt>Query::finish()</tt></p>
+<!-- @@@close -->
+<!-- $$$finish[overload1]$$$finish -->
+<h3 class="fn"><a name="finish"></a><span class="type">void</span> Query::<span class="name">finish</span>()</h3>
+<p>Alerts the database to clean up resources and deactivate this query.</p>
+<!-- @@@finish -->
 <!-- $$$first[overload1]$$$first -->
 <h3 class="fn"><a name="first"></a><span class="type">bool</span> Query::<span class="name">first</span>()</h3>
 <p>Seeks to the first record in this query. Returns true if successful.</p>

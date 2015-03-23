@@ -45,6 +45,7 @@
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#opened">opened</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#prepare">prepare</a></b>(QString<i> query</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> Query * </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#queryx">query</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#rollback">rollback</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#setDatabaseName">setDatabaseName</a></b>(const QString &amp;<i> name</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#transaction">transaction</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#valid">valid</a></b>()</td></tr>
@@ -189,6 +190,12 @@
 <h3 class="fn"><a name="queryChanged"></a><span class="type">void</span> SQLiteDatabase::<span class="name">queryChanged</span>()<tt> [signal]</tt></h3>
 <p>Emitted when the last ran query has changed.</p>
 <!-- @@@queryChanged -->
+<!-- $$$rollback[overload1]$$$rollback -->
+<h3 class="fn"><a name="rollback"></a><span class="type">bool</span> SQLiteDatabase::<span class="name">rollback</span>()</h3>
+<p>Rolls back a database transaction.</p>
+<p>This method will automatically invalidate the existing query.</p>
+<p>Returns true if successful.</p>
+<!-- @@@rollback -->
 <!-- $$$setDatabaseName[overload1]$$$setDatabaseNameconstQString& -->
 <h3 class="fn"><a name="setDatabaseName"></a><span class="type">void</span> SQLiteDatabase::<span class="name">setDatabaseName</span>(const <span class="type">QString</span> &amp;<i> name</i>)</h3>
 <p>Sets the database name to <i>name</i>. You must do this before calling <tt>open()</tt>.</p>
