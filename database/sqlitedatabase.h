@@ -47,10 +47,9 @@ signals:
     void queryChanged();
 
 private:
-    void setLastQuery(const QSqlQuery& query);
+    void setLastQuery(Query* query);
 
     QSqlDatabase m_database;
-    QSqlQuery m_lastQuery;
     Query* m_query;
 };
 

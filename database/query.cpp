@@ -21,6 +21,7 @@
 **************************************************************************/
 
 #include "query.h"
+#include "sqlitedatabase.h"
 
 #include <QSqlRecord>
 #include <QSqlError>
@@ -58,10 +59,11 @@
 
  It sets the internal \c QSqlQuery to be \a query and its \c QObject \a parent.
  */
-Query::Query(const QSqlQuery &query, QObject *parent) :
-    QObject(parent), QSqlQuery(query)
-{
-}
+Query::Query(QObject *parent) : QObject(parent) {}
+
+Query::Query(SQLiteDatabase* database) : QObject(database), QSqlQuery(database->database()) {}
+
+Query::Query(const QString& query, SQLiteDatabase* database) : QObject(database), QSqlQuery(query, database->database()) {}
 
 /*!
   \fn bool Query::first()
@@ -105,7 +107,7 @@ bool Query::seek(int index, bool relative) {
   Returns the index of \a field or -1 if no such field was found.
  */
 int Query::indexOf(const QString& field) {
-    return record().indexOf(field);
+    return QSqlQuery::record().indexOf(field);
 }
 
 /*!
@@ -135,4 +137,12 @@ QVariant Query::value(const QString& name) {
 /*!
  \property Query::valid
  Returns if the query is positioned at a valid record.
+ */
+/*!
+ \property Query::lastQuery
+ Is a textual representation of the query before execution.
+ */
+/*!
+ \property Query::executedQuery
+ Is a textual representation of the query after execution
  */
