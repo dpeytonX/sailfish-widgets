@@ -3,9 +3,9 @@
 ###############################
 # Start the SDK VirtualBox VM #
 ###############################
-# echo "Starting SDK"
-# VBoxHeadless -s "MerSDK" &
-# sleep 10
+echo "Starting SDK"
+VBoxHeadless -s "MerSDK" &
+sleep 10
 
 #########
 # QMake #
@@ -18,6 +18,7 @@ export MER_SSH_SHARED_SRC="$HOME"
 export MER_SSH_SHARED_TARGET="$HOME/SailfishOS/mersdk/targets"
 
 ROOT=`pwd`
+PROJECTS=("database" "applicationsettings" "filemanagement")
 
 function compile_i486() {
   PROJECT=$1
@@ -48,7 +49,6 @@ function compile_armv() {
 }
 
 echo "Starting Build"
-PROJECTS=("database" "applicationsettings" "filemanagement")
 for proj in ${PROJECTS[@]}; do
   echo "STARTING PROJECT: $proj i486"
   compile_i486 $proj

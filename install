@@ -26,6 +26,9 @@ cp -r $QML_DIR $DEPLOY_DIR/$i486
 TARGET_ARMV=$DEPLOY_DIR/$ARMV/$QML_DIR
 TARGET_i486=$DEPLOY_DIR/$i486/$QML_DIR
 
+#compile
+./make
+
 #copy built plugins
 cp $BUILD_DIR/applicationsettings/$ARMV/*.so $TARGET_ARMV/Settings/
 cp $BUILD_DIR/applicationsettings/$i486/*.so $TARGET_i486/Settings/
