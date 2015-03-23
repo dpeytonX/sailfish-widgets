@@ -19,8 +19,6 @@ public:
     Q_INVOKABLE bool first();
     Q_INVOKABLE bool last();
     Q_INVOKABLE bool next();
-    Q_INVOKABLE void finish();
-    Q_INVOKABLE void close();
     Q_INVOKABLE bool seek(int index, bool relative=false);
     Q_INVOKABLE int indexOf(const QString& field);
     Q_INVOKABLE QVariant value(const QString& name);

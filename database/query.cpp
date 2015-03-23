@@ -91,24 +91,6 @@ bool Query::last() {
 }
 
 /*!
-  \fn void Query::finish()
-
-  Alerts the database to clean up resources and deactivate this query.
- */
-void Query::finish() {
-    QSqlQuery::finish();
-}
-
-/*!
-  \fn void Query::close()
-
-  Alias to \c Query::finish()
- */
-void Query::close() {
-    Query::finish();
-}
-
-/*!
   \fn bool Query::seek(int index, bool relative)
  Searches for the record \a index in this query and returns true if successful.
 

@@ -173,9 +173,7 @@ bool SQLiteDatabase::transaction() {
   Returns true if successful.
  */
 bool SQLiteDatabase::rollback() {
-    if(m_query) {
-        m_query->finish();
-    }
+    m_lastQuery.finish();
     return m_database.rollback();
 }
 
@@ -267,6 +265,11 @@ bool SQLiteDatabase::exec(QString query) {
         return m_database.commit();
     }
 
+    if(query.toLower().startsWith("rollback")) {
+        setLastQuery(QSqlQuery(m_database));
+        return m_database.rollback();
+    }
+
     setLastQuery(QSqlQuery(query, m_database));
     return m_lastQuery.exec();
 }
@@ -313,7 +316,7 @@ void SQLiteDatabase::setLastQuery(const QSqlQuery& query) {
  Returns the textual description of the last error that occurred.
  */
 QString SQLiteDatabase::lastError() {
-    return m_lastQuery.lastError().text();
+    return QString(m_lastQuery.lastError().text()) + " " + m_database.lastError().text();
 }
 
 /*!
