@@ -164,6 +164,19 @@ bool SQLiteDatabase::transaction() {
 }
 
 /*!
+  \fn bool SQLiteDatabase::rollback()
+  Rolls back a database transaction.
+
+  This method will automatically invalidate the existing query.
+
+  Returns true if successful.
+ */
+bool SQLiteDatabase::rollback() {
+    if(m_query) m_query->close();
+    return m_database.rollback();
+}
+
+/*!
   \fn bool SQLiteDatabase::commit()
   Ends an SQLite transaction. Returns true if successful.
  */
@@ -251,6 +264,11 @@ bool SQLiteDatabase::exec(QString query) {
         return commit();
     }
 
+    if(query.toLower().startsWith("rollback")) {
+        setLastQuery(nullptr);
+        return rollback();
+    }
+
     setLastQuery(new Query(query, this));
     return m_query->exec();
 }
@@ -278,7 +296,10 @@ void SQLiteDatabase::bind(QString key, QVariant value) {
   \internal
  */
 void SQLiteDatabase::setLastQuery(Query* query) {
-    if(m_query) delete m_query;
+    if(m_query) {
+        m_query->close();
+        delete m_query;
+    }
     m_query = query;
     emit queryChanged();
 }

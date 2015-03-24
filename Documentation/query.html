@@ -29,16 +29,28 @@
 </ul>
 <a name="properties"></a>
 <h2>Properties</h2>
-<ul>
+<table class="propsummary">
+<tr><td class="topAlign"><ul>
 <li class="fn"><b><a href="query.html#active-prop">active</a></b> : const bool</li>
+<li class="fn"><b><a href="query.html#executedQuery-prop">executedQuery</a></b> : const QString</li>
+<li class="fn"><b><a href="query.html#fieldSize-prop">fieldSize</a></b> : const int</li>
 <li class="fn"><b><a href="query.html#lastError-prop">lastError</a></b> : const QString</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn"><b><a href="query.html#lastQuery-prop">lastQuery</a></b> : const QString</li>
 <li class="fn"><b><a href="query.html#size-prop">size</a></b> : const int</li>
 <li class="fn"><b><a href="query.html#valid-prop">valid</a></b> : const bool</li>
 </ul>
+</td></tr>
+</table>
 <a name="public-functions"></a>
 <h2>Public Functions</h2>
 <table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="query.html#Query">Query</a></b>(const QSqlQuery &amp;<i> query</i> = QSqlQuery(), QObject *<i> parent</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="query.html#Query">Query</a></b>(QObject *<i> parent</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="query.html#Query-2">Query</a></b>(SQLiteDatabase *<i> database</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="query.html#Query-3">Query</a></b>(const QString &amp;<i> query</i>, SQLiteDatabase *<i> database</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="query.html#close">close</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="query.html#fieldSize-prop">fieldSize</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="query.html#finish">finish</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="query.html#first">first</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="query.html#indexOf">indexOf</a></b>(const QString &amp;<i> field</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="query.html#last">last</a></b>()</td></tr>
@@ -73,6 +85,18 @@
 <h3 class="fn"><a name="active-prop"></a><span class="name">active</span> : const <span class="type">bool</span></h3>
 <p>Returns if the query is still active (can return rows).</p>
 <!-- @@@active -->
+<!-- $$$executedQuery-prop -->
+<h3 class="fn"><a name="executedQuery-prop"></a><span class="name">executedQuery</span> : const <span class="type">QString</span></h3>
+<p>Is a textual representation of the query after execution</p>
+<!-- @@@executedQuery -->
+<!-- $$$fieldSize-prop$$$fieldSize -->
+<h3 class="fn"><a name="fieldSize-prop"></a><span class="name">fieldSize</span> : const <span class="type">int</span></h3>
+<p>Returns the number of fields returned from the query.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>fieldSize</b></span>()</td></tr>
+</table>
+<!-- @@@fieldSize -->
 <!-- $$$lastError-prop$$$lastError -->
 <h3 class="fn"><a name="lastError-prop"></a><span class="name">lastError</span> : const <span class="type">QString</span></h3>
 <p>Returns the textual description of the last error that occurred.</p>
@@ -81,6 +105,10 @@
 <tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>lastError</b></span>() const</td></tr>
 </table>
 <!-- @@@lastError -->
+<!-- $$$lastQuery-prop -->
+<h3 class="fn"><a name="lastQuery-prop"></a><span class="name">lastQuery</span> : const <span class="type">QString</span></h3>
+<p>Is a textual representation of the query before execution.</p>
+<!-- @@@lastQuery -->
 <!-- $$$size-prop -->
 <h3 class="fn"><a name="size-prop"></a><span class="name">size</span> : const <span class="type">int</span></h3>
 <p>Returns the number of rows returned from the query.</p>
@@ -92,10 +120,26 @@
 </div>
 <div class="func">
 <h2>Member Function Documentation</h2>
-<!-- $$$Query[overload1]$$$QueryconstQSqlQuery&QObject* -->
-<h3 class="fn"><a name="Query"></a>Query::<span class="name">Query</span>(const <span class="type">QSqlQuery</span> &amp;<i> query</i> = QSqlQuery(), <span class="type">QObject</span> *<i> parent</i> = 0)</h3>
-<p>It sets the internal <tt>QSqlQuery</tt> to be <i>query</i> and its <tt>QObject</tt> <i>parent</i>.</p>
+<!-- $$$Query[overload1]$$$QueryQObject* -->
+<h3 class="fn"><a name="Query"></a>Query::<span class="name">Query</span>(<span class="type">QObject</span> *<i> parent</i> = 0)</h3>
+<p>Sets a <tt>QObject</tt> <i>parent</i>.</p>
 <!-- @@@Query -->
+<!-- $$$Query$$$QuerySQLiteDatabase* -->
+<h3 class="fn"><a name="Query-2"></a>Query::<span class="name">Query</span>(<span class="type"><a href="sqlitedatabase.html">SQLiteDatabase</a></span> *<i> database</i>)</h3>
+<p>It sets the internal <tt>QSqlQuery</tt> 's database to be <i>database</i> and a <tt>QObject</tt> <tt>parent</tt> of <i>database</i>.</p>
+<!-- @@@Query -->
+<!-- $$$Query$$$QueryconstQString&SQLiteDatabase* -->
+<h3 class="fn"><a name="Query-3"></a>Query::<span class="name">Query</span>(const <span class="type">QString</span> &amp;<i> query</i>, <span class="type"><a href="sqlitedatabase.html">SQLiteDatabase</a></span> *<i> database</i>)</h3>
+<p>It sets the internal <tt>QSqlQuery</tt> to be <i>query</i> and a <tt>QObject</tt> <tt>parent</tt> of <i>database</i>.</p>
+<!-- @@@Query -->
+<!-- $$$close[overload1]$$$close -->
+<h3 class="fn"><a name="close"></a><span class="type">void</span> Query::<span class="name">close</span>()</h3>
+<p>Releases resources and sets this query to inactive. Alias to <tt>finish()</tt>;</p>
+<!-- @@@close -->
+<!-- $$$finish[overload1]$$$finish -->
+<h3 class="fn"><a name="finish"></a><span class="type">void</span> Query::<span class="name">finish</span>()</h3>
+<p>Releases resources and sets this query to inactive</p>
+<!-- @@@finish -->
 <!-- $$$first[overload1]$$$first -->
 <h3 class="fn"><a name="first"></a><span class="type">bool</span> Query::<span class="name">first</span>()</h3>
 <p>Seeks to the first record in this query. Returns true if successful.</p>
