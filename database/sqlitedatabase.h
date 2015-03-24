@@ -27,6 +27,7 @@ public:
     Q_INVOKABLE void close();
     Q_INVOKABLE bool create(QString filePath);
     Q_INVOKABLE bool transaction();
+    Q_INVOKABLE bool rollback();
     Q_INVOKABLE bool commit();
     Q_INVOKABLE bool exec(QString query=QString());
     Q_INVOKABLE bool execBatch(QStringList batch, bool ignoreErrors=false);
@@ -37,7 +38,6 @@ public:
     bool valid();
     QString databaseName();
     void setDatabaseName(const QString& name);
-    QSqlQuery lastQuery();
     QString lastError();
     Query* query();
 
@@ -47,10 +47,9 @@ signals:
     void queryChanged();
 
 private:
-    void setLastQuery(const QSqlQuery& query);
+    void setLastQuery(Query* query);
 
     QSqlDatabase m_database;
-    QSqlQuery m_lastQuery;
     Query* m_query;
 };
 

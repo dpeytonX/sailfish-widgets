@@ -40,11 +40,11 @@
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#exec">exec</a></b>(QString<i> query</i> = QString())</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#execBatch">execBatch</a></b>(QStringList<i> batch</i>, bool<i> ignoreErrors</i> = false)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#lastError">lastError</a></b>()</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> QSqlQuery </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#lastQuery">lastQuery</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#open">open</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#opened">opened</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#prepare">prepare</a></b>(QString<i> query</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> Query * </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#queryx">query</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#rollback">rollback</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#setDatabaseName">setDatabaseName</a></b>(const QString &amp;<i> name</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#transaction">transaction</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="sqlitedatabase.html#valid">valid</a></b>()</td></tr>
@@ -156,10 +156,6 @@
 <h3 class="fn"><a name="lastError"></a><span class="type">QString</span> SQLiteDatabase::<span class="name">lastError</span>()</h3>
 <p>Returns the textual description of the last error that occurred.</p>
 <!-- @@@lastError -->
-<!-- $$$lastQuery[overload1]$$$lastQuery -->
-<h3 class="fn"><a name="lastQuery"></a><span class="type">QSqlQuery</span> SQLiteDatabase::<span class="name">lastQuery</span>()</h3>
-<p>Returns the last query that was created using <tt>exec()</tt> or <tt>prepare()</tt></p>
-<!-- @@@lastQuery -->
 <!-- $$$open[overload1]$$$open -->
 <h3 class="fn"><a name="open"></a><span class="type">bool</span> SQLiteDatabase::<span class="name">open</span>()</h3>
 <p>Opens the database. This requires that the database name be set.</p>
@@ -189,6 +185,12 @@
 <h3 class="fn"><a name="queryChanged"></a><span class="type">void</span> SQLiteDatabase::<span class="name">queryChanged</span>()<tt> [signal]</tt></h3>
 <p>Emitted when the last ran query has changed.</p>
 <!-- @@@queryChanged -->
+<!-- $$$rollback[overload1]$$$rollback -->
+<h3 class="fn"><a name="rollback"></a><span class="type">bool</span> SQLiteDatabase::<span class="name">rollback</span>()</h3>
+<p>Rolls back a database transaction.</p>
+<p>This method will automatically invalidate the existing query.</p>
+<p>Returns true if successful.</p>
+<!-- @@@rollback -->
 <!-- $$$setDatabaseName[overload1]$$$setDatabaseNameconstQString& -->
 <h3 class="fn"><a name="setDatabaseName"></a><span class="type">void</span> SQLiteDatabase::<span class="name">setDatabaseName</span>(const <span class="type">QString</span> &amp;<i> name</i>)</h3>
 <p>Sets the database name to <i>name</i>. You must do this before calling <tt>open()</tt>.</p>

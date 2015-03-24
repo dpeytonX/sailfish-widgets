@@ -22,7 +22,15 @@
 <p>SailfishWidgets is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</p>
 <p>SailfishWidgets is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
 <p>You should have received a copy of the GNU General Public License along with SailfishWidgets. If not, see &lt;http://www.gnu.org/licenses/&gt;.</p>
-</div><p>SailfishWidgets 1.3&#x2e;3</p>
+</div><p>SailfishWidgets 1.3&#x2e;4</p>
+<ul>
+<li>Added install and make scripts for automated builds</li>
+<li><a href="sqlitedatabase.html">SQLiteDatabase</a> has <tt>rollback()</tt> method</li>
+<li>Simplified <a href="sqlitedatabase.html">SQLiteDatabase</a> so that only a single <a href="query.html">Query</a> object is maintained</li>
+<li>Fixed bug in Qt 5.1 builds from using two internal Query objects</li>
+<li>Added <tt>finish()</tt> , <tt>close()</tt> , <tt>lastQuery</tt>, <tt>executedQuery</tt>, <tt>fieldSize</tt> to <a href="query.html">Query</a></li>
+</ul>
+<p>SailfishWidgets 1.3&#x2e;3</p>
 <ul>
 <li><a href="qml-sailfishwidgets-components-busypage.html">BusyPage</a> will allow any orientation</li>
 <li><a href="qml-sailfishwidgets-components-labelbutton.html">LabelButton</a> now has the <tt>truncationMode</tt> property</li>

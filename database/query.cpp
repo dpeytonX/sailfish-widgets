@@ -21,6 +21,7 @@
 **************************************************************************/
 
 #include "query.h"
+#include "sqlitedatabase.h"
 
 #include <QSqlRecord>
 #include <QSqlError>
@@ -54,14 +55,25 @@
  */
 
 /*!
- \fn Query::Query(const QSqlQuery &query, QObject *parent)
+ \fn Query::Query(QObject *parent)
 
- It sets the internal \c QSqlQuery to be \a query and its \c QObject \a parent.
+ Sets a \c QObject \a parent.
  */
-Query::Query(const QSqlQuery &query, QObject *parent) :
-    QObject(parent), QSqlQuery(query)
-{
-}
+Query::Query(QObject *parent) : QObject(parent), QSqlQuery() {}
+
+/*!
+ \fn Query::Query(SQLiteDatabase* database)
+
+ It sets the internal \c QSqlQuery 's database to be \a database and a \c QObject \c parent of \a database.
+ */
+Query::Query(SQLiteDatabase* database) : QObject(database), QSqlQuery(database->database()) {}
+
+/*!
+ \fn Query::Query(const QString& query, SQLiteDatabase* database)
+
+ It sets the internal \c QSqlQuery to be \a query and a \c QObject \c parent of \a database.
+ */
+Query::Query(const QString& query, SQLiteDatabase* database) : QObject(database), QSqlQuery(query, database->database()) {}
 
 /*!
   \fn bool Query::first()
@@ -91,6 +103,33 @@ bool Query::last() {
 }
 
 /*!
+  \fn int Query::fieldSize()
+
+  Returns the number of fields returned by this query.
+ */
+int Query::fieldSize() {
+    return QSqlQuery::record().count();
+}
+
+/*!
+  \fn void Query::finish()
+
+  Releases resources and sets this query to inactive
+ */
+void Query::finish() {
+    return QSqlQuery::finish();
+}
+
+/*!
+  \fn void Query::close()
+
+  Releases resources and sets this query to inactive. Alias to \c finish();
+ */
+void Query::close() {
+    return finish();
+}
+
+/*!
   \fn bool Query::seek(int index, bool relative)
  Searches for the record \a index in this query and returns true if successful.
 
@@ -105,7 +144,7 @@ bool Query::seek(int index, bool relative) {
   Returns the index of \a field or -1 if no such field was found.
  */
 int Query::indexOf(const QString& field) {
-    return record().indexOf(field);
+    return QSqlQuery::record().indexOf(field);
 }
 
 /*!
@@ -133,6 +172,18 @@ QVariant Query::value(const QString& name) {
  Returns the number of rows returned from the query.
  */
 /*!
+ \property Query::fieldSize
+ Returns the number of fields returned from the query.
+ */
+/*!
  \property Query::valid
  Returns if the query is positioned at a valid record.
+ */
+/*!
+ \property Query::lastQuery
+ Is a textual representation of the query before execution.
+ */
+/*!
+ \property Query::executedQuery
+ Is a textual representation of the query after execution
  */

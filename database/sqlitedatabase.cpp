@@ -77,8 +77,7 @@
   \fn void SQLiteDatabase::SQLiteDatabase(QQuickItem *parent)
   Sets the \a parent.
  */
-SQLiteDatabase::SQLiteDatabase(QQuickItem *parent) : QQuickItem(parent),
-  m_lastQuery(), m_query(new Query(m_lastQuery, this))
+SQLiteDatabase::SQLiteDatabase(QQuickItem *parent) : QQuickItem(parent), m_query(nullptr)
 {
     m_database = QSqlDatabase::addDatabase("QSQLITE");
     m_database.setHostName("localhost");
@@ -165,6 +164,19 @@ bool SQLiteDatabase::transaction() {
 }
 
 /*!
+  \fn bool SQLiteDatabase::rollback()
+  Rolls back a database transaction.
+
+  This method will automatically invalidate the existing query.
+
+  Returns true if successful.
+ */
+bool SQLiteDatabase::rollback() {
+    if(m_query) m_query->close();
+    return m_database.rollback();
+}
+
+/*!
   \fn bool SQLiteDatabase::commit()
   Ends an SQLite transaction. Returns true if successful.
  */
@@ -237,23 +249,28 @@ bool SQLiteDatabase::execBatch(QStringList batch, bool ignoreErrors) {
 bool SQLiteDatabase::exec(QString query) {
     query = query.trimmed();
 
-    if(query.isEmpty())
-        return m_lastQuery.exec();
+    if(query.isEmpty() && m_query)
+        return m_query->exec();
 
     if(query.at(query.length() - 1) != ';') query.append(";");
 
     if(query.toLower().startsWith("begin transaction")) {
-        setLastQuery(QSqlQuery(m_database));
-        return m_database.transaction();
+        setLastQuery(nullptr);
+        return transaction();
     }
 
     if(query.toLower().startsWith("commit")) {
-        setLastQuery(QSqlQuery(m_database));
-        return m_database.commit();
+        setLastQuery(nullptr);
+        return commit();
     }
 
-    setLastQuery(QSqlQuery(query, m_database));
-    return m_lastQuery.exec();
+    if(query.toLower().startsWith("rollback")) {
+        setLastQuery(nullptr);
+        return rollback();
+    }
+
+    setLastQuery(new Query(query, this));
+    return m_query->exec();
 }
 
 /*!
@@ -263,8 +280,8 @@ bool SQLiteDatabase::exec(QString query) {
   Returns true if successful.
  */
 bool SQLiteDatabase::prepare(QString query) {
-    setLastQuery(QSqlQuery(m_database));
-    return m_lastQuery.prepare(query);
+    setLastQuery(new Query(query, this));
+    return m_query->prepare(query);
 }
 
 /*!
@@ -272,24 +289,18 @@ bool SQLiteDatabase::prepare(QString query) {
   Binds the string \a key with the specified \a value to the last query.
  */
 void SQLiteDatabase::bind(QString key, QVariant value) {
-    m_lastQuery.bindValue(key, value);
-}
-
-/*!
-  \fn QSqlQuery SQLiteDatabase::lastQuery()
-  Returns the last query that was created using \c exec() or \c prepare()
- */
-QSqlQuery SQLiteDatabase::lastQuery() {
-    return m_lastQuery;
+    if(m_query) m_query->bindValue(key, value);
 }
 
 /*!
   \internal
  */
-void SQLiteDatabase::setLastQuery(const QSqlQuery& query) {
-    m_lastQuery = query;
-    delete m_query;
-    m_query = new Query(m_lastQuery, this);
+void SQLiteDatabase::setLastQuery(Query* query) {
+    if(m_query) {
+        m_query->close();
+        delete m_query;
+    }
+    m_query = query;
     emit queryChanged();
 }
 
@@ -298,7 +309,7 @@ void SQLiteDatabase::setLastQuery(const QSqlQuery& query) {
  Returns the textual description of the last error that occurred.
  */
 QString SQLiteDatabase::lastError() {
-    return m_lastQuery.lastError().text();
+    return m_query->lastError() + " " + m_database.lastError().text();
 }
 
 /*!
