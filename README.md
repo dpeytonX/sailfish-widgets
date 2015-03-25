@@ -23,7 +23,7 @@ The following are instructions to using SailfishWidgets with your own project. T
 Alternatively, manually edit each qmldir that you use to <code>module harbour.<em>your-project</em>.SailfishWidgets.</em>Package</em></code>.</li>
   <li> For using with QtCreator add the following
 <pre>
-OTHERFILES += harbour/*
+OTHER_FILES += harbour/*
 QML_IMPORT_PATH = .
 <em>your-app</em>.files = harbour
 <em>your-app</em>.path = /usr/share/$${TARGET}
