@@ -161,6 +161,18 @@ QString ApplicationSettings::fileName() const {
 }
 
 /*!
+   \fn QSettings* ApplicationSettings::settings() const
+
+   Returns the \c QSettings backend of this object.
+   This value will be \c nullptr if \c setFileName or \c setApplicationName have not been given valid values.
+
+   You can ensure getting a non-null object by listening to the \c settingsInitialized signal.
+ */
+QSettings* ApplicationSettings::settings() const {
+    return m_settings;
+}
+
+/*!
   \fn void ApplicationSettings::setFileName(QString fileName)
   Sets the setting file's name to \a fileName.
  */
@@ -168,6 +180,15 @@ void ApplicationSettings::setFileName(QString fileName) {
     m_fileName = fileName;
     emit fileNameChanged();
     isSettingsValid();
+}
+
+/*!
+  \fn QVariant ApplicationSettings::value(const QString& setting)
+  Returns the QVariant setting value of the configuration at \a setting. Or \c QVariant::Invalid if unretrievable.
+ */
+QVariant ApplicationSettings::value(const QString& setting) {
+    if(m_settings == 0) return QVariant(QVariant::Invalid);
+    return m_settings->value(setting, QVariant(QVariant::Invalid));
 }
 
 /*!
@@ -208,7 +229,7 @@ void ApplicationSettings::handleProperty(const QQmlProperty& qmlProperty, bool o
     //Don't persist class properties (only user defined ones)
     if(m_existingProperties->contains(qmlProperty.name())) return;
 
-    QVariant value = m_settings->value(qmlProperty.name(), QVariant(QVariant::Invalid));
+    QVariant v = value(qmlProperty.name());
 
     // Add notification handler
     QmlPropertyWrapper* wrapper = new QmlPropertyWrapper(qmlProperty);
@@ -219,9 +240,9 @@ void ApplicationSettings::handleProperty(const QQmlProperty& qmlProperty, bool o
                 SLOT(qmlPropertyLookup(QmlPropertyWrapper*)));
     }
 
-    if(value.isValid() && overwrite) {
+    if(v.isValid() && overwrite) {
         // We already have a value, so prefer settings over default
-        qmlProperty.write(value);
+        qmlProperty.write(v);
         emit settingsPropertyUpdated(qmlProperty.name());
     } else {
         // Populate settings with value

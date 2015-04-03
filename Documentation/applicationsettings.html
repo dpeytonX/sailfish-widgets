@@ -38,6 +38,8 @@
 <tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#fileName">fileName</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#setApplicationName">setApplicationName</a></b>(QString<i> appName</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#setFileName">setFileName</a></b>(QString<i> fileName</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSettings * </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#settings">settings</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVariant </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#value">value</a></b>(const QString &amp;<i> setting</i>)</td></tr>
 </table>
 <a name="public-slots"></a>
 <h2>Public Slots</h2>
@@ -129,6 +131,11 @@
 <h3 class="fn"><a name="setTarget"></a><span class="type">void</span> ApplicationSettings::<span class="name">setTarget</span>(const <span class="type">QQmlProperty</span> &amp;<i> qmlProperty</i>)<tt> [slot]</tt></h3>
 <p>Sets the interal value of <i>qmlProperty</i> to whatever is stored in the settings file. If nothing is stored, then the <i>qmlProperty</i>'s state will be unchanged and the value will instead be written into the settings file.</p>
 <!-- @@@setTarget -->
+<!-- $$$settings[overload1]$$$settings -->
+<h3 class="fn"><a name="settings"></a><span class="type">QSettings</span> * ApplicationSettings::<span class="name">settings</span>() const</h3>
+<p>Returns the <tt>QSettings</tt> backend of this object. This value will be <tt>nullptr</tt> if <tt>setFileName</tt> or <tt>setApplicationName</tt> have not been given valid values.</p>
+<p>You can ensure getting a non-null object by listening to the <tt>settingsInitialized</tt> signal.</p>
+<!-- @@@settings -->
 <!-- $$$settingsInitialized[overload1]$$$settingsInitialized -->
 <h3 class="fn"><a name="settingsInitialized"></a><span class="type">void</span> ApplicationSettings::<span class="name">settingsInitialized</span>()<tt> [signal]</tt></h3>
 <p>Emitted when a initialization of the settings file has been completed.</p>
@@ -142,6 +149,10 @@
 <h3 class="fn"><a name="updateProperty"></a><span class="type">void</span> ApplicationSettings::<span class="name">updateProperty</span>(const <span class="type">QString</span> &amp;<i> propertyName</i>, const <span class="type">QVariant</span> &amp;<i> value</i>)<tt> [slot]</tt></h3>
 <p>Updates the settings file with <i>propertyName</i> and <i>value</i>.</p>
 <!-- @@@updateProperty -->
+<!-- $$$value[overload1]$$$valueconstQString& -->
+<h3 class="fn"><a name="value"></a><span class="type">QVariant</span> ApplicationSettings::<span class="name">value</span>(const <span class="type">QString</span> &amp;<i> setting</i>)</h3>
+<p>Returns the QVariant setting value of the configuration at <i>setting</i>. Or <tt>QVariant::Invalid</tt> if unretrievable.</p>
+<!-- @@@value -->
 </div>
 </body>
 </html>
