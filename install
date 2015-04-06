@@ -18,13 +18,11 @@ rm -fr $TARGET_DIR
 
 #make target directories
 mkdir -p $DEPLOY_DIR
-mkdir -p $DEPLOY_DIR/$ARMV
-mkdir -p $DEPLOY_DIR/$i486
+mkdir -p $DEPLOY_DIR{$ARMV,$i486}
 mkdir -p $RELEASE_DIR
 mkdir -p $INCLUDE_DIR
 #copy qml files
-cp -r $QML_DIR $DEPLOY_DIR/$ARMV
-cp -r $QML_DIR $DEPLOY_DIR/$i486
+cp -r $QML_DIR $DEPLOY_DIR/{$ARMV,$i486}
 
 TARGET_ARMV=$DEPLOY_DIR/$ARMV/$QML_DIR
 TARGET_i486=$DEPLOY_DIR/$i486/$QML_DIR
@@ -41,9 +39,7 @@ cp $BUILD_DIR/database/$ARMV/*.so $TARGET_ARMV/Database/
 cp $BUILD_DIR/database/$i486/*.so $TARGET_i486/Database/
 
 #copy include headers
-cp applicationsettings/*.h $INCLUDE_DIR
-cp filemanagement/*.h $INCLUDE_DIR
-cp database/*.h $INCLUDE_DIR
+cp {applicationsettings,filemanagement,database}/*.h $INCLUDE_DIR
 
 #documentation
 qdoc3 *.qdocconf
