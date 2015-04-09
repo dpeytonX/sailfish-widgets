@@ -44,7 +44,7 @@ It is best to configure your project settings to switch the SailfishWidgets sour
 You can do this by adding a custom build step which will copy the appropriate Sailfish release directory into a common folder <em>harbour/your-app</em> so that you can test easily. It is ok to do a straight <em>cp -r</em> because the qml sources are the same, only the library (.so) file will be overwritten; so none of your QML import paths will change.
 
 <strong>Note:</strong> If you decide to go this route, remember to rename the qmldir module path by running the command in step 2 above. (Optionally, you can automate this process as well using a custom build setting.)</strong>
-<img src="build_process.png" />
+<img src="images/build_process.png" />
 
 <h3>Update your spec file</h3>
 The RPM tool will put the native library into the provides section and this is strictly disallowed according to the Harbour Store policies.
@@ -65,7 +65,7 @@ You can contribute in one of two ways:
 <li>Donate Bitcoins
 </ul>
 <p>
-<img src="bitcoinaddy.png" />
+<img src="images/bitcoinaddy.png" />
 <p>
 <code>1PFqgHeGrtXLYvMge2mTT1FohKuuoKmUN5</code>
 
