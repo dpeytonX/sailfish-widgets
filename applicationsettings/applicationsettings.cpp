@@ -1,7 +1,7 @@
 /***************************************************************************
 ** This file is part of SailfishWidgets
 **
-** Copyright (c) 2014 Dametrious Peyton
+** Copyright (c) 2014-2015 Dametrious Peyton
 **
 ** $QT_BEGIN_LICENSE:GPLV3$
 ** SailfishWidgets is free software: you can redistribute it and/or modify
@@ -103,6 +103,32 @@ ApplicationSettings::ApplicationSettings(QQuickItem *parent) : QQuickItem(parent
     }
     s_allSettings.append(this);
 }
+
+/*!
+ \fn ApplicationSettings::ApplicationSettings(const QString& appName, const QString& fileName, QQuickItem *parent)
+ Constructs a new \l {ApplicationSettings} with the given \c QQuickItem \a parent and initializes
+ the application name and settings file using \a appName and \a fileName, respectively.
+ */
+ApplicationSettings::ApplicationSettings(const QString& appName, const QString& fileName, QQuickItem *parent) : QQuickItem(parent),
+    m_disposed(false),
+    m_initialized(false),
+    m_pending(new QMap<QString, QVariant>()),
+    m_userProperties(new QList<QmlPropertyWrapper*>()),
+    m_settings(0),
+    m_existingProperties(new QStringList())
+{
+    const QMetaObject* myMetaObj = metaObject();
+    for(int i = 0; i < myMetaObj->propertyCount();i++) {
+        QMetaProperty property = myMetaObj->property(i);
+        //Build up a list of pre-existing properties (hackish)
+        m_existingProperties->append(property.name());
+    }
+    s_allSettings.append(this);
+
+    setApplicationName(appName);
+    setFileName(fileName);
+}
+
 /*!
  \fn ApplicationSettings::~ApplicationSettings()
  */
@@ -142,10 +168,10 @@ QString ApplicationSettings::applicationName() const {
 }
 
 /*!
-  \fn void ApplicationSettings::setApplicationName(QString appName)
+  \fn void ApplicationSettings::setApplicationName(const QString& appName)
   Sets the application's name to \a appName.
  */
-void ApplicationSettings::setApplicationName(QString appName) {
+void ApplicationSettings::setApplicationName(const QString& appName) {
     m_applicationName = appName;
     emit applicationNameChanged();
     isSettingsValid();
@@ -173,10 +199,10 @@ QSettings* ApplicationSettings::settings() const {
 }
 
 /*!
-  \fn void ApplicationSettings::setFileName(QString fileName)
+  \fn vvoid ApplicationSettings::setFileName(const QString& fileName)
   Sets the setting file's name to \a fileName.
  */
-void ApplicationSettings::setFileName(QString fileName) {
+void ApplicationSettings::setFileName(const QString& fileName) {
     m_fileName = fileName;
     emit fileNameChanged();
     isSettingsValid();
@@ -189,6 +215,14 @@ void ApplicationSettings::setFileName(QString fileName) {
 QVariant ApplicationSettings::value(const QString& setting) {
     if(m_settings == 0) return QVariant(QVariant::Invalid);
     return m_settings->value(setting, QVariant(QVariant::Invalid));
+}
+
+/*!
+  \fn bool ApplicationSettings::isValid(const QString& property)
+  Returns true if \a property is a valid setting. (Not equal to \c QVariant::Invalid).
+ */
+bool ApplicationSettings::isValid(const QString& property) {
+    return value(property) != QVariant::Invalid;
 }
 
 /*!
