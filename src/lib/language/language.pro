@@ -11,13 +11,15 @@ uri = SailfishWidgets.Language
 # Input
 SOURCES += \
     language_plugin.cpp \
-    #applicationsettings.cpp \
-    locale.cpp
+    localeitem.cpp \
+    defaultlocale.cpp \
+    installedlocales.h
 
 HEADERS += \
     language_plugin.h \
-    #applicationsettings.h \
-    locale.h
+    localeitem.h \
+    defaultlocale.h \
+    installedlocales.h
 
 OTHER_FILES = qmldir
 

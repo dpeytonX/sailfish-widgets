@@ -21,6 +21,8 @@
 **************************************************************************/
 #include "defaultlocale.h"
 
+#include <QString>
+
 /*!
    \class DefaultLocale
    \since 5.2
@@ -36,13 +38,13 @@
   Back to \l {Sailfish Widgets}
  */
 
-DefaultLocale::APPLICATION_LOCALE("app");
+const char* DefaultLocale::APPLICATION_LOCALE("app");
 
 /*!
  \fn DefaultLocale::DefaultLocale(QObject* parent)
  Constructs a new \l {DefaultLocale} using a \c QObject \a parent.
  */
-DefaultLocale::DefaultLocale(QObject* parent) : Locale(parent, APPLICATION_LOCALE) {
+DefaultLocale::DefaultLocale(QQuickItem* parent) : LocaleItem(APPLICATION_LOCALE, parent) {
 }
 
 /*!
@@ -63,10 +65,10 @@ void DefaultLocale::setApplicationDefaultText(const QString& applicationDefaultT
 }
 
 /*!
- \fn QString DefaultLocale::applicationLocale() const
+ \fn QString DefaultLocale::applicationLocale()
  Returns the static constant that represents the locale string for the default application's locale.
  */
-QString DefaultLocale::applicationLocale() const {
+QString DefaultLocale::applicationLocale() {
     return APPLICATION_LOCALE;
 }
 

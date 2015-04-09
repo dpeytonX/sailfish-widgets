@@ -19,16 +19,16 @@
 ** $QT_END_LICENSE$
 **
 **************************************************************************/
-#include "locale.h"
+#include "localeitem.h"
 
 
 #include <QLocale>
 #include <QString>
 
 /*!
-   \class Locale
+   \class LocaleItem
    \since 5.2
-   \brief The Locale class
+   \brief The LocaleItem class
 
    \inmodule Language
 
@@ -42,41 +42,41 @@
  */
 
 /*!
- \fn Locale::Locale(QQuickItem *parent)
- Constructs a new \l {Locale} using a \c QObject \a parent.
+ \fn LocaleItem::LocaleItem(QQuickItem *parent)
+ Constructs a new \l {LocaleItem} using a \c QObject \a parent.
  */
-Locale::Locale(QQuickItem *parent) :
+LocaleItem::LocaleItem(QQuickItem *parent) :
     QQuickItem(parent), m_locale("")
 {
 }
 /*!
- \fn Locale::Locale(const QString& locale, QQuickItem *parent)
- Constructs a new \l {Locale} using a \a locale string and a \c QObject \a parent.
+ \fn LocaleItem::LocaleItem(const QString& locale, QQuickItem *parent)
+ Constructs a new \l {LocaleItem} using a \a locale string and a \c QObject \a parent.
  */
-Locale::Locale(const QString& locale, QQuickItem *parent) : QQuickItem(parent), m_locale(locale) {}
+LocaleItem::LocaleItem(const QString& locale, QQuickItem *parent) : QQuickItem(parent), m_locale(locale) {}
 
 /*!
- \fn QString Locale::locale()
+ \fn QString LocaleItem::locale()
  Returns the locale.
  */
-QString Locale::locale() const {
+QString LocaleItem::locale() const {
     return m_locale;
 }
 
 /*!
- \fn void Locale::setLocale(const QString& locale)
+ \fn void LocaleItem::setLocale(const QString& locale)
  Sets the internal locale to \a locale.
  */
-void Locale::setLocale(const QString& locale) {
+void LocaleItem::setLocale(const QString& locale) {
     m_locale = locale;
     emit localeChanged();
 }
 
 /*!
- \fn QString Locale::pretty() const
+ \fn QString LocaleItem::pretty() const
  Returns the locale represented in a user-friendly format with country and language translated into the native language.
  */
-QString Locale::pretty() const {
+QString LocaleItem::pretty() const {
     QString lang(language());
     QString ctry(country());
     if(ctry.isEmpty()) {
@@ -86,50 +86,50 @@ QString Locale::pretty() const {
 }
 
 /*!
- \fn QString Locale::language() const
+ \fn QString LocaleItem::language() const
  Returns the language of the locale in its native language.
  */
-QString Locale::language() const {
+QString LocaleItem::language() const {
     return QLocale(m_locale).nativeLanguageName();
 }
 
 /*!
- \fn QString Locale::country() const
+ \fn QString LocaleItem::country() const
  Returns the country of the locale in the native language.
  */
-QString Locale::country() const {
+QString LocaleItem::country() const {
     return QLocale(m_locale).nativeCountryName();
 }
 
 /*!
- \fn friend bool Locale::operator==(const Locale& lhs, const Locale& rhs)
+ \fn friend bool LocaleItem::operator==(const Locale& lhs, const Locale& rhs)
  Friend function that compares \a lhs and \c rhs.
 
  Returns true if the \c {Locale} objects match.
  */
 
 /*!
- \fn void Locale::localeChanged()
+ \fn void LocaleItem::localeChanged()
  Emitted when the locale string has changed.
  */
 
 /*!
-  \property Locale::language
+  \property LocaleItem::language
   The locale's language translated in the locale's native language.
   */
 
 /*!
-  \property Locale::country
+  \property LocaleItem::country
   The locale's country translated in the locale's native language.
   */
 
 /*!
-  \property Locale::pretty
+  \property LocaleItem::pretty
   The locale represented in a user-friendly format with country and language translated into the native language.
   */
 
 /*!
-  \property Locale::locale
+  \property LocaleItem::locale
   The locale string
   */
 
@@ -139,6 +139,6 @@ QString Locale::country() const {
 
  Equality compares the internal locale string using \c QString equality.
  */
-bool operator==(const Locale& lhs, const Locale& rhs) {
+bool operator==(const LocaleItem& lhs, const LocaleItem& rhs) {
     return lhs.m_locale == rhs.m_locale;
 }

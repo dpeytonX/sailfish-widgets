@@ -24,10 +24,7 @@
 
 #include <QDir>
 #include <QList>
-#include <QQmlListProperty>
 #include <QStringList>
-
-#include "locale.h"
 
 #include <sailfishapp.h>
 

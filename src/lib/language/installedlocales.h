@@ -24,30 +24,32 @@
 #define INSTALLEDLOCALES_H
 
 #include <QObject>
+#include <QQmlListProperty>
 #include <QLocale>
 
-class QQmlListProperty;
+#include "localeitem.h"
+
+template <typename T>
 class QList;
-class Locale;
 
 class InstalledLocales : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QQmlListProperty<Locale> locales READ locales NOTIFY localesChanged)
+    Q_PROPERTY(QQmlListProperty<LocaleItem> locales READ locales NOTIFY localesChanged)
     Q_PROPERTY(bool includeAppDefault READ includeAppDefault WRITE setIncludeAppDefault)
 public:
     InstalledLocales(QObject* parent=0);
-    Locale* localeAt(QQmlListProperty<Locale> *property, int index);
-    int localeCount(QQmlListProperty<Locale> *property);
+    LocaleItem* localeAt(QQmlListProperty<LocaleItem> *property, int index);
+    int localeCount(QQmlListProperty<LocaleItem> *property);
     bool includeAppDefault() const;
     void setIncludeAppDefault(bool includeAppDefault);
-    QQmlListProperty<Locale> locales() const;
+    QQmlListProperty<LocaleItem> locales() const;
 
 signals:
     void localesChanged();
 
 private:
-    QList<Locale> m_availableLocales;
+    QList<LocaleItem> m_availableLocales;
     bool m_includeAppDefault;
 };
 

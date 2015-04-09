@@ -22,20 +22,21 @@
 #ifndef DEFAULTLOCALE_H
 #define DEFAULTLOCALE_H
 
-#include <QObject>
-#include "locale.h"
+#include "localeitem.h"
 
+class QQuickItem;
 class QString;
 
-class DefaultLocale: public Locale {
+class DefaultLocale: public LocaleItem {
     Q_OBJECT
     Q_PROPERTY(QString applicationDefaultText READ pretty WRITE setApplicationDefaultText)
     Q_PROPERTY(QString DEFAULT_APPLICATION_LOCALE READ applicationLocale CONSTANT)
 public:
-    explicit DefaultLocale(QObject* parent=0);
+    explicit DefaultLocale(QQuickItem* parent=0);
     void setApplicationDefaultText(const QString& applicationDefaultText);
-    static QString applicationLocale() const;
-    static const QString APPLICATION_LOCALE;
+    QString pretty() const;
+    static QString applicationLocale();
+    static const char* APPLICATION_LOCALE;
 
 signals:
     void applicationDefaultTextChanged();

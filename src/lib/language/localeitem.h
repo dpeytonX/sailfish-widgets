@@ -22,29 +22,28 @@
 #ifndef SWL_LOCALE_H
 #define SWL_LOCALE_H
 
-#include <QCoreApplication>
 #include <QQuickItem>
 
 class QLocale;
 class QString;
 
-class Locale : public QQuickItem
+class LocaleItem : public QQuickItem
 {
     Q_OBJECT
-    Q_DISABLE_COPY(Locale)
+    Q_DISABLE_COPY(LocaleItem)
     Q_PROPERTY(QString language READ language)
     Q_PROPERTY(QString country READ country)
     Q_PROPERTY(QString pretty READ pretty)
     Q_PROPERTY(QString locale READ locale WRITE setLocale NOTIFY localeChanged)
 public:
-    Locale(QQuickItem *parent = 0);
-    Locale(const QString& locale, QQuickItem *parent=0);
+    LocaleItem(QQuickItem *parent = 0);
+    LocaleItem(const QString& locale, QQuickItem *parent=0);
     QString locale() const;
     void setLocale(const QString& locale);
     virtual QString pretty() const;
     QString language() const;
     QString country() const;
-    friend bool operator==(const Locale& lhs, const Locale& rhs);
+    friend bool operator==(const LocaleItem& lhs, const LocaleItem& rhs);
 
 signals:
     void localeChanged();
