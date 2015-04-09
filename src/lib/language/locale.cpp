@@ -21,6 +21,10 @@
 **************************************************************************/
 #include "locale.h"
 
+
+#include <QLocale>
+#include <QString>
+
 /*!
    \class Locale
    \since 5.2
@@ -38,18 +42,18 @@
  */
 
 /*!
- \fn Locale::Locale(QObject *parent)
+ \fn Locale::Locale(QQuickItem *parent)
  Constructs a new \l {Locale} using a \c QObject \a parent.
  */
-Locale::Locale(QObject *parent) :
-    QObject(parent), locale("")
+Locale::Locale(QQuickItem *parent) :
+    QQuickItem(parent), m_locale("")
 {
 }
 /*!
- \fn Locale::Locale(const QString& locale, QObject *parent)
+ \fn Locale::Locale(const QString& locale, QQuickItem *parent)
  Constructs a new \l {Locale} using a \a locale string and a \c QObject \a parent.
  */
-Locale::Locale(const QString& locale, QObject *parent) : QObject(parent), m_locale(locale) {}
+Locale::Locale(const QString& locale, QQuickItem *parent) : QQuickItem(parent), m_locale(locale) {}
 
 /*!
  \fn QString Locale::locale()
@@ -90,7 +94,7 @@ QString Locale::language() const {
 }
 
 /*!
- \fn QString Locale::country(const QString& locale) const
+ \fn QString Locale::country() const
  Returns the country of the locale in the native language.
  */
 QString Locale::country() const {
@@ -136,5 +140,5 @@ QString Locale::country() const {
  Equality compares the internal locale string using \c QString equality.
  */
 bool operator==(const Locale& lhs, const Locale& rhs) {
-    return lhs.locale == rhs.locale;
+    return lhs.m_locale == rhs.m_locale;
 }

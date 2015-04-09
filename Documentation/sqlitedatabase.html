@@ -112,7 +112,7 @@
 <!-- @@@commit -->
 <!-- $$$create[overload1]$$$createQString -->
 <h3 class="fn"><a name="create"></a><span class="type">bool</span> SQLiteDatabase::<span class="name">create</span>(<span class="type">QString</span><i> filePath</i>)</h3>
-<p>Creates a new <a href="sqlitedatabase.html">SQLiteDatabase</a> at <i>filePath</i> and opens it.</p>
+<p>Creates a new SQLiteDatabase at <i>filePath</i> and opens it.</p>
 <p>Returns true if the database was succesfully opened.</p>
 <p><b>See also </b><a href="sqlitedatabase.html#open">open</a>().</p>
 <!-- @@@create -->
@@ -176,9 +176,9 @@
 <p>Returns true if successful.</p>
 <!-- @@@prepare -->
 <!-- $$$query[overload1]$$$query -->
-<h3 class="fn"><a name="queryx"></a><span class="type"><a href="query.html">Query</a></span> * SQLiteDatabase::<span class="name">query</span>()</h3>
-<p>This method will return the last <a href="query.html">Query</a> object that was created using the <tt>exec()</tt> or <tt>prepare()</tt> methods.</p>
-<p><b>Warning:</b> <a href="query.html">Query</a> objects will be deleted whenever you call a <tt>exec()</tt> or <tt>prepare()</tt>.</p>
+<h3 class="fn"><a name="queryx"></a><span class="type">Query</span> * SQLiteDatabase::<span class="name">query</span>()</h3>
+<p>This method will return the last Query object that was created using the <tt>exec()</tt> or <tt>prepare()</tt> methods.</p>
+<p><b>Warning:</b> Query objects will be deleted whenever you call a <tt>exec()</tt> or <tt>prepare()</tt>.</p>
 <p>Therefore, you must not use the object returned from this method after executing a new SQL statement.</p>
 <!-- @@@query -->
 <!-- $$$queryChanged[overload1]$$$queryChanged -->

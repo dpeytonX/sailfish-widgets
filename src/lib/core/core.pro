@@ -4,6 +4,8 @@ include($$PWD/../language/language.pro)
 QT       -= gui
 CONFIG += sailfishapp
 
+QMAKE_CXXFLAGS += "-std=c++0x"
+
 TARGET = core
 TEMPLATE = lib
 

@@ -65,6 +65,8 @@ public:
 
     void setFileName(const QString& fileName);
 
+    bool isValid(const QString& property);
+
     Q_INVOKABLE QVariant value(const QString& setting);
 
 public slots:

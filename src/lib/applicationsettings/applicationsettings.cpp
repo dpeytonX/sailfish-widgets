@@ -199,7 +199,7 @@ QSettings* ApplicationSettings::settings() const {
 }
 
 /*!
-  \fn vvoid ApplicationSettings::setFileName(const QString& fileName)
+  \fn void ApplicationSettings::setFileName(const QString& fileName)
   Sets the setting file's name to \a fileName.
  */
 void ApplicationSettings::setFileName(const QString& fileName) {

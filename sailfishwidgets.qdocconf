@@ -10,8 +10,8 @@ generateindex = true
 outputformats = HTML
 
 imagedirs = images
-sourcedirs = SailfishWidgets applicationsettings filemanagement database
-headerdirs = applicationsettings filemanagement database
+sourcedirs = src/lib/* src/qml/SailfishWidgets
+headerdirs = src/lib/*
 sources.fileextensions = "*.cpp *.qml *.qdoc *.js *.h"
 headers.fileextensions = "*.h"
 

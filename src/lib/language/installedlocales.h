@@ -24,6 +24,7 @@
 #define INSTALLEDLOCALES_H
 
 #include <QObject>
+#include <QLocale>
 
 class QQmlListProperty;
 class QList;

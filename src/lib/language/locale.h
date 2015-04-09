@@ -19,31 +19,31 @@
 ** $QT_END_LICENSE$
 **
 **************************************************************************/
-#ifndef LOCALE_H
-#define LOCALE_H
+#ifndef SWL_LOCALE_H
+#define SWL_LOCALE_H
 
-#include <QObject>
-#include <QLocale>
-#include <QString>
+#include <QCoreApplication>
+#include <QQuickItem>
 
-/*!
- * Represents a locale in a UI friendly manner
- */
-class Locale : public QObject
+class QLocale;
+class QString;
+
+class Locale : public QQuickItem
 {
     Q_OBJECT
+    Q_DISABLE_COPY(Locale)
     Q_PROPERTY(QString language READ language)
     Q_PROPERTY(QString country READ country)
     Q_PROPERTY(QString pretty READ pretty)
     Q_PROPERTY(QString locale READ locale WRITE setLocale NOTIFY localeChanged)
 public:
-    explicit Locale(QObject *parent = 0);
-    Locale(const QString& locale, QObject *parent=0);
+    Locale(QQuickItem *parent = 0);
+    Locale(const QString& locale, QQuickItem *parent=0);
     QString locale() const;
     void setLocale(const QString& locale);
     virtual QString pretty() const;
     QString language() const;
-    QString country();
+    QString country() const;
     friend bool operator==(const Locale& lhs, const Locale& rhs);
 
 signals:
@@ -53,4 +53,4 @@ protected:
     QString m_locale;
 };
 
-#endif // LOCALE_H
+#endif // SWL_LOCALE_H
