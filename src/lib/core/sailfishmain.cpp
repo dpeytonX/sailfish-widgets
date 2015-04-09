@@ -22,12 +22,9 @@
 
 #include "sailfishmain.h"
 
-#include <QCoreApplication>
-#include <QString>
+#include <QGuiApplication>
 #include <QTranslator>
-
 #include <applicationsettings.h>
-
 #include <sailfishapp.h>
 
 /*!
@@ -53,8 +50,8 @@
 int SailfishMain::main(int argc, char *argv[], const QString& appName, const QString& settingsFile, const QString& localeSetting) {
     if(!appName.isEmpty() && !settingsFile.isEmpty()) {
         ApplicationSettings settings(appName, settingsFile);
-        installLanguage(appName, settings.isValid(localeSetting) ? settings.value(localeSetting) : "",
-                                          SailfishApp::application(argc, argv));
+        installLanguage(appName, settings.isValid(localeSetting) ? settings.value(localeSetting).toString() : "",
+                                          qobject_cast<QCoreApplication*>(SailfishApp::application(argc, argv)));
     }
 
     return SailfishApp::main(argc, argv);
@@ -68,9 +65,10 @@ int SailfishMain::main(int argc, char *argv[], const QString& appName, const QSt
  Returns true if successful.
  */
 bool SailfishMain::installLanguage(const QString& appName, const QString& locale, QCoreApplication* app) {
-    if(QTranslator().load(appName + (locale.isEmpty() ? ".qm" : ("-" + locale + ".qm")),
+    QTranslator translator;
+    if(translator.load(appName + (locale.isEmpty() ? ".qm" : ("-" + locale + ".qm")),
                           SailfishApp::pathTo(QString("translations")).toLocalFile())) {
-        return app->installTranslator(&m_translator);
+        return app->installTranslator(&translator);
     }
     return false;
 }
