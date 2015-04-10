@@ -45,7 +45,7 @@ const char* DefaultLocale::APPLICATION_LOCALE("app");
  \fn DefaultLocale::DefaultLocale(QQuickItem* parent)
  Constructs a new \l {DefaultLocale} using a \c QObject \a parent.
  */
-DefaultLocale::DefaultLocale(QQuickItem* parent) : LocaleItem(APPLICATION_LOCALE, parent) {
+DefaultLocale::DefaultLocale(QQuickItem* parent) : LocaleItem(QString(APPLICATION_LOCALE), parent) {
 }
 
 /*!

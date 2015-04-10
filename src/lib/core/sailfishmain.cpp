@@ -22,6 +22,7 @@
 
 #include "sailfishmain.h"
 
+#include <QDebug>
 #include <QGuiApplication>
 #include <QTranslator>
 #include <applicationsettings.h>
@@ -65,6 +66,10 @@
 int SailfishMain::main(int argc, char *argv[], const QString& appName, const QString& settingsFile, const QString& localeSetting) {
     if(!appName.isEmpty() && !settingsFile.isEmpty()) {
         ApplicationSettings settings(appName, settingsFile);
+        qDebug() << settings.isValid(localeSetting);
+        qDebug() << settings.applicationName();
+        qDebug() << settings.fileName();
+        settings.refresh();
         installLanguage(appName, settings.isValid(localeSetting) ? settings.value(localeSetting).toString() : "",
                                           qobject_cast<QCoreApplication*>(SailfishApp::application(argc, argv)));
     }
@@ -81,9 +86,15 @@ int SailfishMain::main(int argc, char *argv[], const QString& appName, const QSt
  */
 bool SailfishMain::installLanguage(const QString& appName, const QString& locale, QCoreApplication* app) {
     QTranslator translator;
-    if(translator.load(appName + (locale.isEmpty() ? ".qm" : ("-" + locale + ".qm")),
-                          SailfishApp::pathTo(QString("translations")).toLocalFile())) {
+    //TODO: link to liblanguage for default locale
+    QString qm = appName + (locale.isEmpty() || locale == "app" ? ".qm" : ("-" + locale + ".qm"));
+    QString path = SailfishApp::pathTo(QString("translations")).toLocalFile();
+    qDebug() << qm;
+    qDebug() << path;
+    if(translator.load(qm, path)) {
         return app->installTranslator(&translator);
     }
+    qDebug() << "didn't load translator file " << qm;
+    qDebug() << "loaded default locale: " << translator.load(appName + ".qm", path);
     return false;
 }

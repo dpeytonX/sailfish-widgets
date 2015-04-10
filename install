@@ -16,8 +16,8 @@ VERSION=1_3_4
 ARMV=armv
 i486=i486
 
-TARGET_ARMV=$DEPLOY_DIR/$ARMV
-TARGET_i486=$DEPLOY_DIR/$i486
+TARGET_ARMV=$DEPLOY_DIR/$ARMV/$PROJECT_NAME
+TARGET_i486=$DEPLOY_DIR/$i486/$PROJECT_NAME
 
 rm -fr $TARGET_DIR
 
@@ -32,23 +32,23 @@ qdoc3 $CURDIR/*.qdocconf
 cp -r $DOC_DIR $DEPLOY_DIR
 
 #copy qml files
-cp -r $QML_DIR/* $DEPLOY_DIR/armv
-cp -r $QML_DIR/* $DEPLOY_DIR/i486
+cp -r $QML_DIR/* $TARGET_ARMV/
+cp -r $QML_DIR/* $TARGET_i486/
 
 #compile
 ./make
 
 #copy built plugins
-cp $BUILD_DIR/applicationsettings/$ARMV/*.so $TARGET_ARMV/Settings/
-cp $BUILD_DIR/applicationsettings/$i486/*.so $TARGET_i486/Settings/
-cp $BUILD_DIR/filemanagement/$ARMV/*.so $TARGET_ARMV/FileManagement/
-cp $BUILD_DIR/filemanagement/$i486/*.so $TARGET_i486/FileManagement/
-cp $BUILD_DIR/database/$ARMV/*.so $TARGET_ARMV/Database/
-cp $BUILD_DIR/database/$i486/*.so $TARGET_i486/Database/
-cp $BUILD_DIR/language/$ARMV/*.so $TARGET_ARMV/Language/
-cp $BUILD_DIR/language/$i486/*.so $TARGET_i486/Language/
-cp $BUILD_DIR/core/$ARMV/*.so $TARGET_ARMV/Core/
-cp $BUILD_DIR/core/$i486/*.so $TARGET_i486/Core/
+cp $BUILD_DIR/applicationsettings/$ARMV/*\.so* $TARGET_ARMV/Settings/
+cp $BUILD_DIR/applicationsettings/$i486/*\.so* $TARGET_i486/Settings/
+cp $BUILD_DIR/filemanagement/$ARMV/*\.so* $TARGET_ARMV/FileManagement/
+cp $BUILD_DIR/filemanagement/$i486/*\.so* $TARGET_i486/FileManagement/
+cp $BUILD_DIR/database/$ARMV/*\.so* $TARGET_ARMV/Database/
+cp $BUILD_DIR/database/$i486/*\.so* $TARGET_i486/Database/
+cp $BUILD_DIR/language/$ARMV/*\.so* $TARGET_ARMV/Language/
+cp $BUILD_DIR/language/$i486/*\.so* $TARGET_i486/Language/
+cp $BUILD_DIR/core/$ARMV/*\.so* $TARGET_ARMV/Core/
+cp $BUILD_DIR/core/$ARMV/*\.so* $TARGET_ARMV/Core/
 
 #copy include headers
 cp $LIB_DIR/{applicationsettings,filemanagement,database,language,core}/*.h $INCLUDE_DIR

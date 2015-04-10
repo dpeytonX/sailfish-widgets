@@ -32,6 +32,7 @@
 <h2>Properties</h2>
 <ul>
 <li class="fn"><b><a href="installedlocales.html#appName-prop">appName</a></b> : QString</li>
+<li class="fn"><b><a href="installedlocales.html#applicationDefaultText-prop">applicationDefaultText</a></b> : QString</li>
 <li class="fn"><b><a href="installedlocales.html#includeAppDefault-prop">includeAppDefault</a></b> : bool</li>
 <li class="fn"><b><a href="installedlocales.html#locales-prop">locales</a></b> : const QQmlListProperty&lt;LocaleItem&gt;</li>
 </ul>
@@ -40,15 +41,19 @@
 <table class="alignedsummary">
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="installedlocales.html#InstalledLocales">InstalledLocales</a></b>(QQuickItem *<i> parent</i> = 0)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="installedlocales.html#appName-prop">appName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="installedlocales.html#applicationDefaultText-prop">applicationDefaultText</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="installedlocales.html#findLocale">findLocale</a></b>(const QString &amp;<i> locale</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="installedlocales.html#includeAppDefault-prop">includeAppDefault</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QQmlListProperty&lt;LocaleItem&gt; </td><td class="memItemRight bottomAlign"><b><a href="installedlocales.html#locales-prop">locales</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="installedlocales.html#appName-prop">setAppName</a></b>(const QString &amp;<i> appName</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="installedlocales.html#applicationDefaultText-prop">setApplicationDefaultText</a></b>(const QString &amp;<i> applicationDefaultText</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="installedlocales.html#includeAppDefault-prop">setIncludeAppDefault</a></b>(bool<i> includeAppDefault</i>)</td></tr>
 </table>
 <a name="signals"></a>
 <h2>Signals</h2>
 <table class="alignedsummary">
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="installedlocales.html#appName-prop">appNameChanged</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="installedlocales.html#applicationDefaultText-prop">applicationDefaultTextChanged</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="installedlocales.html#locales-prop">localesChanged</a></b>()</td></tr>
 </table>
 <a name="details"></a>
@@ -77,6 +82,19 @@
 <tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>appNameChanged</b></span>()</td></tr>
 </table>
 <!-- @@@appName -->
+<!-- $$$applicationDefaultText-prop$$$applicationDefaultText$$$setApplicationDefaultTextconstQString&$$$applicationDefaultTextChanged -->
+<h3 class="fn"><a name="applicationDefaultText-prop"></a><span class="name">applicationDefaultText</span> : <span class="type">QString</span></h3>
+<p>The text provided by your application which will appear when the default application locale is displayed.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>applicationDefaultText</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setApplicationDefaultText</b></span>(const QString &amp;<i> applicationDefaultText</i>)</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>applicationDefaultTextChanged</b></span>()</td></tr>
+</table>
+<!-- @@@applicationDefaultText -->
 <!-- $$$includeAppDefault-prop$$$includeAppDefault$$$setIncludeAppDefaultbool -->
 <h3 class="fn"><a name="includeAppDefault-prop"></a><span class="name">includeAppDefault</span> : <span class="type">bool</span></h3>
 <p>Whether the default locale is included in the locales list.</p>
@@ -105,6 +123,10 @@
 <h3 class="fn"><a name="InstalledLocales"></a>InstalledLocales::<span class="name">InstalledLocales</span>(<span class="type">QQuickItem</span> *<i> parent</i> = 0)</h3>
 <p>Constructs a new <a href="installedlocales.html">InstalledLocales</a> using a <tt>QQuickItem</tt> <i>parent</i></p>
 <!-- @@@InstalledLocales -->
+<!-- $$$findLocale[overload1]$$$findLocaleconstQString& -->
+<h3 class="fn"><a name="findLocale"></a><span class="type">int</span> InstalledLocales::<span class="name">findLocale</span>(const <span class="type">QString</span> &amp;<i> locale</i>)</h3>
+<p>Finds the <i>locale</i> and returns the index in the list. Returns -1 if the locale could not be found.</p>
+<!-- @@@findLocale -->
 </div>
 </body>
 </html>

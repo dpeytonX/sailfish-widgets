@@ -53,7 +53,7 @@
  Constructs a new \l {InstalledLocales} using a \c QQuickItem \a parent
  */
 InstalledLocales::InstalledLocales(QQuickItem *parent) : QQuickItem(parent),
-    m_availableLocales(QList<LocaleItem*>()), m_appName(""), m_includeAppDefault(true)  {
+    m_availableLocales(QList<LocaleItem*>()), m_appName(""), m_applicationDefaultText(""), m_includeAppDefault(true)  {
 }
 
 /*!
@@ -95,9 +95,45 @@ void InstalledLocales::setIncludeAppDefault(bool includeAppDefault) {
             break;
         }
     }
-    if(m_availableLocales.isEmpty())
-        m_availableLocales.insert(0, new DefaultLocale(this));
+    if(m_includeAppDefault) {
+        DefaultLocale* l = new DefaultLocale(this);
+        l->setApplicationDefaultText(m_applicationDefaultText);
+        m_availableLocales.insert(0, l);
+    }
     emit localesChanged();
+}
+
+/*!
+ \fn QString InstalledLocales::applicationDefaultText() const
+
+ Returns the application default text.
+ */
+QString InstalledLocales::applicationDefaultText() const {
+    return m_applicationDefaultText;
+}
+
+/*!
+ \fn void InstalledLocales::setApplicationDefaultText(const QString& applicationDefaultText)
+
+ Sets the \a applicationDefaultText.
+ */
+void InstalledLocales::setApplicationDefaultText(const QString& applicationDefaultText) {
+    m_applicationDefaultText = applicationDefaultText;
+    emit applicationDefaultTextChanged();
+}
+
+/*!
+ \fn int InstalledLocales::findLocale(const QString& locale)
+
+ Finds the \a locale and returns the index in the list. Returns -1 if the locale could not be found.
+ */
+int InstalledLocales::findLocale(const QString& locale) {
+    for(LocaleItem* l : m_availableLocales) {
+        if(l->locale() == locale) {
+            return m_availableLocales.indexOf(l);
+        }
+    }
+    return -1;
 }
 
 /*!
@@ -148,14 +184,21 @@ void InstalledLocales::setAppName(const QString& appName) {
 
 /*!
  \fn void InstalledLocales::localesChanged()
- Emitted when the \c the internal locales list has changed.
+ Emitted when the internal locales list has changed.
 
  This is only updated if the \c includeAppDefault variable is updated.
  */
 
 /*!
  \fn void InstalledLocales::appNameChanged()
- Emitted when the \c the application's name is changed.
+ Emitted when the application's name is changed.
+
+ This will also update the available locales list.
+ */
+
+/*!
+ \fn void InstalledLocales::applicationDefaultTextChanged()
+ Emitted when the application default text is changed.
 
  This will also update the available locales list.
  */
@@ -173,4 +216,9 @@ void InstalledLocales::setAppName(const QString& appName) {
 /*!
   \property InstalledLocales::appName
   The application's name.
+  */
+
+/*!
+  \property InstalledLocales::applicationDefaultText
+  The text provided by your application which will appear when the default application locale is displayed.
   */
