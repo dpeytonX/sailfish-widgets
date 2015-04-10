@@ -5,6 +5,8 @@ CONFIG += qt plugin
 
 QMAKE_CXXFLAGS += "-std=c++0x"
 
+INCLUDEPATH += /usr/include/sailfishapp
+
 TARGET = $$qtLibraryTarget($$TARGET)
 uri = SailfishWidgets.Language
 
@@ -13,7 +15,7 @@ SOURCES += \
     language_plugin.cpp \
     localeitem.cpp \
     defaultlocale.cpp \
-    installedlocales.h
+    installedlocales.cpp
 
 HEADERS += \
     language_plugin.h \

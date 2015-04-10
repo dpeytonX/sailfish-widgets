@@ -100,6 +100,9 @@ echo "Starting Build"
 for proj in ${PROJECTS[@]}; do
   for arch in ${ARCH[@]}; do
     echo "STARTING PROJECT: $proj $arch"
+    if [ $proj = 'core' ]; then
+      $("compile_$arch" applicationsettings)
+    fi
     $("compile_$arch" $proj)
   done
 done

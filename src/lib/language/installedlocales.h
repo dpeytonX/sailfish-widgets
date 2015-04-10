@@ -23,7 +23,7 @@
 #ifndef INSTALLEDLOCALES_H
 #define INSTALLEDLOCALES_H
 
-#include <QObject>
+#include <QQuickItem>
 #include <QQmlListProperty>
 #include <QLocale>
 
@@ -32,24 +32,30 @@
 template <typename T>
 class QList;
 
-class InstalledLocales : public QObject
+class InstalledLocales : public QQuickItem
 {
     Q_OBJECT
     Q_PROPERTY(QQmlListProperty<LocaleItem> locales READ locales NOTIFY localesChanged)
     Q_PROPERTY(bool includeAppDefault READ includeAppDefault WRITE setIncludeAppDefault)
+    Q_PROPERTY(QString appName READ appName WRITE setAppName NOTIFY appNameChanged)
 public:
-    InstalledLocales(QObject* parent=0);
-    LocaleItem* localeAt(QQmlListProperty<LocaleItem> *property, int index);
-    int localeCount(QQmlListProperty<LocaleItem> *property);
+    InstalledLocales(QQuickItem *parent=0);
     bool includeAppDefault() const;
     void setIncludeAppDefault(bool includeAppDefault);
-    QQmlListProperty<LocaleItem> locales() const;
+    QQmlListProperty<LocaleItem> locales();
+    QString appName() const;
+    void setAppName(const QString& appName);
+
+    static LocaleItem* localeAt(QQmlListProperty<LocaleItem> *property, int index);
+    static int localeCount(QQmlListProperty<LocaleItem> *property);
 
 signals:
     void localesChanged();
+    void appNameChanged();
 
 private:
-    QList<LocaleItem> m_availableLocales;
+    QList<LocaleItem*> m_availableLocales;
+    QString m_appName;
     bool m_includeAppDefault;
 };
 

@@ -26,13 +26,14 @@
 /*!
    \class DefaultLocale
    \since 5.2
+   \inherits LocaleItem
    \brief The DefaultLocale class
 
    \inmodule Language
 
   Applications usually have a default translation file which is not suffixed with a country/region specifier.
 
-  This special file is given the locale of APPLICATION_LOCALE and instead of corresponding to a specific language, it just represents
+  This special file is given the locale of \l {DEFAULT_APPLICATION_LOCALE} and instead of corresponding to a specific language, it just represents
   the default translation bundle if no others have been installed.
 
   Back to \l {Sailfish Widgets}
@@ -41,14 +42,14 @@
 const char* DefaultLocale::APPLICATION_LOCALE("app");
 
 /*!
- \fn DefaultLocale::DefaultLocale(QObject* parent)
+ \fn DefaultLocale::DefaultLocale(QQuickItem* parent)
  Constructs a new \l {DefaultLocale} using a \c QObject \a parent.
  */
 DefaultLocale::DefaultLocale(QQuickItem* parent) : LocaleItem(APPLICATION_LOCALE, parent) {
 }
 
 /*!
- \fn QString DefaultLocale::pretty() const
+ \reimp
  Returns whatever the applicationDefaultText has been set to.
  */
 QString DefaultLocale::pretty() const {
@@ -83,6 +84,6 @@ QString DefaultLocale::applicationLocale() {
   */
 
 /*!
-  \property DefaultLocale::applicationLocale
-  The static constant that represents the locale string for the default application's locale.
+  \property DefaultLocale::DEFAULT_APPLICATION_LOCALE
+  This is the \a qsTr string that you can use to represent the default application local. For example, "Application Default" in English or "アップリの規定" in Japanese.
   */

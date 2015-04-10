@@ -30,11 +30,12 @@ class QString;
 class LocaleItem : public QQuickItem
 {
     Q_OBJECT
-    Q_DISABLE_COPY(LocaleItem)
+
     Q_PROPERTY(QString language READ language)
     Q_PROPERTY(QString country READ country)
     Q_PROPERTY(QString pretty READ pretty)
     Q_PROPERTY(QString locale READ locale WRITE setLocale NOTIFY localeChanged)
+
 public:
     LocaleItem(QQuickItem *parent = 0);
     LocaleItem(const QString& locale, QQuickItem *parent=0);

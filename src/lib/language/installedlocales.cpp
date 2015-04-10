@@ -28,6 +28,8 @@
 
 #include <sailfishapp.h>
 
+#include "defaultlocale.h"
+
 /*!
    \class InstalledLocales
    \since 5.2
@@ -47,33 +49,25 @@
  */
 
 /*!
- \fn InstalledLocales::InstalledLocales(QObject *parent)
- Constructs a new \l {InstalledLocales}
+ \fn InstalledLocales::InstalledLocales(QQuickItem *parent)
+ Constructs a new \l {InstalledLocales} using a \c QQuickItem \a parent
  */
-InstalledLocales::InstalledLocales(QObject *parent) : QObject(parent),
-    m_availableLocales(), m_includeAppDefault(true) {
-
-    QDir dir(SailfishApp::pathTo(QString("translations")).toLocalFile());
-    QStringList qmlFiles = dir.entryList();
-    for(const QString& qmlFile : qmlFiles) {
-        int posQm = qmlFile.lastIndexOf(".qm");
-        if(app.size() >= qmlFile.size() || app.size() >= posQm || posQm == -1) continue;
-        m_availableLocales(qmlFile.mid(app.size() + 1, posQm - app.size() - 1));
-    }
+InstalledLocales::InstalledLocales(QQuickItem *parent) : QQuickItem(parent),
+    m_availableLocales(QList<LocaleItem*>()), m_appName(""), m_includeAppDefault(true)  {
 }
 
 /*!
  \internal
  */
-Locale* InstalledLocales::localeAt(QQmlListProperty<Locale> *property, int index) {
-    return &m_availableLocales[index];
+LocaleItem* InstalledLocales::localeAt(QQmlListProperty<LocaleItem> *property, int index) {
+    return (*((QList<LocaleItem*> *)property->data))[index];
 }
 
 /*!
  \internal
  */
-int InstalledLocales::localeCount(QQmlListProperty<Locale> *property) {
-    return m_availableLocales.size();
+int InstalledLocales::localeCount(QQmlListProperty<LocaleItem> *property) {
+    return (((QList<LocaleItem*> *)property->data))->size();
 }
 
 /*!
@@ -94,19 +88,20 @@ bool InstalledLocales::includeAppDefault() const {
 void InstalledLocales::setIncludeAppDefault(bool includeAppDefault) {
     m_includeAppDefault = includeAppDefault;
 
-    for(Locale l : m_availableLocales) {
-        if(l.locale() == DefaultLocale::APPLICATION_LOCALE) {
+    for(LocaleItem* l : m_availableLocales) {
+        if(l->locale() == DefaultLocale::APPLICATION_LOCALE) {
             m_availableLocales.removeOne(l);
+            l->deleteLater();
             break;
         }
     }
-    if(m_availableLocales)
-        m_availableLocales.insert(0, DefaultLocale(this));
+    if(m_availableLocales.isEmpty())
+        m_availableLocales.insert(0, new DefaultLocale(this));
     emit localesChanged();
 }
 
 /*!
- \fn QQmlListProperty<Locale> InstalledLocales::locales() const
+ \fn QQmlListProperty<Locale> InstalledLocales::locales()
  Returns the installed locales for your application.
 
  These are determined by the translation \c .qm files that are installed in the translations
@@ -114,8 +109,41 @@ void InstalledLocales::setIncludeAppDefault(bool includeAppDefault) {
 
  The non-localed translation (harbour-your_app.qm) is only included unless you set the includeAppDefault property to false.
  */
-QQmlListProperty<Locale> InstalledLocales::locales() const {
-    return QQmlListProperty(this, nullptr, localeCount, localeAt);
+QQmlListProperty<LocaleItem> InstalledLocales::locales() {
+    return QQmlListProperty<LocaleItem>(this, &m_availableLocales, &(InstalledLocales::localeCount), &(InstalledLocales::localeAt));
+}
+
+/*!
+ \fn QString InstalledLocales::appName() const
+ Returns the application name.
+ */
+QString InstalledLocales::appName() const {
+    return m_appName;
+}
+
+/*!
+ \fn void InstalledLocales::setAppName(const QString& appName)
+ Sets the application's name to \a appName .
+
+ You must set the application name in order for \l {InstalledLocales} to be able to find the appropriate translation units.
+ */
+void InstalledLocales::setAppName(const QString& appName) {
+    m_appName = appName;
+    emit appNameChanged();
+
+    for(LocaleItem* l : m_availableLocales) {
+        l->deleteLater();
+    }
+    m_availableLocales.clear();
+
+    QDir dir(SailfishApp::pathTo(QString("translations")).toLocalFile());
+    QStringList qmlFiles = dir.entryList();
+    for(const QString& qmlFile : qmlFiles) {
+        int posQm = qmlFile.lastIndexOf(".qm");
+        if(m_appName.size() >= qmlFile.size() || m_appName.size() >= posQm || posQm == -1) continue;
+        m_availableLocales.append(new LocaleItem(qmlFile.mid(m_appName.size() + 1, posQm - m_appName.size() - 1), this));
+    }
+    setIncludeAppDefault(m_includeAppDefault);
 }
 
 /*!
@@ -124,7 +152,13 @@ QQmlListProperty<Locale> InstalledLocales::locales() const {
 
  This is only updated if the \c includeAppDefault variable is updated.
  */
-void localesChanged();
+
+/*!
+ \fn void InstalledLocales::appNameChanged()
+ Emitted when the \c the application's name is changed.
+
+ This will also update the available locales list.
+ */
 
 /*!
   \property InstalledLocales::includeAppDefault
@@ -134,4 +168,9 @@ void localesChanged();
 /*!
   \property InstalledLocales::locales
   The locales provided by your app.
+  */
+
+/*!
+  \property InstalledLocales::appName
+  The application's name.
   */

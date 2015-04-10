@@ -5,7 +5,9 @@ PROJECT_NAME=SailfishWidgets
 BUILD_DIR=build
 TARGET_DIR=target
 DEPLOY_DIR=$TARGET_DIR/$PROJECT_NAME
-QML_DIR=SailfishWidgets
+SRC_DIR=src
+QML_DIR=$SRC_DIR/qml/SailfishWidgets
+LIB_DIR=$SRC_DIR/lib
 RELEASE_DIR=release
 DOC_DIR=Documentation
 INCLUDE_DIR=$DEPLOY_DIR/include
@@ -14,18 +16,23 @@ VERSION=1_3_4
 ARMV=armv
 i486=i486
 
+TARGET_ARMV=$DEPLOY_DIR/$ARMV
+TARGET_i486=$DEPLOY_DIR/$i486
+
 rm -fr $TARGET_DIR
 
 #make target directories
-mkdir -p $DEPLOY_DIR
-mkdir -p $DEPLOY_DIR{$ARMV,$i486}
+mkdir -p $TARGET_ARMV/{Settings,FileManagement,Database,Language,Core}
+mkdir -p $TARGET_i486/{Settings,FileManagement,Database,Language,Core}
 mkdir -p $RELEASE_DIR
 mkdir -p $INCLUDE_DIR
+
+#documentation
+qdoc3 $CURDIR/*.qdocconf
+cp -r $DOC_DIR $DEPLOY_DIR
+
 #copy qml files
 cp -r $QML_DIR $DEPLOY_DIR/{$ARMV,$i486}
-
-TARGET_ARMV=$DEPLOY_DIR/$ARMV/$QML_DIR
-TARGET_i486=$DEPLOY_DIR/$i486/$QML_DIR
 
 #compile
 ./make
@@ -37,13 +44,13 @@ cp $BUILD_DIR/filemanagement/$ARMV/*.so $TARGET_ARMV/FileManagement/
 cp $BUILD_DIR/filemanagement/$i486/*.so $TARGET_i486/FileManagement/
 cp $BUILD_DIR/database/$ARMV/*.so $TARGET_ARMV/Database/
 cp $BUILD_DIR/database/$i486/*.so $TARGET_i486/Database/
+cp $BUILD_DIR/language/$ARMV/*.so $TARGET_ARMV/Language/
+cp $BUILD_DIR/language/$i486/*.so $TARGET_i486/Language/
+cp $BUILD_DIR/core/$ARMV/*.so $TARGET_ARMV/Core/
+cp $BUILD_DIR/core/$i486/*.so $TARGET_i486/Core/
 
 #copy include headers
-cp {applicationsettings,filemanagement,database}/*.h $INCLUDE_DIR
-
-#documentation
-qdoc3 *.qdocconf
-cp -r $DOC_DIR $DEPLOY_DIR
+cp $LIB_DIR/{applicationsettings,filemanagement,database,language,core}/*.h $INCLUDE_DIR
 
 #release builds
 

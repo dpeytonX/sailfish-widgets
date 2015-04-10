@@ -16,7 +16,7 @@ sources.fileextensions = "*.cpp *.qml *.qdoc *.js *.h"
 headers.fileextensions = "*.h"
 
 syntaxhighlighting = true
-Cpp.ignoretokens = Q_INVOKABLE
+Cpp.ignoretokens = Q_INVOKABLE SAILFISHMAIN_EXPORT
 HTML.stylesheets = stylesheet.css
 HTML.style = "body {background: red;}"
 HTML.postheader = "<link rel='stylesheet' href='style/stylesheet.css' />" \

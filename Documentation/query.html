@@ -64,10 +64,10 @@
 <div class="descr">
 <h2>Detailed Description</h2>
 <p>The Query class</p>
-<p>This class will allow you to get more information about a query performed using SQLiteDatabase.</p>
+<p>This class will allow you to get more information about a query performed using <a href="sqlitedatabase.html">SQLiteDatabase</a>.</p>
 <p>It is not meant to be instantiated as a QML object.</p>
 <p>An example usage is as follows.</p>
-<pre class="qml"><span class="type">SQLiteDatabase</span> {
+<pre class="qml"><span class="type"><a href="sqlitedatabase.html">SQLiteDatabase</a></span> {
   <span class="name">Component</span>.onCompleted: {
     <span class="name">exec</span>(<span class="string">&quot;SELECT * FROM table&quot;</span>)
     <span class="keyword">if</span>(<span class="name">query</span>.<span class="name">valid</span>()) {
@@ -125,11 +125,11 @@
 <p>Sets a <tt>QObject</tt> <i>parent</i>.</p>
 <!-- @@@Query -->
 <!-- $$$Query$$$QuerySQLiteDatabase* -->
-<h3 class="fn"><a name="Query-2"></a>Query::<span class="name">Query</span>(<span class="type">SQLiteDatabase</span> *<i> database</i>)</h3>
+<h3 class="fn"><a name="Query-2"></a>Query::<span class="name">Query</span>(<span class="type"><a href="sqlitedatabase.html">SQLiteDatabase</a></span> *<i> database</i>)</h3>
 <p>It sets the internal <tt>QSqlQuery</tt> 's database to be <i>database</i> and a <tt>QObject</tt> <tt>parent</tt> of <i>database</i>.</p>
 <!-- @@@Query -->
 <!-- $$$Query$$$QueryconstQString&SQLiteDatabase* -->
-<h3 class="fn"><a name="Query-3"></a>Query::<span class="name">Query</span>(const <span class="type">QString</span> &amp;<i> query</i>, <span class="type">SQLiteDatabase</span> *<i> database</i>)</h3>
+<h3 class="fn"><a name="Query-3"></a>Query::<span class="name">Query</span>(const <span class="type">QString</span> &amp;<i> query</i>, <span class="type"><a href="sqlitedatabase.html">SQLiteDatabase</a></span> *<i> database</i>)</h3>
 <p>It sets the internal <tt>QSqlQuery</tt> to be <i>query</i> and a <tt>QObject</tt> <tt>parent</tt> of <i>database</i>.</p>
 <!-- @@@Query -->
 <!-- $$$close[overload1]$$$close -->

@@ -1,4 +1,4 @@
-QT       -= gui
+QT = qml quick
 
 QMAKE_CXXFLAGS += "-std=c++0x"
 
@@ -12,7 +12,7 @@ SOURCES += sailfishmain.cpp
 HEADERS += sailfishmain.h \
         sailfishmain_global.h
 
-INCLUDEPATH += $$PWD/../applicationsettings
+INCLUDEPATH += $$PWD/../applicationsettings /usr/include/sailfishapp
 
 unix {
     target.path = $$installPath

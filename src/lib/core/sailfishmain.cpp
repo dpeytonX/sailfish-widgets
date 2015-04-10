@@ -36,6 +36,21 @@
 
    This namespace supports the quick construction of SailfishApps.
 
+   \c {SailfishMain} namespace has the following functions
+ \code
+ int SailfishMain::main(int argc, char *argv[],
+                        const QString& appName,
+                        const QString& settingsFile,
+                        const QString& localeSetting)
+ \endcode
+
+
+ \code
+ bool SailfishMain::installLanguage(const QString& appName, const QString& locale,
+                                    QCoreApplication* app)
+ \endcode
+
+
    Back to \l {Sailfish Widgets}
  */
 
@@ -58,7 +73,7 @@ int SailfishMain::main(int argc, char *argv[], const QString& appName, const QSt
 }
 
 /*!
- \fn bool SailfishMain::installLanguage(const QString& appName, const QString& locale, QCoreApplication* app)
+  \fn bool SailfishMain::installLanguage(const QString& appName, const QString& locale, QCoreApplication* app)
 
  Installs the \a locale for the given \a appName of the application \a app.
 

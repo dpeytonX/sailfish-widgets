@@ -56,7 +56,7 @@ LocaleItem::LocaleItem(QQuickItem *parent) :
 LocaleItem::LocaleItem(const QString& locale, QQuickItem *parent) : QQuickItem(parent), m_locale(locale) {}
 
 /*!
- \fn QString LocaleItem::locale()
+ \fn QString LocaleItem::locale() const
  Returns the locale.
  */
 QString LocaleItem::locale() const {
@@ -102,11 +102,17 @@ QString LocaleItem::country() const {
 }
 
 /*!
- \fn friend bool LocaleItem::operator==(const Locale& lhs, const Locale& rhs)
- Friend function that compares \a lhs and \c rhs.
 
- Returns true if the \c {Locale} objects match.
+ \relates LocaleItem
+
+ fn bool operator==(const Locale& lhs, const Locale& rhs)
+ Compares two \c {Locale} objects for equality-- \a lhs and \a rhs.
+
+ Equality compares the internal locale string using \c QString equality.
  */
+bool operator==(const LocaleItem& lhs, const LocaleItem& rhs) {
+    return lhs.m_locale == rhs.m_locale;
+}
 
 /*!
  \fn void LocaleItem::localeChanged()
@@ -132,13 +138,3 @@ QString LocaleItem::country() const {
   \property LocaleItem::locale
   The locale string
   */
-
-/*!
- \fn bool operator==(const Locale& lhs, const Locale& rhs)
- Compares two \c {Locale} objects for equality-- \a lhs and \a rhs.
-
- Equality compares the internal locale string using \c QString equality.
- */
-bool operator==(const LocaleItem& lhs, const LocaleItem& rhs) {
-    return lhs.m_locale == rhs.m_locale;
-}

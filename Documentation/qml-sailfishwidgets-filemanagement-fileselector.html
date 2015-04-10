@@ -50,7 +50,7 @@
 <h2>Detailed Description</h2>
 <p>Back to <a href="index.html">Sailfish Widgets</a></p>
 <p>Displays a file system browser that allows a user to select one or more files or directories that are stored in a <tt>ListView</tt></p>
-<p class="centerAlign"><img src="images/file_selector.png" alt="&quot;File Selector in action&quot;" /></p><p>It uses the Dir Qt object which provides the directory list and exposes some methods from <tt>QDir</tt> as Qml Properties</p>
+<p class="centerAlign"><img src="images/file_selector.png" alt="&quot;File Selector in action&quot;" /></p><p>It uses the <a href="dir.html">Dir</a> Qt object which provides the directory list and exposes some methods from <tt>QDir</tt> as Qml Properties</p>
 <p>This widget inherits the properties and signals from Sailfish.Silica Dialog.</p>
 <pre class="cpp">Qml                           Instantiates
 This dialog <span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">&gt;</span> Qml DirectoryInfo (handles all operations)
@@ -64,7 +64,7 @@ populates list view</pre>
 </div></div><!-- @@@acceptText -->
 <br/>
 <!-- $$$baseDirectory -->
-<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="baseDirectory-prop"></a><span class="name">baseDirectory</span> : <span class="type">string</span></p></td></tr></table></div><div class="qmldoc"><p>Text property which is a file path that this Dialog should show at first. Defaults to Dir <tt>XdgHome</tt></p>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="baseDirectory-prop"></a><span class="name">baseDirectory</span> : <span class="type">string</span></p></td></tr></table></div><div class="qmldoc"><p>Text property which is a file path that this Dialog should show at first. Defaults to <a href="dir.html">Dir</a> <tt>XdgHome</tt></p>
 </div></div><!-- @@@baseDirectory -->
 <br/>
 <!-- $$$cancelText -->
@@ -76,15 +76,15 @@ populates list view</pre>
 </div></div><!-- @@@deselectText -->
 <br/>
 <!-- $$$directory -->
-<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="directory-prop"></a><span class="name">directory</span> : <span class="type">alias</span></p></td></tr></table></div><div class="qmldoc"><p>An alias to the Dir object.</p>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="directory-prop"></a><span class="name">directory</span> : <span class="type">alias</span></p></td></tr></table></div><div class="qmldoc"><p>An alias to the <a href="dir.html">Dir</a> object.</p>
 </div></div><!-- @@@directory -->
 <br/>
 <!-- $$$fileList -->
-<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="fileList-prop"></a><span class="name">fileList</span> : <span class="type">alias</span></p></td></tr></table></div><div class="qmldoc"><p>An alias to the Dir object.</p>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="fileList-prop"></a><span class="name">fileList</span> : <span class="type">alias</span></p></td></tr></table></div><div class="qmldoc"><p>An alias to the <a href="dir.html">Dir</a> object.</p>
 </div></div><!-- @@@fileList -->
 <br/>
 <!-- $$$filter -->
-<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="filter-prop"></a><span class="name">filter</span> : <span class="type">alias</span></p></td></tr></table></div><div class="qmldoc"><p>An enum type that controls what file system types to display in the <tt>ListView</tt>. Uses the Dir <tt>DirFilter</tt> enum. You can chain enums using bitwise-or <tt>|</tt>. Its syntax follows that same as that of <tt>QDir::entryList</tt>.</p>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="filter-prop"></a><span class="name">filter</span> : <span class="type">alias</span></p></td></tr></table></div><div class="qmldoc"><p>An enum type that controls what file system types to display in the <tt>ListView</tt>. Uses the <a href="dir.html">Dir</a> <tt>DirFilter</tt> enum. You can chain enums using bitwise-or <tt>|</tt>. Its syntax follows that same as that of <tt>QDir::entryList</tt>.</p>
 </div></div><!-- @@@filter -->
 <br/>
 <!-- $$$header -->
@@ -112,11 +112,11 @@ populates list view</pre>
 </div></div><!-- @@@selectedFiles -->
 <br/>
 <!-- $$$selectionFilter -->
-<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="selectionFilter-prop"></a><span class="name">selectionFilter</span> : <span class="type">int</span></p></td></tr></table></div><div class="qmldoc"><p>An alias to an enum type that controls which elements can be selected. It uses the same enum as Dir <tt>DirFilter</tt>.</p>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="selectionFilter-prop"></a><span class="name">selectionFilter</span> : <span class="type">int</span></p></td></tr></table></div><div class="qmldoc"><p>An alias to an enum type that controls which elements can be selected. It uses the same enum as <a href="dir.html">Dir</a> <tt>DirFilter</tt>.</p>
 </div></div><!-- @@@selectionFilter -->
 <br/>
 <!-- $$$sort -->
-<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="sort-prop"></a><span class="name">sort</span> : <span class="type">alias</span></p></td></tr></table></div><div class="qmldoc"><p>An enum type that controls the order of file system types to display in the <tt>ListView</tt>. Uses the Dir <tt>DirSort</tt> enum. You can chain enums using bitwise-or <tt>|</tt>. Its syntax follows that same as that of <tt>QDir::entryList</tt>.</p>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="sort-prop"></a><span class="name">sort</span> : <span class="type">alias</span></p></td></tr></table></div><div class="qmldoc"><p>An enum type that controls the order of file system types to display in the <tt>ListView</tt>. Uses the <a href="dir.html">Dir</a> <tt>DirSort</tt> enum. You can chain enums using bitwise-or <tt>|</tt>. Its syntax follows that same as that of <tt>QDir::entryList</tt>.</p>
 </div></div><!-- @@@sort -->
 <br/>
 </body>
