@@ -21,11 +21,13 @@
 **************************************************************************/
 
 #include "sailfishmain.h"
+#include <applicationsettings.h>
 
 #include <QDebug>
 #include <QGuiApplication>
+#include <QQuickView>
 #include <QTranslator>
-#include <applicationsettings.h>
+
 #include <sailfishapp.h>
 
 /*!
@@ -38,19 +40,6 @@
    This namespace supports the quick construction of SailfishApps.
 
    \c {SailfishMain} namespace has the following functions
- \code
- int SailfishMain::main(int argc, char *argv[],
-                        const QString& appName,
-                        const QString& settingsFile,
-                        const QString& localeSetting)
- \endcode
-
-
- \code
- bool SailfishMain::installLanguage(const QString& appName, const QString& locale,
-                                    QCoreApplication* app)
- \endcode
-
 
    Back to \l {Sailfish Widgets}
  */
@@ -70,31 +59,39 @@ int SailfishMain::main(int argc, char *argv[], const QString& appName, const QSt
         qDebug() << settings.applicationName();
         qDebug() << settings.fileName();
         settings.refresh();
-        installLanguage(appName, settings.isValid(localeSetting) ? settings.value(localeSetting).toString() : "",
-                                          qobject_cast<QCoreApplication*>(SailfishApp::application(argc, argv)));
+        QGuiApplication* app(SailfishApp::application(argc, argv));
+        installLanguage(appName, settings.isValid(localeSetting) ? settings.value(localeSetting).toString() : "", app);
+
+        //Start the app
+        QQuickView* view(SailfishApp::createView());
+        view->setSource(SailfishApp::pathTo("qml/" + appName + ".qml"));
+        view->show();
+        return app->exec();
     }
 
     return SailfishApp::main(argc, argv);
 }
 
 /*!
-  \fn bool SailfishMain::installLanguage(const QString& appName, const QString& locale, QCoreApplication* app)
+  \fn bool SailfishMain::installLanguage(const QString& appName, const QString& locale, QGuiApplication* app)
 
  Installs the \a locale for the given \a appName of the application \a app.
 
  Returns true if successful.
  */
-bool SailfishMain::installLanguage(const QString& appName, const QString& locale, QCoreApplication* app) {
-    QTranslator translator;
+bool SailfishMain::installLanguage(const QString& appName, const QString& locale, QGuiApplication* app) {
+    QTranslator* translator(new QTranslator(app));
     //TODO: link to liblanguage for default locale
     QString qm = appName + (locale.isEmpty() || locale == "app" ? ".qm" : ("-" + locale + ".qm"));
     QString path = SailfishApp::pathTo(QString("translations")).toLocalFile();
-    qDebug() << qm;
-    qDebug() << path;
-    if(translator.load(qm, path)) {
-        return app->installTranslator(&translator);
+    qDebug() << "qm: " << qm;
+    qDebug() << "path: " << path;
+    if(translator->load(qm, path)) {
+        bool result = app->installTranslator(translator);
+        qDebug() << "app loaded " << qm << result;
+        return result;
     }
     qDebug() << "didn't load translator file " << qm;
-    qDebug() << "loaded default locale: " << translator.load(appName + ".qm", path);
+    qDebug() << "loaded default locale";
     return false;
 }

@@ -7,6 +7,8 @@ QMAKE_CXXFLAGS += "-std=c++0x"
 
 INCLUDEPATH += /usr/include/sailfishapp
 
+LIBS += -L/usr/lib -lsailfishapp
+
 TARGET = $$qtLibraryTarget($$TARGET)
 uri = SailfishWidgets.Language
 

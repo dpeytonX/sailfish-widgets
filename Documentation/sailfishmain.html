@@ -27,7 +27,7 @@
 <a name="functions"></a>
 <h2>Functions</h2>
 <table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="sailfishmain.html#installLanguage">installLanguage</a></b>(const QString &amp;<i> appName</i>, const QString &amp;<i> locale</i>, QCoreApplication *<i> app</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="sailfishmain.html#installLanguage">installLanguage</a></b>(const QString &amp;<i> appName</i>, const QString &amp;<i> locale</i>, QGuiApplication *<i> app</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="sailfishmain.html#main">main</a></b>(int<i> argc</i>, char *[]<i> argv</i>, const QString &amp;<i> appName</i> = QString( &quot;&quot; ), const QString &amp;<i> settingsFile</i> = QString( &quot;&quot; ), const QString &amp;<i> localeSetting</i> = QString( &quot;locale&quot; ))</td></tr>
 </table>
 <a name="details"></a>
@@ -37,19 +37,13 @@
 <p>The SailfishMain namespace</p>
 <p>This namespace supports the quick construction of SailfishApps.</p>
 <p><tt>SailfishMain</tt> namespace has the following functions</p>
-<pre class="cpp"><span class="type">int</span> SailfishMain<span class="operator">::</span><a href="sailfishmain.html#main">main</a>(<span class="type">int</span> argc<span class="operator">,</span> <span class="type">char</span> <span class="operator">*</span>argv<span class="operator">[</span><span class="operator">]</span><span class="operator">,</span>
-                       <span class="keyword">const</span> <span class="type">QString</span><span class="operator">&amp;</span> appName<span class="operator">,</span>
-                       <span class="keyword">const</span> <span class="type">QString</span><span class="operator">&amp;</span> settingsFile<span class="operator">,</span>
-                       <span class="keyword">const</span> <span class="type">QString</span><span class="operator">&amp;</span> localeSetting)</pre>
-<pre class="cpp">bool SailfishMain<span class="operator">::</span><a href="sailfishmain.html#installLanguage">installLanguage</a>(<span class="keyword">const</span> <span class="type">QString</span><span class="operator">&amp;</span> appName<span class="operator">,</span> <span class="keyword">const</span> <span class="type">QString</span><span class="operator">&amp;</span> locale<span class="operator">,</span>
-                                   <span class="type">QCoreApplication</span><span class="operator">*</span> app)</pre>
 <p>Back to <a href="index.html">Sailfish Widgets</a></p>
 </div>
 <!-- @@@SailfishMain -->
 <div class="func">
 <h2>Function Documentation</h2>
-<!-- $$$installLanguage[overload1]$$$installLanguageconstQString&constQString&QCoreApplication* -->
-<h3 class="fn"><a name="installLanguage"></a><span class="type">bool</span> SailfishMain::<span class="name">installLanguage</span>(const <span class="type">QString</span> &amp;<i> appName</i>, const <span class="type">QString</span> &amp;<i> locale</i>, <span class="type">QCoreApplication</span> *<i> app</i>)</h3>
+<!-- $$$installLanguage[overload1]$$$installLanguageconstQString&constQString&QGuiApplication* -->
+<h3 class="fn"><a name="installLanguage"></a><span class="type">bool</span> SailfishMain::<span class="name">installLanguage</span>(const <span class="type">QString</span> &amp;<i> appName</i>, const <span class="type">QString</span> &amp;<i> locale</i>, <span class="type">QGuiApplication</span> *<i> app</i>)</h3>
 <p>Installs the <i>locale</i> for the given <i>appName</i> of the application <i>app</i>.</p>
 <p>Returns true if successful.</p>
 <!-- @@@installLanguage -->

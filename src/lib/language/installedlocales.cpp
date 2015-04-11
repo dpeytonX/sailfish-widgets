@@ -26,8 +26,6 @@
 #include <QList>
 #include <QStringList>
 
-#include <sailfishapp.h>
-
 #include "defaultlocale.h"
 
 /*!
@@ -60,14 +58,14 @@ InstalledLocales::InstalledLocales(QQuickItem *parent) : QQuickItem(parent),
  \internal
  */
 LocaleItem* InstalledLocales::localeAt(QQmlListProperty<LocaleItem> *property, int index) {
-    return (*((QList<LocaleItem*> *)property->data))[index];
+    return property == nullptr ? nullptr : (*((QList<LocaleItem*> *)property->data))[index];
 }
 
 /*!
  \internal
  */
 int InstalledLocales::localeCount(QQmlListProperty<LocaleItem> *property) {
-    return (((QList<LocaleItem*> *)property->data))->size();
+    return property == nullptr ? 0 : (((QList<LocaleItem*> *)property->data))->size();
 }
 
 /*!

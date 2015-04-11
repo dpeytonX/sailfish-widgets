@@ -14,6 +14,8 @@ HEADERS += sailfishmain.h \
 
 INCLUDEPATH += $$PWD/../applicationsettings /usr/include/sailfishapp
 
+LIBS += -L/usr/lib -lsailfishapp
+
 unix {
     target.path = $$installPath
     INSTALLS += target
