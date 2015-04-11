@@ -91,7 +91,6 @@ void InstalledLocales::setIncludeAppDefault(bool includeAppDefault) {
     for(LocaleItem* l : m_availableLocales) {
         if(l->locale() == DefaultLocale::APPLICATION_LOCALE) {
             m_availableLocales.removeOne(l);
-            l->deleteLater();
             break;
         }
     }
@@ -167,9 +166,6 @@ void InstalledLocales::setAppName(const QString& appName) {
     m_appName = appName;
     emit appNameChanged();
 
-    for(LocaleItem* l : m_availableLocales) {
-        l->deleteLater();
-    }
     m_availableLocales.clear();
 
     QDir dir(SailfishApp::pathTo(QString("translations")).toLocalFile());
