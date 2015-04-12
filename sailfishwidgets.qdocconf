@@ -10,13 +10,13 @@ generateindex = true
 outputformats = HTML
 
 imagedirs = images
-sourcedirs = SailfishWidgets applicationsettings filemanagement database
-headerdirs = applicationsettings filemanagement database
+sourcedirs = src/lib/* src/qml/SailfishWidgets
+headerdirs = src/lib/*
 sources.fileextensions = "*.cpp *.qml *.qdoc *.js *.h"
 headers.fileextensions = "*.h"
 
 syntaxhighlighting = true
-Cpp.ignoretokens = Q_INVOKABLE
+Cpp.ignoretokens = Q_INVOKABLE SAILFISHMAIN_EXPORT APPLICATIONSETTINGS_EXPORT
 HTML.stylesheets = stylesheet.css
 HTML.style = "body {background: red;}"
 HTML.postheader = "<link rel='stylesheet' href='style/stylesheet.css' />" \

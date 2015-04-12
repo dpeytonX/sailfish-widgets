@@ -33,11 +33,13 @@
 <table class="alignedsummary">
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#ApplicationSettings">ApplicationSettings</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#ApplicationSettings-2">ApplicationSettings</a></b>(QQuickItem *<i> parent</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#ApplicationSettings-3">ApplicationSettings</a></b>(const QString &amp;<i> appName</i>, const QString &amp;<i> fileName</i>, QQuickItem *<i> parent</i> = 0)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#dtor.ApplicationSettings">~ApplicationSettings</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#applicationName">applicationName</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#fileName">fileName</a></b>() const</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#setApplicationName">setApplicationName</a></b>(QString<i> appName</i>)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#setFileName">setFileName</a></b>(QString<i> fileName</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#isValid">isValid</a></b>(const QString &amp;<i> property</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#setApplicationName">setApplicationName</a></b>(const QString &amp;<i> appName</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#setFileName">setFileName</a></b>(const QString &amp;<i> fileName</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QSettings * </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#settings">settings</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QVariant </td><td class="memItemRight bottomAlign"><b><a href="applicationsettings.html#value">value</a></b>(const QString &amp;<i> setting</i>)</td></tr>
 </table>
@@ -92,6 +94,10 @@
 <h3 class="fn"><a name="ApplicationSettings-2"></a>ApplicationSettings::<span class="name">ApplicationSettings</span>(<span class="type">QQuickItem</span> *<i> parent</i>)</h3>
 <p>Constructs a new <a href="applicationsettings.html">ApplicationSettings</a> with the given <tt>QQuickItem</tt> <i>parent</i></p>
 <!-- @@@ApplicationSettings -->
+<!-- $$$ApplicationSettings$$$ApplicationSettingsconstQString&constQString&QQuickItem* -->
+<h3 class="fn"><a name="ApplicationSettings-3"></a>ApplicationSettings::<span class="name">ApplicationSettings</span>(const <span class="type">QString</span> &amp;<i> appName</i>, const <span class="type">QString</span> &amp;<i> fileName</i>, <span class="type">QQuickItem</span> *<i> parent</i> = 0)</h3>
+<p>Constructs a new <a href="applicationsettings.html">ApplicationSettings</a> with the given <tt>QQuickItem</tt> <i>parent</i> and initializes the application name and settings file using <i>appName</i> and <i>fileName</i>, respectively.</p>
+<!-- @@@ApplicationSettings -->
 <!-- $$$~ApplicationSettings[overload1]$$$~ApplicationSettings -->
 <h3 class="fn"><a name="dtor.ApplicationSettings"></a>ApplicationSettings::<span class="name">~ApplicationSettings</span>()</h3>
 <!-- @@@~ApplicationSettings -->
@@ -113,17 +119,21 @@
 <h3 class="fn"><a name="fileNameChanged"></a><span class="type">void</span> ApplicationSettings::<span class="name">fileNameChanged</span>()<tt> [signal]</tt></h3>
 <p>Emitted when the <tt>fileName</tt> has changed.</p>
 <!-- @@@fileNameChanged -->
+<!-- $$$isValid[overload1]$$$isValidconstQString& -->
+<h3 class="fn"><a name="isValid"></a><span class="type">bool</span> ApplicationSettings::<span class="name">isValid</span>(const <span class="type">QString</span> &amp;<i> property</i>)</h3>
+<p>Returns true if <i>property</i> is a valid setting. (Not equal to <tt>QVariant::Invalid</tt>).</p>
+<!-- @@@isValid -->
 <!-- $$$refresh[overload1]$$$refresh -->
 <h3 class="fn"><a name="refresh"></a><span class="type">void</span> ApplicationSettings::<span class="name">refresh</span>()<tt> [slot]</tt></h3>
 <p>Refreshes all properties defined by the QML interface with those from QSettings</p>
 <!-- @@@refresh -->
-<!-- $$$setApplicationName[overload1]$$$setApplicationNameQString -->
-<h3 class="fn"><a name="setApplicationName"></a><span class="type">void</span> ApplicationSettings::<span class="name">setApplicationName</span>(<span class="type">QString</span><i> appName</i>)</h3>
+<!-- $$$setApplicationName[overload1]$$$setApplicationNameconstQString& -->
+<h3 class="fn"><a name="setApplicationName"></a><span class="type">void</span> ApplicationSettings::<span class="name">setApplicationName</span>(const <span class="type">QString</span> &amp;<i> appName</i>)</h3>
 <p>Sets the application's name to <i>appName</i>.</p>
 <p><b>See also </b><a href="applicationsettings.html#applicationName">applicationName</a>().</p>
 <!-- @@@setApplicationName -->
-<!-- $$$setFileName[overload1]$$$setFileNameQString -->
-<h3 class="fn"><a name="setFileName"></a><span class="type">void</span> ApplicationSettings::<span class="name">setFileName</span>(<span class="type">QString</span><i> fileName</i>)</h3>
+<!-- $$$setFileName[overload1]$$$setFileNameconstQString& -->
+<h3 class="fn"><a name="setFileName"></a><span class="type">void</span> ApplicationSettings::<span class="name">setFileName</span>(const <span class="type">QString</span> &amp;<i> fileName</i>)</h3>
 <p>Sets the setting file's name to <i>fileName</i>.</p>
 <p><b>See also </b><a href="applicationsettings.html#fileName">fileName</a>().</p>
 <!-- @@@setFileName -->

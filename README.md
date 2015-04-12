@@ -44,7 +44,7 @@ It is best to configure your project settings to switch the SailfishWidgets sour
 You can do this by adding a custom build step which will copy the appropriate Sailfish release directory into a common folder <em>harbour/your-app</em> so that you can test easily. It is ok to do a straight <em>cp -r</em> because the qml sources are the same, only the library (.so) file will be overwritten; so none of your QML import paths will change.
 
 <strong>Note:</strong> If you decide to go this route, remember to rename the qmldir module path by running the command in step 2 above. (Optionally, you can automate this process as well using a custom build setting.)</strong>
-<img src="build_process.png" />
+<img src="images/build_process.png" />
 
 <h3>Update your spec file</h3>
 The RPM tool will put the native library into the provides section and this is strictly disallowed according to the Harbour Store policies.
@@ -52,7 +52,29 @@ The RPM tool will put the native library into the provides section and this is s
 See <a href="https://harbour.jolla.com/faq#2.6.0">Provides: libFooBar.so.1' not allowed in RPM</a>
 
 The suggested solutions is to put the following line in between the <code># &gt;&gt; macros</code> and <code># &lt;&lt; macros</code> section in the <em>your-app</em>.spec file.
-<pre>%define __provides_exclude_from ^%{_datadir}/.*$</pre>
+<pre>
+  %define __provides_exclude_from ^%{_datadir}/.*$
+</pre>
+
+<h3>Core Library</h3>
+Include the following in the <code># &gt;&gt; macros</code> and <code># &lt;&lt; macros</code> section in the <em>your-app</em>.spec file.
+<pre>
+%define __requires_exclude ^libapplicationsettings|libcore.*$
+</pre>
+
+The Core library requires libapplicationsettings.so. The following code will automatically include the shared libraries during the linking process.
+
+<pre>
+  LIBS += -L$$PWD/harbour/nemosyne/SailfishWidgets/Core -L$$PWD/harbour/nemosyne/SailfishWidgets/Settings -lapplicationsettings -lcore
+  nemosynelibs.files = $$PWD/harbour/nemosyne/SailfishWidgets/Settings/libapplicationsettings* \
+                       $$PWD/harbour/nemosyne/SailfishWidgets/Core/libcore*
+  nemosynelibs.path = /usr/share/$${TARGET}/lib
+  # Delete the private lib for the harbour store RPM validator
+  nemosynelibs.commands = "rm -fr /home/deploy/installroot/usr/share/harbour-nemosyne/harbour/nemosyne/SailfishWidgets/Core"
+  INSTALLS += nemosynelibs
+</pre>
+
+The <code>sailfishapp</code> configuration will automatically add /usr/share/<em>you-app</em>/lib to the LD path so your application will automatically search that folder for libraries that are deployed with your application.
 
 
 <h2>Contribute</h2>
@@ -65,7 +87,7 @@ You can contribute in one of two ways:
 <li>Donate Bitcoins
 </ul>
 <p>
-<img src="bitcoinaddy.png" />
+<img src="images/bitcoinaddy.png" />
 <p>
 <code>1PFqgHeGrtXLYvMge2mTT1FohKuuoKmUN5</code>
 
