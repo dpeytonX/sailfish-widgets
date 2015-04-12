@@ -28,8 +28,6 @@
 #include <QQuickView>
 #include <QTranslator>
 
-#include <sailfishapp.h>
-
 /*!
    \namespace SailfishMain
    \since 5.2
@@ -38,6 +36,11 @@
    \inmodule Core
 
    This namespace supports the quick construction of SailfishApps.
+
+   Usage of this library requires that you define the following in the RPM spec file's \code >> macros ... << macros \endcode section.
+   \code
+   %define __requires_exclude ^libapplicationsettings|libcore.*$
+   \endcode
 
    \c {SailfishMain} namespace has the following functions
 

@@ -36,6 +36,10 @@
 <h2>Detailed Description</h2>
 <p>The SailfishMain namespace</p>
 <p>This namespace supports the quick construction of SailfishApps.</p>
+<p>Usage of this library requires that you define the following in the RPM spec file's</p>
+<pre class="cpp"><span class="operator">&gt;</span><span class="operator">&gt;</span> macros <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> macros</pre>
+<p>section.</p>
+<pre class="cpp">  <span class="operator">%</span>define __requires_exclude <span class="operator">^</span>libapplicationsettings<span class="operator">|</span>libcore<span class="operator">.</span><span class="operator">*</span>$</pre>
 <p><tt>SailfishMain</tt> namespace has the following functions</p>
 <p>Back to <a href="index.html">Sailfish Widgets</a></p>
 </div>

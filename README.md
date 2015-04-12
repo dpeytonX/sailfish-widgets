@@ -52,7 +52,27 @@ The RPM tool will put the native library into the provides section and this is s
 See <a href="https://harbour.jolla.com/faq#2.6.0">Provides: libFooBar.so.1' not allowed in RPM</a>
 
 The suggested solutions is to put the following line in between the <code># &gt;&gt; macros</code> and <code># &lt;&lt; macros</code> section in the <em>your-app</em>.spec file.
-<pre>%define __provides_exclude_from ^%{_datadir}/.*$</pre>
+<pre>
+  %define __provides_exclude_from ^%{_datadir}/.*$
+</pre>
+
+<h3>Core Library</h3>
+Include the following in the <code># &gt;&gt; macros</code> and <code># &lt;&lt; macros</code> section in the <em>your-app</em>.spec file.
+<pre>
+%define __requires_exclude ^libapplicationsettings|libcore.*$
+</pre>
+
+The Core library requires libapplicationsettings.so. The following code will automatically include the shared libraries during the linking process.
+
+<pre>
+  LIBS += -L$$PWD/harbour/nemosyne/SailfishWidgets/Core -L$$PWD/harbour/nemosyne/SailfishWidgets/Settings -lapplicationsettings -lcore
+  nemosynelibs.files = $$PWD/harbour/nemosyne/SailfishWidgets/Settings/libapplicationsettings* \
+                       $$PWD/harbour/nemosyne/SailfishWidgets/Core/libcore*
+  nemosynelibs.path = /usr/share/$${TARGET}/lib
+  INSTALLS += nemosynelibs
+</pre>
+
+The <code>sailfishapp</code> configuration will automatically add /usr/share/<em>you-app</em>/lib to the LD path so your application will automatically search that folder for libraries that are deployed with your application.
 
 
 <h2>Contribute</h2>
