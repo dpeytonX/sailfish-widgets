@@ -16,13 +16,15 @@ INCLUDEPATH += $$PWD/../applicationsettings /usr/include/sailfishapp
 
 LIBS += -L/usr/lib -lsailfishapp
 
-unix {
-    target.path = $$installPath
-    INSTALLS += target
-}
-
 unix:!macx: LIBS += -L$$OUT_PWD/../../applicationsettings/i486 \
                     -L$$OUT_PWD/../../applicationsettings/armv -lapplicationsettings
 
 INCLUDEPATH += $$PWD/../applicationsettings
 DEPENDPATH += $$PWD/../applicationsettings
+
+!contains( CONFIG, "DEBUG") {
+    strip_lib.target = strlib
+    strip_lib.depends = all
+    strip_lib.commands = $(STRIP) --strip-all $(TARGET)
+    QMAKE_EXTRA_TARGETS += strip_lib
+}

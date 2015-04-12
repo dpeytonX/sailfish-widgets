@@ -69,6 +69,8 @@ The Core library requires libapplicationsettings.so. The following code will aut
   nemosynelibs.files = $$PWD/harbour/nemosyne/SailfishWidgets/Settings/libapplicationsettings* \
                        $$PWD/harbour/nemosyne/SailfishWidgets/Core/libcore*
   nemosynelibs.path = /usr/share/$${TARGET}/lib
+  # Delete the private lib for the harbour store RPM validator
+  nemosynelibs.commands = "rm -fr /home/deploy/installroot/usr/share/harbour-nemosyne/harbour/nemosyne/SailfishWidgets/Core"
   INSTALLS += nemosynelibs
 </pre>
 

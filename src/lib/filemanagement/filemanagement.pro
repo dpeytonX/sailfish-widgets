@@ -37,3 +37,9 @@ unix {
     INSTALLS += target qmldir
 }
 
+!contains( CONFIG, "DEBUG") {
+    strip_lib.target = strlib
+    strip_lib.depends = all
+    strip_lib.commands = $(STRIP) --strip-all $(TARGET)
+    QMAKE_EXTRA_TARGETS += strip_lib
+}

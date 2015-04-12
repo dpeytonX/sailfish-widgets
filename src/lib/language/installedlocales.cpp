@@ -26,6 +26,8 @@
 #include <QList>
 #include <QStringList>
 
+#include <sailfishapp.h>
+
 #include "defaultlocale.h"
 
 /*!

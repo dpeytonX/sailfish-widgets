@@ -31,9 +31,19 @@ function compile_armv() {
   export MER_SSH_TARGET_NAME="SailfishOS-armv7hl"
   echo "$DEBUG"
   pushd $BUILD_PATH
-  "$MER_SSH_SDK_TOOLS/qmake" "$MER_SSH_PROJECT_PATH/${PROJECT}.pro" "-r" "-spec" "linux-g++" "$DEBUG"
+  
+  if [ -n $DEBUG ]; then
+    local STRIP='QMAKE_CXXFLAGS += "-fvisibility=hidden -fvisibility-inlines-hidden"'
+  else
+    local STRIP=""
+  fi
+  "$MER_SSH_SDK_TOOLS/qmake" "$MER_SSH_PROJECT_PATH/${PROJECT}.pro" "-r" "-spec" "linux-g++" "$DEBUG" "$STRIP"
   "$MER_SSH_SDK_TOOLS/make" "clean"
-  "$MER_SSH_SDK_TOOLS/make"
+  if [ -n "$STRIP" ]; then
+    "$MER_SSH_SDK_TOOLS/make" "strlib"
+  else 
+    "$MER_SSH_SDK_TOOLS/make"
+  fi
   popd 1> /dev/null
 }
 
