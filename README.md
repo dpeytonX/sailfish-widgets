@@ -76,6 +76,8 @@ The Core library requires libapplicationsettings.so. The following code will aut
 
 The <code>sailfishapp</code> configuration will automatically add /usr/share/<em>you-app</em>/lib to the LD path so your application will automatically search that folder for libraries that are deployed with your application.
 
+<h2>Debugging native libraries</h2>
+In order to debug the internal library, you will need to download the entire source tree and run the make file with the debug option. Replace the your application's version of the library with the debug version and run GDB remotely on the device. Qt Creator should provide this option automatically.
 
 <h2>Contribute</h2>
 
