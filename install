@@ -48,7 +48,7 @@ cp $BUILD_DIR/database/$i486/*\.so* $TARGET_i486/Database/
 cp $BUILD_DIR/language/$ARMV/*\.so* $TARGET_ARMV/Language/
 cp $BUILD_DIR/language/$i486/*\.so* $TARGET_i486/Language/
 cp $BUILD_DIR/core/$ARMV/*\.so* $TARGET_ARMV/Core/
-cp $BUILD_DIR/core/$ARMV/*\.so* $TARGET_ARMV/Core/
+cp $BUILD_DIR/core/$i486/*\.so* $TARGET_i486/Core/
 
 #copy include headers
 cp $LIB_DIR/{applicationsettings,filemanagement,database,language,core}/*.h $INCLUDE_DIR
