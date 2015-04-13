@@ -20,6 +20,7 @@ TARGET_ARMV=$DEPLOY_DIR/$ARMV/$PROJECT_NAME
 TARGET_i486=$DEPLOY_DIR/$i486/$PROJECT_NAME
 
 rm -fr $TARGET_DIR
+rm -fr $BUILD_DIR
 
 #make target directories
 mkdir -p $TARGET_ARMV/{Settings,FileManagement,Database,Language,Core}
