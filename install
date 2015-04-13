@@ -12,7 +12,7 @@ RELEASE_DIR=release
 DOC_DIR=Documentation
 INCLUDE_DIR=$DEPLOY_DIR/include
 
-VERSION=1_3_4
+VERSION=1_4_0
 ARMV=armv
 i486=i486
 
