@@ -54,7 +54,7 @@ import Sailfish.Silica 1.0
   \l {https://github.com/Armadill0/harbour-tasklist}{Tasklist}
 
   */
-OrientationPage {
+Page {
     /*!
        \qmlproperty alias AboutPage::aboutTaskList
       An alias to the \c SilicaFlickable page container
@@ -112,6 +112,7 @@ OrientationPage {
     property variant projectLinks
 
     id: aboutPage
+    allowedOrientations: Orientation.All
 
     SilicaFlickable {
         id: aboutTaskList

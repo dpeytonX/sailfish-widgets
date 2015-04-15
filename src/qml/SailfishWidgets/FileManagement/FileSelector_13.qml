@@ -52,7 +52,7 @@ import "." 1.2
   \endcode
   */
 
-OrientationDialog {
+Dialog {
     /*!
        \qmlproperty alias FileSelector::fileList
       An alias to the \l {Dir} object.

@@ -12,7 +12,7 @@ RELEASE_DIR=release
 DOC_DIR=Documentation
 INCLUDE_DIR=$DEPLOY_DIR/include
 
-VERSION=1_3_4
+VERSION=1_4_0
 ARMV=armv
 i486=i486
 
@@ -20,6 +20,7 @@ TARGET_ARMV=$DEPLOY_DIR/$ARMV/$PROJECT_NAME
 TARGET_i486=$DEPLOY_DIR/$i486/$PROJECT_NAME
 
 rm -fr $TARGET_DIR
+rm -fr $BUILD_DIR
 
 #make target directories
 mkdir -p $TARGET_ARMV/{Settings,FileManagement,Database,Language,Core}
