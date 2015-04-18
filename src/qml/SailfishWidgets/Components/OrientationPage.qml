@@ -34,5 +34,5 @@ import Sailfish.Silica 1.0
    This is a \c {Page} component that sets \c {allowedOrientations} to \c {Orientation.All}
   */
 Page {
-    allowedOrientations: Orientation.All
+    allowedOrientations: Orientation.Portrait | Orientation.Landscape | Orientation.LandscapeInverted
 }

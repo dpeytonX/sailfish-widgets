@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QDOCINDEX>
-<INDEX url="" title="Library to speed up Sailfish Development" version="1.3.4" project="Safilfish Widgets">
+<INDEX url="" title="Library to speed up Sailfish Development" version="1.4.1" project="Safilfish Widgets">
     <namespace threadsafety="unspecified" name="" access="public" status="commendable">
         <qmlclass name="AboutPage" qml-module-name="SailfishWidgets.Components" qml-base-type="SailfishWidgets.Components::OrientationPage" fullname="SailfishWidgets.Components::AboutPage" href="qml-sailfishwidgets-components-aboutpage.html" access="public" status="commendable" since="5.1" title="AboutPage" fulltitle="AboutPage" subtitle="" brief="Displays a summary page for your application">
             <qmlproperty threadsafety="unspecified" name="aboutContent" fullname="SailfishWidgets.Components::AboutPage::aboutContent" href="qml-sailfishwidgets-components-aboutpage.html#aboutContent-prop" access="public" status="commendable" type="alias" attached="false" writable="true"/>
