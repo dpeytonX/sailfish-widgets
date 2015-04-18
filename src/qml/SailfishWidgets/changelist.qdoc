@@ -24,6 +24,11 @@
 
   \startpage
 
+  SailfishWidgets 1.4.1
+  \list
+  \li Added \l {OrientationDialog} and \l {OrientationPage} will not support inverted portrait by default.
+  \endlist
+
   SailfishWidgets 1.4.0
   \list
   \li Added \l {OrientationHelper} to force Sailfish Silica components' spawned Pages to inherit allowedOrientation

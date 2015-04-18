@@ -5,7 +5,7 @@ Sailfish.Silica 1.0 compatible widgets which aim to speed up development by impl
 
 This project is GPLv3 unless otherwise indicated on the file itself. Files with other licenses are copyrighted to their respective owners.
 
-Version 1.4.0
+Version 1.4.1
 <p>
 <img src="http://www.gnu.org/graphics/gplv3-127x51.png" width="254" height="102" />
 
@@ -30,7 +30,7 @@ QML_IMPORT_PATH = .
 INSTALLS += <em>your-app</em>
 </pre>
    </li>
-   <li> In your QML file add the following import statement: <code>import harbour.<em>your-app</em>.SailfishWidgets.<em>Package</em> <em>version</em></code></li>
+   <li> In your QML file add the following import statement: <code>import harbour.<em>your-app</em>.SailfishWidgets.<em>Package</em> <em>version 
 </ol>
 
 <h2> Using native plugins </h2>
@@ -77,7 +77,7 @@ The Core library requires libapplicationsettings.so. The following code will aut
 The <code>sailfishapp</code> configuration will automatically add /usr/share/<em>you-app</em>/lib to the LD path so your application will automatically search that folder for libraries that are deployed with your application.
 
 <h2>Debugging native libraries</h2>
-In order to debug the internal library, you will need to download the entire source tree and run the make file with the debug option. Replace the your application's version of the library with the debug version and run GDB remotely on the device. Qt Creator should provide this option automatically.
+In order to debug the internal library, you will need to download the entire source tree and run the make file with the debug option. Replace the your application's version 
 
 <h2>Contribute</h2>
 

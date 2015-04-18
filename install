@@ -12,7 +12,7 @@ RELEASE_DIR=release
 DOC_DIR=Documentation
 INCLUDE_DIR=$DEPLOY_DIR/include
 
-VERSION=1_4_0
+VERSION=1_4_1
 ARMV=armv
 i486=i486
 
@@ -21,6 +21,13 @@ TARGET_i486=$DEPLOY_DIR/$i486/$PROJECT_NAME
 
 rm -fr $TARGET_DIR
 rm -fr $BUILD_DIR
+
+echo Building ${VERSION//_/.}
+
+#update versions
+sed -i "s/version =.*$/version = ${VERSION//_/.}/" sailfishwidgets.qdocconf
+sed -i "s/version.*$/version ${version//_/.}/" README.md
+sed -i "s/SailfishWidgets \d+\.\d+\.\d+.*$/SailfishWidgets ${version//_/.}/" $QML_DIR/index.qdoc
 
 #make target directories
 mkdir -p $TARGET_ARMV/{Settings,FileManagement,Database,Language,Core}
