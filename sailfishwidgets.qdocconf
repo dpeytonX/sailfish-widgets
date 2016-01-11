@@ -3,7 +3,7 @@ outputencoding = UTF-8
 
 project = Safilfish Widgets
 description = Library to speed up Sailfish Development
-version = 1.4.1
+version = 1.4.2
 
 generateindex = true
 
