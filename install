@@ -11,8 +11,9 @@ LIB_DIR=$SRC_DIR/lib
 RELEASE_DIR=release
 DOC_DIR=Documentation
 INCLUDE_DIR=$DEPLOY_DIR/include
+QDOC=qdoc
 
-VERSION=1_4_1
+VERSION=1_4_2
 ARMV=armv
 i486=i486
 
@@ -36,7 +37,7 @@ mkdir -p $RELEASE_DIR
 mkdir -p $INCLUDE_DIR
 
 #documentation
-qdoc3 $CURDIR/*.qdocconf
+$QDOC $CURDIR/*.qdocconf
 cp -r $DOC_DIR $DEPLOY_DIR
 
 #copy qml files
