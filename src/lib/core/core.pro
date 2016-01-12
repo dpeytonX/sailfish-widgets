@@ -17,7 +17,7 @@ INCLUDEPATH += $$PWD/../applicationsettings /usr/include/sailfishapp
 LIBS += -L/usr/lib -lsailfishapp
 
 unix:!macx: LIBS += -L$$OUT_PWD/../../applicationsettings/i486 \
-                    -L$$OUT_PWD/../../applicationsettings/armv -lapplicationsettings
+                    -L$$OUT_PWD/../../applicationsettings/armv
 
 INCLUDEPATH += $$PWD/../applicationsettings
 DEPENDPATH += $$PWD/../applicationsettings
