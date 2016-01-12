@@ -48,8 +48,4 @@ contains( CMD_LINE, "true") {
  }
 }
 
-as.depends = $$OUT_PWD/libapplicationsettings.so
-as.target = $$_PRO_FILE_PWD_/../../qml/SailfishWidgets/Settings/
-as.commands = $(COPY_FILE) $$as.depends $$as.target
-QMAKE_EXTRA_TARGETS += as
-PRE_TARGETDEPS += $$as.target
+DESTDIR = $$_PRO_FILE_PWD_/../../qml/SailfishWidgets/Settings/
