@@ -12,7 +12,6 @@ SUBDIRS = src/lib/applicationsettings \
           src/lib/filemanagement \
           src/lib/language
 
-SOURCES += src/qml/SailfishWidgets/*
 OTHER_FILES += src/qml/SailfishWidgets/Components/* \
                src/qml/SailfishWidgets/Database/* \
                src/qml/SailfishWidgets/FileManagement/* \

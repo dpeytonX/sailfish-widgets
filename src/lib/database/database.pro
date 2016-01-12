@@ -23,6 +23,7 @@ HEADERS += \
 
 OTHER_FILES =
 
+contains( CMD_LINE, "true") {
 !equals(_PRO_FILE_PWD_, $$OUT_PWD) {
     copy_qmldir.target = $$OUT_PWD/qmldir
     copy_qmldir.depends = $$_PRO_FILE_PWD_/../../qml/SailfishWidgets/Database/qmldir
@@ -37,6 +38,7 @@ unix {
     qmldir.path = $$installPath
     target.path = $$installPath
     INSTALLS += target qmldir
+}
 }
 
 !contains( CONFIG, "DEBUG") {
