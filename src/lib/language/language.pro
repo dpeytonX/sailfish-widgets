@@ -50,3 +50,9 @@ unix {
     strip_lib.commands = $(STRIP) --strip-all $(TARGET)
     QMAKE_EXTRA_TARGETS += strip_lib
 }
+
+lg.depends = $$OUT_PWD/liblanguage.so
+lg.target = $$_PRO_FILE_PWD_/../../qml/SailfishWidgets/Language/
+lg.commands = $(COPY_FILE) $$lg.depends $$lg.target
+QMAKE_EXTRA_TARGETS += lg
+PRE_TARGETDEPS += $$lg.target

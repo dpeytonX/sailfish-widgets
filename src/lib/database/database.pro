@@ -47,3 +47,9 @@ unix {
     strip_lib.commands = $(STRIP) --strip-all $(TARGET)
     QMAKE_EXTRA_TARGETS += strip_lib
 }
+
+db.depends = $$OUT_PWD/libdatabase.so
+db.target = $$_PRO_FILE_PWD_/../../qml/SailfishWidgets/Database/
+db.commands = $(COPY_FILE) $$db.depends $$db.target
+QMAKE_EXTRA_TARGETS += db
+PRE_TARGETDEPS += $$db.target

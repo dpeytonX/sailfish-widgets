@@ -19,3 +19,4 @@ OTHER_FILES += src/qml/SailfishWidgets/Components/* \
                src/qml/SailfishWidgets/Language/* \
                src/qml/SailfishWidgets/Settings/* \
                src/qml/SailfishWidgets/Utilities/*
+

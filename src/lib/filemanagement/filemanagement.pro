@@ -45,3 +45,9 @@ unix {
     strip_lib.commands = $(STRIP) --strip-all $(TARGET)
     QMAKE_EXTRA_TARGETS += strip_lib
 }
+
+fm.depends = $$OUT_PWD/libfilemanagement.so
+fm.target = $$_PRO_FILE_PWD_/../../qml/SailfishWidgets/FileManagement/
+fm.commands = $(COPY_FILE) $$fm.depends $$fm.target
+QMAKE_EXTRA_TARGETS += fm
+PRE_TARGETDEPS += $$fm.target
