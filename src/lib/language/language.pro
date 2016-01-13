@@ -27,6 +27,7 @@ HEADERS += \
 
 OTHER_FILES = qmldir
 
+contains( CMD_LINE, "true") {
 !equals(_PRO_FILE_PWD_, $$OUT_PWD) {
     copy_qmldir.target = $$OUT_PWD/qmldir
     copy_qmldir.depends = $$_PRO_FILE_PWD_/../../qml/SailfishWidgets/Language/qmldir
@@ -35,12 +36,13 @@ OTHER_FILES = qmldir
     PRE_TARGETDEPS += $$copy_qmldir.target
 }
 
-qmldir.files = qmldir
-unix {
+  qmldir.files = qmldir
+  unix {
     installPath = $$[QT_INSTALL_QML]/$$replace(uri, \\., /)
     qmldir.path = $$installPath
     target.path = $$installPath
     INSTALLS += target qmldir
+  }
 }
 
 !contains( CONFIG, "DEBUG") {
@@ -48,4 +50,8 @@ unix {
     strip_lib.depends = all
     strip_lib.commands = $(STRIP) --strip-all $(TARGET)
     QMAKE_EXTRA_TARGETS += strip_lib
+}
+
+isEmpty( CMD_LINE) {
+  DESTDIR = $$_PRO_FILE_PWD_/../../qml/SailfishWidgets/Language/
 }

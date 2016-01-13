@@ -4,6 +4,8 @@
 #######################
 # FUNCTIONS           #
 #######################
+SAILFISH_SDK_DIR="$HOME/.config/SailfishBeta7"
+
 function compile_i486() {
   PROJECT=$1
   TARGET="i486"
@@ -11,10 +13,10 @@ function compile_i486() {
 
   mkdir -p $BUILD_PATH
   export MER_SSH_PROJECT_PATH="$BUILD/$PROJECT"
-  export MER_SSH_SDK_TOOLS="$HOME/.config/SailfishBeta2/mer-sdk-tools/MerSDK/SailfishOS-i486"
+  export MER_SSH_SDK_TOOLS="$SAILFISH_SDK_DIR/mer-sdk-tools/MerSDK/SailfishOS-i486"
   export MER_SSH_TARGET_NAME="SailfishOS-i486"
   pushd $BUILD_PATH
-  "$MER_SSH_SDK_TOOLS/qmake" "$MER_SSH_PROJECT_PATH/${PROJECT}.pro" "-r" "-spec" "linux-g++-32" "$DEBUG"
+  "$MER_SSH_SDK_TOOLS/qmake" "$MER_SSH_PROJECT_PATH/${PROJECT}.pro" "-r" "-spec" "linux-g++-32" "$DEBUG" "CMD_LINE+=true"
   "$MER_SSH_SDK_TOOLS/make" "clean"
   "$MER_SSH_SDK_TOOLS/make"
   popd 1> /dev/null
@@ -27,17 +29,17 @@ function compile_armv() {
 
   mkdir -p $BUILD_PATH
   export MER_SSH_PROJECT_PATH="$BUILD/$PROJECT"
-  export MER_SSH_SDK_TOOLS="$HOME/.config/SailfishBeta2/mer-sdk-tools/MerSDK/SailfishOS-armv7hl"
+  export MER_SSH_SDK_TOOLS="$SAILFISH_SDK_DIR/mer-sdk-tools/MerSDK/SailfishOS-armv7hl"
   export MER_SSH_TARGET_NAME="SailfishOS-armv7hl"
   echo "$DEBUG"
   pushd $BUILD_PATH
   
   if [ -n $DEBUG ]; then
-    local STRIP='QMAKE_CXXFLAGS += "-fvisibility=hidden -fvisibility-inlines-hidden"'
-  else
     local STRIP=""
+  else
+    local STRIP='QMAKE_CXXFLAGS += "-fvisibility=hidden -fvisibility-inlines-hidden"'
   fi
-  "$MER_SSH_SDK_TOOLS/qmake" "$MER_SSH_PROJECT_PATH/${PROJECT}.pro" "-r" "-spec" "linux-g++" "$DEBUG" "$STRIP"
+  "$MER_SSH_SDK_TOOLS/qmake" "$MER_SSH_PROJECT_PATH/${PROJECT}.pro" "-r" "-spec" "linux-g++" "$DEBUG" "$STRIP" "CMD_LINE+=true"
   "$MER_SSH_SDK_TOOLS/make" "clean"
   if [ -n "$STRIP" ]; then
     "$MER_SSH_SDK_TOOLS/make" "strlib"

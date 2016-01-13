@@ -3,3 +3,4 @@ target
 build
 Makefile
 *pro.user*
+src/qml/SailfishWidgets/**/*.so

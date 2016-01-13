@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- changelist.qdoc -->
@@ -8,11 +8,10 @@
 </head>
 <body>
 <link rel='stylesheet' href='style/stylesheet.css' /> <h2>Back to <a href='https://github.com/prplmnky/sailfish-widgets'>GitHub</a></h2><li>ChangeList</li>
-<li id="buildversion">
-</li>
   <link rel="start" href="" />
 <p class="naviNextPrevious headerNavi">
 </p><p/>
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
 <h1 class="title">ChangeList</h1>
 <span class="subtitle"></span>
 <!-- $$$ChangeList.html-description -->
@@ -38,21 +37,21 @@
 <li><a href="localeitem.html">LocaleItem</a></li>
 <li><a href="defaultlocale.html">DefaultLocale</a></li>
 <li><a href="sailfishmain.html">SailfishMain</a></li>
-<li>Added <tt>isValid()</tt> method to <a href="applicationsettings.html">ApplicationSettings</a></li>
+<li>Added <code>isValid()</code> method to <a href="applicationsettings.html">ApplicationSettings</a></li>
 <li>Added new constructor to <a href="applicationsettings.html">ApplicationSettings</a></li>
-<li>Added <tt>settings()</tt> and <tt>value()</tt> methods to <a href="applicationsettings.html">ApplicationSettings</a></li>
+<li>Added <code>settings()</code> and <code>value()</code> methods to <a href="applicationsettings.html">ApplicationSettings</a></li>
 <li>Added install and make scripts for automated builds</li>
 <li>Added debug vs release build command for the make script</li>
 <li>Release tarball will include the header files</li>
-<li><a href="sqlitedatabase.html">SQLiteDatabase</a> has <tt>rollback()</tt> method</li>
+<li><a href="sqlitedatabase.html">SQLiteDatabase</a> has <code>rollback()</code> method</li>
 <li>Simplified <a href="sqlitedatabase.html">SQLiteDatabase</a> so that only a single <a href="query.html">Query</a> object is maintained</li>
 <li>Fixed bug in Qt 5.1 builds from using two internal Query objects</li>
-<li>Added <tt>finish()</tt> , <tt>close()</tt> , <tt>lastQuery</tt>, <tt>executedQuery</tt>, <tt>fieldSize</tt> to <a href="query.html">Query</a></li>
+<li>Added <code>finish()</code> , <code>close()</code> , <code>lastQuery</code>, <code>executedQuery</code>, <code>fieldSize</code> to <a href="query.html">Query</a></li>
 </ul>
 <p>SailfishWidgets 1.3&#x2e;3</p>
 <ul>
 <li><a href="qml-sailfishwidgets-components-busypage.html">BusyPage</a> will allow any orientation</li>
-<li><a href="qml-sailfishwidgets-components-labelbutton.html">LabelButton</a> now has the <tt>truncationMode</tt> property</li>
+<li><a href="qml-sailfishwidgets-components-labelbutton.html">LabelButton</a> now has the <code>truncationMode</code> property</li>
 </ul>
 <p>SailfishWidgets 1.3&#x2e;2</p>
 <ul>
@@ -62,21 +61,21 @@
 <ul>
 <li>Added <a href="sqlitedatabase.html">SQLiteDatabase</a> and <a href="query.html">Query</a> to the Database package</li>
 <li>Fixed some warnings with <a href="applicationsettings.html">ApplicationSettings</a>, <a href="file.html">File</a>, and <a href="dir.html">Dir</a>'s documentation.</li>
-<li>Added <tt>open()</tt> <tt>close()</tt> <tt>readAll()</tt> and <tt>write()</tt> methods to <a href="file.html">File</a></li>
-<li>Added <tt>remove()</tt> <tt>rename()</tt> <tt>copy()</tt> methods to <a href="file.html">File</a></li>
+<li>Added <code>open()</code> <code>close()</code> <code>readAll()</code> and <code>write()</code> methods to <a href="file.html">File</a></li>
+<li>Added <code>remove()</code> <code>rename()</code> <code>copy()</code> methods to <a href="file.html">File</a></li>
 </ul>
 <p>SailfishWidgets 1.3</p>
 <ul>
-<li>Deprecating <a href="qml-sailfishwidgets-components-heading.html" class="obsolete">Heading<sup>(obsolete)</sup></a> in favor of SectionHeader. From now on, use <tt>Sailfish.Silica::SectionHeader</tt>.</li>
+<li>Deprecating <a href="qml-sailfishwidgets-components-heading.html">Heading</a> in favor of SectionHeader. From now on, use <code>Sailfish.Silica::SectionHeader</code>.</li>
 <li>Added <a href="qml-sailfishwidgets-components-aboutpage.html">AboutPage</a></li>
-<li>Fixed error in <a href="qml-sailfishwidgets-utilities-dynamicloader.html">DynamicLoader</a> when accessing <tt>errorString</tt> on null Component</li>
+<li>Fixed error in <a href="qml-sailfishwidgets-utilities-dynamicloader.html">DynamicLoader</a> when accessing <code>errorString</code> on null Component</li>
 </ul>
 <p>SailfishWidgets 1.2</p>
 <ul>
 <li>Updated <a href="qml-sailfishwidgets-components-standardlistview.html">StandardListView</a> to remove PageHeader (makes it more useful in dialogs)</li>
 <li>Added <a href="qml-variant.html">Variant</a> for operations on variant types</li>
 <li>Added <a href="dir.html">Dir</a>, <a href="file.html">File</a>, and <a href="qml-sailfishwidgets-filemanagement-fileselector.html">FileSelector</a> inside the FileManagement package</li>
-<li><a href="applicationsettings.html">ApplicationSettings</a> will emit <tt>settingsPropertyUpdated(QString name)</tt> when a property is changed.</li>
+<li><a href="applicationsettings.html">ApplicationSettings</a> will emit <code>settingsPropertyUpdated(QString name)</code> when a property is changed.</li>
 <li><a href="applicationsettings.html">ApplicationSettings</a> will propagate settings changes to all known QML objects refering to the same settings file.</li>
 <li>Added <a href="qml-sailfishwidgets-components-spacer.html">Spacer</a>, <a href="qml-sailfishwidgets-components-labelbutton.html">LabelButton</a>, and <a href="qml-sailfishwidgets-components-busypage.html">BusyPage</a> components</li>
 </ul>
