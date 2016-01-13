@@ -48,4 +48,6 @@ contains( CMD_LINE, "true") {
  }
 }
 
-DESTDIR = $$_PRO_FILE_PWD_/../../qml/SailfishWidgets/Settings/
+isEmpty( CMD_LINE) {
+  DESTDIR = $$_PRO_FILE_PWD_/../../qml/SailfishWidgets/Settings/
+}
