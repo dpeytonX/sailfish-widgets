@@ -79,26 +79,8 @@ The <code>sailfishapp</code> configuration will automatically add /usr/share/<em
 <h2>Debugging native libraries</h2>
 In order to debug the internal library, you will need to download the entire source tree and run the make file with the debug option. Replace the your application's version 
 
-<h2>Contribute</h2>
-
-This application is open source,  but please do contribute to active development!
-<p>
-You can contribute in one of two ways:
-<ul>
-<li>Fork this branch and make pull request! (Please create an issue ticket first, though)
-<li>Donate Bitcoins
-</ul>
-<p>
-<img src="images/bitcoinaddy.png" />
-<p>
-<code>1PFqgHeGrtXLYvMge2mTT1FohKuuoKmUN5</code>
-
-<p>
-
-THANK YOU!
 
 <h2>Links</h2>
 <a href="http://qt-project.org/doc/qt-5/qtqml-modules-qmldir.html">qmldir specification</a>
 
-<br>
-Copyright ©2014-2015 Dametrious Peyton. All Rights Reserved
+$$FOOTER$$
