@@ -5,7 +5,7 @@ Sailfish.Silica 1.0 compatible widgets which aim to speed up development by impl
 
 This project is GPLv3 unless otherwise indicated on the file itself. Files with other licenses are copyrighted to their respective owners.
 
-Version 1.4.1
+Version 3.3
 <p>
 <img src="http://www.gnu.org/graphics/gplv3-127x51.png" width="254" height="102" />
 
@@ -20,7 +20,7 @@ The following are instructions to using SailfishWidgets with your own project. T
   <li> First, download the source code and put the <code>SailfishWidgets</code> folder within the <code>harbour/<em>your-project</em></code> directory</li>
   <li> Then, edit the first line of qmldir. This is easiest accomplished with the following BASH command. 
 <pre>find . -name "qmldir" -exec sed -i "s/module SailfishWidgets/module harbour.<em>yourAppName</em>.SailfishWidgets/" \{} \;</pre>.
-Alternatively, manually edit each qmldir that you use to <code>module harbour.<em>your-project</em>.SailfishWidgets.</em>Package</em></code>.</li>
+Alternatively, manually edit each qmldir that you use to <code>module harbour.<em>your-project</em>.SailfishWidgets.<em>Package</em></code>.</li>
   <li> For using with QtCreator add the following
 <pre>
 OTHER_FILES += harbour/<em>your-app</em>
@@ -30,7 +30,7 @@ QML_IMPORT_PATH = .
 INSTALLS += <em>your-app</em>
 </pre>
    </li>
-   <li> In your QML file add the following import statement: <code>import harbour.<em>your-app</em>.SailfishWidgets.<em>Package</em> <em>version 
+   <li> In your QML file add the following import statement: <code>import harbour.<em>your-app</em>.SailfishWidgets.<em>Package</em> <em>version</em> 
 </ol>
 
 <h2> Using native plugins </h2>
