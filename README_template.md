@@ -9,6 +9,9 @@ Version 3.3
 <p>
 <img src="http://www.gnu.org/graphics/gplv3-127x51.png" width="254" height="102" />
 
+<h2> TODO </h2>
+<li> Have a template engine to update project version and QML import versions before commit
+
 <h2> Documentation </h2>
 Documentation is located <a href="https://rawgit.com/prplmnky/sailfish-widgets/master/Documentation/index.html">here</a>.
 
