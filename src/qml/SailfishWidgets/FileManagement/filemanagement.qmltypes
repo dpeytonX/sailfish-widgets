@@ -25,8 +25,8 @@ Module {
         // the Animation object would be found in the package Foo and
         // QtQuick.
         exports: [
-            "FileManagement 1.2",
-            "SailfishWidgets/FileManagement 1.2"
+            "FileManagement 3.3",
+            "SailfishWidgets/FileManagement 3.3"
         ]
 
         // The meta object revisions for the exports specified in 'exports'.
