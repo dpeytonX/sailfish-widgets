@@ -45,7 +45,7 @@ cp -r $QML_DIR/* $TARGET_ARMV/
 cp -r $QML_DIR/* $TARGET_i486/
 
 #compile
-./make $1
+./make-install $1
 
 #copy built plugins
 cp $BUILD_DIR/applicationsettings/$ARMV/*\.so* $TARGET_ARMV/Settings/
