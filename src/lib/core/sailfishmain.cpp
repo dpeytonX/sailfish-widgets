@@ -63,6 +63,10 @@ int SailfishMain::main(int argc, char *argv[], const QString& appName, const QSt
         qDebug() << settings.fileName();
         settings.refresh();
         QGuiApplication* app(SailfishApp::application(argc, argv));
+
+        //Set the library path to the 'lib' dir of the application
+        //Jolla specifies that shared libs go there
+        QCoreApplication::addLibraryPath(QCoreApplication::applicationDirPath() + "/lib");
         installLanguage(appName, settings.isValid(localeSetting) ? settings.value(localeSetting).toString() : "", app);
 
         //Start the app

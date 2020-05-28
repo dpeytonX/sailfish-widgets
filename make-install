@@ -54,6 +54,7 @@ function compile_armv() {
   else 
     "$MER_SSH_SDK_TOOLS/make"
   fi
+
   popd 1> /dev/null
 }
 

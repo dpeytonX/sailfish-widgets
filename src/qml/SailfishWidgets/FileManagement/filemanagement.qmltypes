@@ -24,10 +24,7 @@ Module {
         // For example if this module was imported with 'import Foo 4.8'
         // the Animation object would be found in the package Foo and
         // QtQuick.
-        exports: [
-            "FileManagement 3.3",
-            "SailfishWidgets/FileManagement 3.3"
-        ]
+        exports: ["FileManagement 3.3", "SailfishWidgets/FileManagement 3.3"]
 
         // The meta object revisions for the exports specified in 'exports'.
         // Describes with revisioned properties will be visible in an export.
@@ -37,7 +34,7 @@ Module {
 
         //In other words, the package import version will receive all features up to and including the
         //specified revision
-        //exportMetaObjectRevisions: [0, 0]
+        exportMetaObjectRevisions: [0, 4]
 
         Property {
             name: "root"
@@ -93,61 +90,65 @@ Module {
             name: "entries"
             type: "list<string>"
         }
-        
-        Signal { name: "pathChanged" }
-        Signal { name: "filterChanged" }
-        Signal { name: "filesChanged" }
-        Signal { name: "sortChanged" }
 
-        Method { name: "refresh" }
+        Signal {
+            name: "pathChanged"
+        }
+        Signal {
+            name: "filterChanged"
+        }
+        Signal {
+            name: "filesChanged"
+        }
+        Signal {
+            name: "sortChanged"
+        }
+
+        Method {
+            name: "refresh"
+        }
 
         Enum {
             name: "DirFilter"
             values: {
-                  "Dirs" : 1,
-                  "Files" : 2,
-                  "Drives" : 4,
-                  "NoSymLinks" : 8,
-                  "AllEntries" : 7,
-                  "TypeMask" : 15,
-
-                  "Readable" : 17,
-                  "Writable" : 32,
-                  "Executable" : 64,
-                  "PermissionMask" : 112,
-
-                  "Modified" : 128,
-                  "Hidden" : 160,
-                  "System" : 320,
-
-                  "AccessMask" : 624,
-
-                  "AllDirs" : 640,
-                  "CaseSensitive" : 1280,
-                  "NoDot" : 3200,
-                  "NoDotDot" : 6400,
-                  "NoDotAndDotDot" : 9600,
-
-                  "NoFilter" : -1
+                "Dirs": 1,
+                "Files": 2,
+                "Drives": 4,
+                "NoSymLinks": 8,
+                "AllEntries": 7,
+                "TypeMask": 15,
+                "Readable": 17,
+                "Writable": 32,
+                "Executable": 64,
+                "PermissionMask": 112,
+                "Modified": 128,
+                "Hidden": 160,
+                "System": 320,
+                "AccessMask": 624,
+                "AllDirs": 640,
+                "CaseSensitive": 1280,
+                "NoDot": 3200,
+                "NoDotDot": 6400,
+                "NoDotAndDotDot": 9600,
+                "NoFilter": -1
             }
         }
 
         Enum {
             name: "DirSort"
             values: {
-                    "Name" : 0,
-                    "Time" : 1,
-                    "Size" : 2,
-                    "Unsorted" : 3,
-                    "SortByMask" : 3,
-
-                    "DirsFirst" : 4,
-                    "Reversed" : 8,
-                    "IgnoreCase" : 16,
-                    "DirsLast" : 32,
-                    "LocaleAware" : 64,
-                    "Type" : 128,
-                    "NoSort" : -1
+                "Name": 0,
+                "Time": 1,
+                "Size": 2,
+                "Unsorted": 3,
+                "SortByMask": 3,
+                "DirsFirst": 4,
+                "Reversed": 8,
+                "IgnoreCase": 16,
+                "DirsLast": 32,
+                "LocaleAware": 64,
+                "Type": 128,
+                "NoSort": -1
             }
         }
     }
@@ -156,11 +157,8 @@ Module {
         name: "File"
 
         prototype: "QObject"
-        exports: [
-            "FileManagement 1.2",
-            "SailfishWidgets/FileManagement 1.2"
-        ]
-        exportMetaObjectRevisions: [0, 0]
+        exports: ["FileManagement 3.3", "SailfishWidgets/FileManagement 3.3"]
+        exportMetaObjectRevisions: [0, 4]
 
         Property {
             name: "dir"
@@ -216,7 +214,9 @@ Module {
             name: "fileName"
             type: "string"
         }
-        
-        Signal { name: "fileNameChanged" }
+
+        Signal {
+            name: "fileNameChanged"
+        }
     }
 }

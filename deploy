@@ -26,9 +26,15 @@ rm -fr $BUILD_DIR
 echo Building ${VERSION//_/.}
 
 #update versions
-sed -i "s/version =.*$/version = ${VERSION//_/.}/" sailfishwidgets.qdocconf
-sed -i "s/version.*$/version ${version//_/.}/" README.md
-sed -i "s/SailfishWidgets \d+\.\d+\.\d+.*$/SailfishWidgets ${version//_/.}/" $QML_DIR/index.qdoc
+if [ `uname -s` = "Darwin" ]; then
+  gsed -i "s/version =.*$/version = ${VERSION//_/.}/" sailfishwidgets.qdocconf
+  gsed -i "s/version.*$/version ${version//_/.}/" README.md
+  gsed -i "s/SailfishWidgets \d+\.\d+\.\d+.*$/SailfishWidgets ${version//_/.}/" $QML_DIR/index.qdoc
+else
+  sed -i "s/version =.*$/version = ${VERSION//_/.}/" sailfishwidgets.qdocconf
+  sed -i "s/version.*$/version ${version//_/.}/" README.md
+  sed -i "s/SailfishWidgets \d+\.\d+\.\d+.*$/SailfishWidgets ${version//_/.}/" $QML_DIR/index.qdoc
+fi
 
 #make target directories
 mkdir -p $TARGET_ARMV/{Settings,FileManagement,Database,Language,Core}
