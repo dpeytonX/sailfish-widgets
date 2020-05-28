@@ -5,7 +5,7 @@ CONFIG += qt plugin
 
 QT += sql
 
-QMAKE_CXXFLAGS += "-std=c++0x"
+#QMAKE_CXXFLAGS += "-std=c++0x"
 
 TARGET = $$qtLibraryTarget($$TARGET)
 uri = SailfishWidgets.Database

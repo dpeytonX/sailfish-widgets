@@ -1,6 +1,6 @@
 QT = qml quick
 
-QMAKE_CXXFLAGS += "-std=c++0x"
+#QMAKE_CXXFLAGS += "-std=c++0x"
 
 TARGET = core
 TEMPLATE = lib
