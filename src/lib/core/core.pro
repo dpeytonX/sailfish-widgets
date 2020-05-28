@@ -9,15 +9,18 @@ DEFINES += SAILFISHMAIN_LIBRARY
 
 SOURCES += sailfishmain.cpp
 
-HEADERS += sailfishmain.h \
-        sailfishmain_global.h
+INCLUDEPATH += /usr/include/sailfishapp
 
-INCLUDEPATH += $$PWD/../applicationsettings /usr/include/sailfishapp
+HEADERS += sailfishmain.h \
+        sailfishmain_global.h \
+       $$PWD/../applicationsettings/applicationsettings.h \
+
 
 LIBS += -L/usr/lib -lsailfishapp
 
 unix:!macx: LIBS += -L$$OUT_PWD/../../applicationsettings/i486 \
-                    -L$$OUT_PWD/../../applicationsettings/armv
+                    -L$$OUT_PWD/../../applicationsettings/armv7hl \
+                    -lapplicationsettings
 
 INCLUDEPATH += $$PWD/../applicationsettings
 DEPENDPATH += $$PWD/../applicationsettings
