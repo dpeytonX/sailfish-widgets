@@ -27,6 +27,7 @@
 #include <QGuiApplication>
 #include <QQuickView>
 #include <QTranslator>
+#include <QQmlEngine>
 
 /*!
    \namespace SailfishMain
@@ -64,13 +65,23 @@ int SailfishMain::main(int argc, char *argv[], const QString& appName, const QSt
         settings.refresh();
         QGuiApplication* app(SailfishApp::application(argc, argv));
 
+        qDebug() << SailfishApp::pathTo("lib").toString();
+        app->addLibraryPath("/usr/share/" + appName + "/lib");
+        foreach (const QString &path, app->libraryPaths())
+            qDebug() << path;
+
         //Set the library path to the 'lib' dir of the application
         //Jolla specifies that shared libs go there
-        QCoreApplication::addLibraryPath(QCoreApplication::applicationDirPath() + "/lib");
+
         installLanguage(appName, settings.isValid(localeSetting) ? settings.value(localeSetting).toString() : "", app);
 
         //Start the app
         QQuickView* view(SailfishApp::createView());
+        // This is needed to import custom QML Plugins/Modules
+        view->engine()->addImportPath("/usr/share/" + appName);
+        view->engine()->addPluginPath("/usr/share/" + appName);
+        foreach (const QString& path, view->engine()->pluginPathList())
+            qDebug() << "Plugin path: " << path;
         view->setSource(SailfishApp::pathTo("qml/" + appName + ".qml"));
         view->show();
         return app->exec();

@@ -28,7 +28,7 @@
 void ApplicationsettingsPlugin::registerTypes(const char *uri)
 {
     // @uri SailfishWidgets.Settings
-    qmlRegisterType<ApplicationSettings>(uri, 1, 1, "ApplicationSettings");
+    qmlRegisterType<ApplicationSettings>(uri, 3, 3, "ApplicationSettings");
 }
 
 
