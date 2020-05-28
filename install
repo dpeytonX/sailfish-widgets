@@ -14,7 +14,7 @@ INCLUDE_DIR=$DEPLOY_DIR/include
 QDOC=qdoc
 
 VERSION=3.3
-ARMV=armv
+ARMV=armv7hl
 i486=i486
 
 TARGET_ARMV=$DEPLOY_DIR/$ARMV/$PROJECT_NAME
@@ -45,7 +45,7 @@ cp -r $QML_DIR/* $TARGET_ARMV/
 cp -r $QML_DIR/* $TARGET_i486/
 
 #compile
-./make
+./make $1
 
 #copy built plugins
 cp $BUILD_DIR/applicationsettings/$ARMV/*\.so* $TARGET_ARMV/Settings/

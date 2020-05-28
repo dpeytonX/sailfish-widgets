@@ -3,17 +3,6 @@
 SAILFISH_SDK_DIR="$HOME/.config/SailfishSDK"
 MER_TOOLS=$SAILFISH_SDK_DIR/libsfdk/build-target-tools/Sailfish\ OS\ Build\ Engine
 VERSION=3.3.0.16
-#######################
-# MER BUILD VARIABLES #
-#######################
-export MER_SSH_SHARED_SRC=$1
-
-export MER_SSH_PORT=2222
-export MER_SSH_HOST=127.0.0.1
-export MER_SSH_USERNAME="mersdk"
-export MER_SSH_PRIVATE_KEY="$MER_SSH_SHARED_SRC/SailfishOS/vmshare/ssh/private_keys/engine/mersdk"
-export MER_SSH_SHARED_HOME="$HOME"
-export MER_SSH_SHARED_TARGET="$HOME/SailfishOS/mersdk/targets"
 
 ROOT=`pwd`
 BUILD=$ROOT/src/lib
@@ -32,7 +21,7 @@ function compile_i486() {
 
   mkdir -p $BUILD_PATH
   export MER_SSH_PROJECT_PATH="$BUILD/$PROJECT"
-  export MER_SSH_TARGET_NAME="SailfishOS-$VERSION-i486"
+  export MER_SSH_TARGET_NAME="SailfishOS-$VERSION-$TARGET"
   export MER_SSH_SDK_TOOLS=$MER_TOOLS/$MER_SSH_TARGET_NAME
   pushd $BUILD_PATH
   "$MER_SSH_SDK_TOOLS/qmake" "$MER_SSH_PROJECT_PATH/${PROJECT}.pro" "-r" "-spec" "linux-g++-32" "$DEBUG" "CMD_LINE+=true"
@@ -43,12 +32,12 @@ function compile_i486() {
 
 function compile_armv() {
   PROJECT=$1
-  TARGET="armv"
+  TARGET="armv7hl"
   BUILD_PATH="$ROOT/build/$PROJECT/$TARGET"
 
   mkdir -p $BUILD_PATH
   export MER_SSH_PROJECT_PATH="$BUILD/$PROJECT"
-  export MER_SSH_TARGET_NAME="SailfishOS-$VERSION-armv7hl"
+  export MER_SSH_TARGET_NAME="SailfishOS-$VERSION-$TARGET"
   export MER_SSH_SDK_TOOLS=$MER_TOOLS/$MER_SSH_TARGET_NAME
   echo "$DEBUG"
   pushd $BUILD_PATH
@@ -101,10 +90,23 @@ while getopts :hDp:a: opt "$@"; do
     ;;
   esac  
 done
+shift $((OPTIND -1))
 
 if [[ -z "$1" || ! -d "$1" ]]; then
   echo "Shared source directory is either missing or not a directory" && exit 1
 fi
+
+#######################
+# MER BUILD VARIABLES #
+#######################
+export MER_SSH_SHARED_SRC=$1
+
+export MER_SSH_PORT=2222
+export MER_SSH_HOST=127.0.0.1
+export MER_SSH_USERNAME="mersdk"
+export MER_SSH_PRIVATE_KEY="$MER_SSH_SHARED_SRC/SailfishOS/vmshare/ssh/private_keys/engine/mersdk"
+export MER_SSH_SHARED_HOME="$HOME"
+export MER_SSH_SHARED_TARGET="$HOME/SailfishOS/mersdk/targets"
 
 ###############################
 # Start the SDK VirtualBox VM #
