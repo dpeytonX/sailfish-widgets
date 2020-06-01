@@ -4,3 +4,4 @@ build
 Makefile
 *pro.user*
 src/qml/SailfishWidgets/**/*.so
+release/SailfishWidgets

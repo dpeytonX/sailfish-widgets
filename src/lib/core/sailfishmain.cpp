@@ -79,7 +79,8 @@ int SailfishMain::main(int argc, char *argv[], const QString& appName, const QSt
         QQuickView* view(SailfishApp::createView());
         // This is needed to import custom QML Plugins/Modules
         view->engine()->addImportPath("/usr/share/" + appName);
-        view->engine()->addPluginPath("/usr/share/" + appName);
+        view->engine()->addImportPath("/usr/share/" + appName + "/lib");
+        view->engine()->addPluginPath("/usr/share/" + appName + "/lib");
         foreach (const QString& path, view->engine()->pluginPathList())
             qDebug() << "Plugin path: " << path;
         view->setSource(SailfishApp::pathTo("qml/" + appName + ".qml"));
