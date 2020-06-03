@@ -3,7 +3,7 @@ TARGET = language
 QT += qml quick
 CONFIG += qt plugin
 
-QMAKE_CXXFLAGS += "-std=c++0x"
+#QMAKE_CXXFLAGS += "-std=c++0x"
 
 INCLUDEPATH += /usr/include/sailfishapp
 

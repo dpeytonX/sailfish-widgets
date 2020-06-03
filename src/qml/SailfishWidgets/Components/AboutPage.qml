@@ -33,7 +33,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 ** along with SailfishWidgets.  If not, see <http://www.gnu.org/licenses/>.
 ** $QT_END_LICENSE$
 */
-import QtQuick 2.1
+import QtQuick 2.2
 import Sailfish.Silica 1.0
 
 /*!

@@ -7,8 +7,8 @@
 void DatabasePlugin::registerTypes(const char *uri)
 {
     // @uri SailfishWidgets.Database
-    qmlRegisterType<SQLiteDatabase>(uri, 1, 3, "SQLiteDatabase");
-    qmlRegisterType<Query>(uri, 1, 3, "Query");
+    qmlRegisterType<SQLiteDatabase>(uri, 3, 3, "SQLiteDatabase");
+    qmlRegisterType<Query>(uri, 3, 3, "Query");
 }
 
 

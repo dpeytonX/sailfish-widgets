@@ -3,7 +3,7 @@ TARGET = filemanagement
 QT += qml quick
 CONFIG += qt plugin
 
-QMAKE_CXXFLAGS += "-std=c++0x"
+#QMAKE_CXXFLAGS += "-std=c++0x"
 
 TARGET = $$qtLibraryTarget($$TARGET)
 uri = SailfishWidgets.FileManagement

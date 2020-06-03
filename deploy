@@ -1,0 +1,80 @@
+#!/bin/bash
+
+CURDIR=`pwd`
+PROJECT_NAME=SailfishWidgets
+BUILD_DIR=build
+TARGET_DIR=target
+DEPLOY_DIR=$TARGET_DIR/$PROJECT_NAME
+SRC_DIR=src
+QML_DIR=$SRC_DIR/qml/SailfishWidgets
+LIB_DIR=$SRC_DIR/lib
+RELEASE_DIR=release
+DOC_DIR=Documentation
+INCLUDE_DIR=$DEPLOY_DIR/include
+QDOC=qdoc
+
+VERSION=3.3
+ARMV=armv7hl
+i486=i486
+
+TARGET_ARMV=$DEPLOY_DIR/$ARMV/$PROJECT_NAME
+TARGET_i486=$DEPLOY_DIR/$i486/$PROJECT_NAME
+LIB_ARMV=$DEPLOY_DIR/lib_${ARMV}
+LIB_i486=$DEPLOY_DIR/lib_${i486}
+
+rm -fr $TARGET_DIR
+rm -fr $BUILD_DIR
+
+echo Building ${VERSION//_/.}
+
+#update versions
+if [ `uname -s` = "Darwin" ]; then
+  gsed -i "s/version =.*$/version = ${VERSION//_/.}/" sailfishwidgets.qdocconf
+  gsed -i "s/version.*$/version ${version//_/.}/" README.md
+  gsed -i "s/SailfishWidgets \d+\.\d+\.\d+.*$/SailfishWidgets ${version//_/.}/" $QML_DIR/index.qdoc
+else
+  sed -i "s/version =.*$/version = ${VERSION//_/.}/" sailfishwidgets.qdocconf
+  sed -i "s/version.*$/version ${version//_/.}/" README.md
+  sed -i "s/SailfishWidgets \d+\.\d+\.\d+.*$/SailfishWidgets ${version//_/.}/" $QML_DIR/index.qdoc
+fi
+
+#make target directories
+mkdir -p $TARGET_ARMV/{Settings,FileManagement,Database,Language,Core}
+mkdir -p $TARGET_i486/{Settings,FileManagement,Database,Language,Core}
+mkdir -p $RELEASE_DIR
+mkdir -p $INCLUDE_DIR
+mkdir -p $LIB_ARMV
+mkdir -p $LIB_i486
+
+#documentation
+$QDOC $CURDIR/*.qdocconf
+cp -r $DOC_DIR $DEPLOY_DIR
+
+#copy qml files
+cp -r $QML_DIR/* $TARGET_ARMV/
+cp -r $QML_DIR/* $TARGET_i486/
+
+#compile
+./make-install $1
+
+#copy built plugins
+cp $BUILD_DIR/applicationsettings/$ARMV/*\.so* $LIB_ARMV
+cp $BUILD_DIR/applicationsettings/$i486/*\.so* $LIB_i486
+cp $BUILD_DIR/filemanagement/$ARMV/*\.so* $LIB_ARMV
+cp $BUILD_DIR/filemanagement/$i486/*\.so* $LIB_i486
+cp $BUILD_DIR/database/$ARMV/*\.so* $LIB_ARMV
+cp $BUILD_DIR/database/$i486/*\.so* $LIB_i486
+cp $BUILD_DIR/language/$ARMV/*\.so* $LIB_ARMV
+cp $BUILD_DIR/language/$i486/*\.so* $LIB_i486
+cp $BUILD_DIR/core/$ARMV/*\.so* $LIB_ARMV
+cp $BUILD_DIR/core/$i486/*\.so* $LIB_i486
+
+#copy include headers
+cp $LIB_DIR/{applicationsettings,filemanagement,database,language,core}/*.h $INCLUDE_DIR
+
+#release builds
+
+cd $TARGET_DIR
+tar -cvjf $PROJECT_NAME\_$VERSION\.tar.bz2 *
+cd $CURDIR
+cp $TARGET_DIR/*bz2 $RELEASE_DIR/

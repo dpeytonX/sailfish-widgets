@@ -29,8 +29,8 @@
 void FilemanagementPlugin::registerTypes(const char *uri)
 {
     // @uri SailfishWidgets.FileManagement
-    qmlRegisterType<Dir>(uri, 1, 2, "Dir");
-    qmlRegisterType<File>(uri, 1, 2, "File");
+    qmlRegisterType<Dir>(uri, 3, 3, "Dir");
+    qmlRegisterType<File>(uri, 3, 3, "File");
 }
 
 
