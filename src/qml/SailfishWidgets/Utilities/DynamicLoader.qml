@@ -40,6 +40,12 @@ Item {
     */
     signal create(Component component, variant parent, variant properties)
     /*!
+       \qmlsignal DynamicLoader::createObj
+       Call this signal to begin object creation. Pass in the QML Component and its parent
+       \c onCreate
+    */
+    signal createObj(Component component, variant parent)
+    /*!
        \qmlsignal DynamicLoader::error
        Emitted when an error has occurred with object creation.
        \c onError
@@ -51,6 +57,8 @@ Item {
        \c onObjectCompleted
     */
     signal objectCompleted(variant object)
+
+    onCreateObj: create(component, parent, {})
 
     onCreate: {
         if(!!component && component.status === Component.Ready) {

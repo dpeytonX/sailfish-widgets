@@ -1,4 +1,4 @@
 module SailfishWidgets.Language
-versioner 3.3 version.qml
+versioner 3.4 version.qml
 plugin language
 typeinfo language.qmltypes

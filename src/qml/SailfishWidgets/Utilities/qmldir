@@ -1,3 +1,3 @@
 module SailfishWidgets.Utilities
-versioner 3.3 version.qml
+versioner 3.4 version.qml
 DynamicLoader 3.3 DynamicLoader.qml
