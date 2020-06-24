@@ -13,7 +13,7 @@ DOC_DIR=Documentation
 INCLUDE_DIR=$DEPLOY_DIR/include
 QDOC=qdoc
 
-VERSION=3.3
+VERSION=3.4
 ARMV=armv7hl
 i486=i486
 

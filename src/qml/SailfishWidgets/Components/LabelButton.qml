@@ -27,10 +27,12 @@ import Sailfish.Silica 1.0
    \since 5.0
    \brief A Clickable Label
    \inqmlmodule SailfishWidgets.Components
+   \obsolete
 
    Back to \l {Sailfish Widgets}
 
-  Similar to a button in functionality except it uses a Label with no text decoration for the message.
+   \warning Deprecated
+   Use the Sailfish.Silica 1.0 Button instead
   */
 BackgroundItem {
     /*!
@@ -49,5 +51,7 @@ BackgroundItem {
       An alias to the internal label's \c {truncationMode}
     */
     property alias truncationMode: lbl.truncationMode
-    InformationalLabel {id: lbl; text: item.text}
+
+
+    InformationalLabel {id: lbl; text: item.text; color: _showPress ? Theme.highlightColor : Theme.primaryColor}
 }

@@ -1,5 +1,6 @@
 module SailfishWidgets.Components
-versioner 3.3 version.qml
+versioner 3.4 version.qml
+AboutDialog 3.3 AboutDialog.qml
 AboutPage 3.3 AboutPage.qml
 BusyPage 3.3 BusyPage.qml
 Heading 3.3 Heading.qml

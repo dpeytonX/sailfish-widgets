@@ -34,5 +34,5 @@ import Sailfish.Silica 1.0
    This is a \c {Dialog} component that sets \c {allowedOrientations} to \c {Orientation.All}
   */
 Dialog {
-    allowedOrientations: Orientation.Portrait | Orientation.Landscape | Orientation.LandscapeInverted
+    allowedOrientations: Orientation.Portrait | Orientation.Landscape | Orientation.LandscapeInverted | Orientation.PortraitInverted
 }
