@@ -10,7 +10,7 @@ Version 3.4
 <img src="http://www.gnu.org/graphics/gplv3-127x51.png" width="254" height="102" />
 
 <h2> TODO </h2>
-<li> Have a template engine to update project version and QML import versions before commit
+<li> Have a template engine to update project version 
 
 <h2> Documentation </h2>
 Documentation is located <a href="https://rawgit.com/prplmnky/sailfish-widgets/master/Documentation/index.html">here</a>.
@@ -33,7 +33,7 @@ QML_IMPORT_PATH = .
 INSTALLS += <em>your-app</em>
 </pre>
    </li>
-   <li> In your QML file add the following import statement: <code>import harbour.<em>your-app</em>.SailfishWidgets.<em>Package</em> <em>version</em> 
+   <li> In your QML file add the following import statement: <code>import harbour.<em>your-app</em>.SailfishWidgets.<em>Package</em> <em>version 
 </ol>
 
 <h2> Using native plugins </h2>

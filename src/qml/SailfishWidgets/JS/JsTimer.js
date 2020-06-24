@@ -1,10 +1,7 @@
-function JsTimer(parent) {
-    return Qt.createQmlObject("import QtQuick 2.0; Timer{}", parent)
-}
-
-function setTimeout(timer, callback, duration) {
+function JsTimer(parent, callback, duration) {
+    var timer = Qt.createQmlObject("import QtQuick 2.0; Timer{}", parent)
     timer.interval = duration
     timer.repeat = false
     timer.triggered.connect(callback);
-    timer.start()
+    return timer
 }

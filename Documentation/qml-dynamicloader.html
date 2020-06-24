@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- DynamicLoader.qml -->
-  <title>DynamicLoader QML Type | Safilfish Widgets 3.3</title>
+  <title>DynamicLoader QML Type | Safilfish Widgets 3.3.1</title>
 </head>
 <body>
 <link rel='stylesheet' href='style/stylesheet.css' /> <h2>Back to <a href='https://github.com/prplmnky/sailfish-widgets'>GitHub</a></h2><div class="sidebar">
@@ -29,6 +29,7 @@
 <h2 id="signals">Signals</h2>
 <ul>
 <li class="fn"><b><b><a href="qml-dynamicloader.html#create-signal">create</a></b></b>(<i>Component</i>, <i>variant</i>, <i>variant</i>)</li>
+<li class="fn"><b><b><a href="qml-dynamicloader.html#createObj-signal">createObj</a></b></b>(<i>Component</i>, <i>variant</i>)</li>
 <li class="fn"><b><b><a href="qml-dynamicloader.html#error-signal">error</a></b></b>(<i>string</i>)</li>
 <li class="fn"><b><b><a href="qml-dynamicloader.html#objectCompleted-signal">objectCompleted</a></b></b>(<i>variant</i>)</li>
 </ul>
@@ -48,6 +49,16 @@
 </table></div>
 </div><div class="qmldoc"><p>Call this signal to begin object creation. Pass in the QML Component, its parent, and properties. <code>onCreate</code></p>
 </div></div><!-- @@@create -->
+<br/>
+<!-- $$$createObj -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="createObj-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="createObj-signal"></a><span class="name">createObj</span>(<i>Component</i> = component, <i>variant</i> = parent)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Call this signal to begin object creation. Pass in the QML Component and its parent <code>onCreate</code></p>
+</div></div><!-- @@@createObj -->
 <br/>
 <!-- $$$error -->
 <div class="qmlitem"><div class="qmlproto">

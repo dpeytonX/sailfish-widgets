@@ -54,7 +54,7 @@ import Sailfish.Silica 1.0
   \l {https://github.com/Armadill0/harbour-tasklist}{Tasklist}
 
   */
-Dialog {
+OrientationDialog {
     /*!
        \qmlproperty alias AboutPage::aboutTaskList
       An alias to the \c SilicaFlickable page container
@@ -111,6 +111,8 @@ Dialog {
     */
     property variant projectLinks
 
+    property variant attributions
+
     id: aboutPage
 
     SilicaFlickable {
@@ -148,11 +150,16 @@ Dialog {
 
             Label {
                 //: TaskList description
-                text: description
+                text: "<style>a:link { color: " + Theme.highlightColor + "; }</style>" + description
                 width: parent.width - Theme.paddingLarge * 2
                 anchors.horizontalCenter: parent.horizontalCenter
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
+                textFormat: Text.RichText
+
+                onLinkActivated: {
+                    Qt.openUrlExternally(link)
+                }
             }
             SectionHeader {
                 //: headline for application licensing information
@@ -215,6 +222,26 @@ Dialog {
                     font.pixelSize: Theme.fontSizeSmall
                 }
             }
+
+            SectionHeader {
+                text: qsTr("Attributions")
+            }
+
+            Repeater {
+                model: attributions
+                delegate: Label {
+                    text: "- <style>a:link { color: " + Theme.highlightColor + "; }</style>" + modelData
+                    width: parent.width - Theme.paddingLarge * 2
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    font.pixelSize: Theme.fontSizeSmall
+                    textFormat: Text.RichText
+
+                    onLinkActivated: {
+                        Qt.openUrlExternally(link)
+                    }
+                }
+            }
+
             Rectangle {
                 width: parent.width
                 height: Theme.paddingLarge
